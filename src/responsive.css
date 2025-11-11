@@ -1,0 +1,49 @@
+@media(max-width: 900px){
+    .login-left{
+        display: none;
+    }   
+}
+
+@media(max-width: 370px){
+    .login-center-options{
+        flex-direction: column;
+        align-items: center;
+        row-gap: 10px;
+    }
+
+    .login-center-buttons{
+        margin-top: 20px;
+    }
+
+    .login-center h2{
+        font-size: 3rem;
+    }
+
+    .login-center p{
+        font-size: 1.5rem;
+    }
+
+    .login-main {
+  display: flex;
+  height: 100vh; /* full screen */
+}
+
+.login-left {
+  flex: 1; /* takes half screen */
+  display: flex;
+}
+
+.login-left .bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* cover full area */
+}
+
+.login-right {
+  flex: 1; /* other half */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+}
