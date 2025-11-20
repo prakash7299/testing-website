@@ -9,13 +9,8 @@ export default function Footer() {
       <div className="footer-container">
         {/* Left Section */}
         <div className="footer-left">
-          <img src={sfeLogo} alt="Society for Education" className="footer-logo" />
           <p>
-            The <b>ICELL-25</b>, hosted by the <b>Society for Education (SFE)</b>, is a prestigious
-            academic event designed to unite scholars, educators, industry professionals, and
-            researchers from across India. This conference serves as a platform to present
-            groundbreaking research, explore technological advancements, and exchange innovative
-            ideas.
+            The <b>ICELL-25</b>, hosted by the <b>Society for Education (SFE)</b>,
           </p>
         </div>
 

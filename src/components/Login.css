@@ -4,96 +4,8 @@
   background-color: #fff;
 }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  background-color: #007bff;
-  color: white;
-}
-.btn-register {
-  background: white;
-  color: #007bff;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: bold;
-}
-.btn-register:hover {
-  background: #eaf2ff;
-}
-
-/* Hero Section */
-.hero {
-  position: relative;
-  height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.hero-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  z-index: -1;
-  filter: brightness(0.7);
-}
-.hero-content {
-  color: white;
-  text-align: center;
-  z-index: 2;
-}
-.btn-primary {
-  background-color: #007bff;
-  color: white;
-  padding: 0.7rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  margin-top: 1rem;
-  cursor: pointer;
-}
-.btn-primary:hover {
-  background-color: #0056b3;
-}
-
-/* Content Sections */
-.content-section {
-  padding: 3rem 8%;
-  line-height: 1.7;
-}
-.content-section h2 {
-  color: #002c61;
-  margin-bottom: 1rem;
-}
-
-/* Delegates Section */
-.delegates-section {
-  padding: 3rem 8%;
-  background: #f8f9fa;
-  text-align: center;
-}
-.delegate-grid {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-}
-.delegate img,
-.delegate video {
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-.delegate h5 {
-  margin-top: 1rem;
-  font-size: 1.1rem;
-  color: #003366;
-}
-        /* Top contact bar */
-        .top-bar {
+/* ---------------------- TOP BAR ---------------------- */
+.top-bar {
   background-color: #0056b3;
   color: white;
   font-size: 14px;
@@ -114,34 +26,24 @@
   text-decoration: underline;
 }
 
-                .navbar ul li a {
-          text-decoration: none;
-          color: #003366;
-          font-weight: 500;
-          transition: color 0.3s;
-        }
-
-        .navbar ul li a:hover {
-          color: #007bff;
-        }
-
-         .navbar {
+/* ---------------------- NAVBAR ---------------------- */
+.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #ffffff;
   padding: 10px 60px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  flex-wrap: wrap; /* allow wrapping for mobile */
+  flex-wrap: wrap;
 }
 
-        .navbar img.logo {
-          height: 60px;
-            width: auto;
+.navbar img.logo {
+  height: 60px;
+  width: auto;
   object-fit: contain;
-        }
+}
 
-        .navbar ul {
+.navbar ul {
   list-style: none;
   display: flex;
   gap: 20px;
@@ -161,7 +63,6 @@
   color: #007bff;
 }
 
-/* Registration button */
 .btn-register {
   background-color: #007bff;
   color: white;
@@ -177,42 +78,154 @@
   background-color: #0056b3;
 }
 
+/* ---------------------- HERO SECTION ---------------------- */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-size: cover;
+  background-position: center;
+}
 
-                /* Hero Section */
-        .hero {
-          position: relative;
-          width: 100%;
-          height: 75vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          color: white;
-        }
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.55);
+}
 
-        .hero::after {
-          content: "";
-          position: absolute;
-          top: 0; left: 0;
-          width: 100%; height: 100%;
-          background-color: rgba(0, 0, 0, 0.55);
-        }
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  padding: 20px;
+}
 
-        .hero-content {
-          position: relative;
-          z-index: 2;
-          max-width: 850px;
-          padding: 20px;
-        }
-
-        .phone-link {
-  color: white;          /* or the same color as your top-bar text */
+/* Phone link */
+.phone-link {
+  color: white;
   text-decoration: none;
 }
 
 .phone-link:hover {
   text-decoration: underline;
 }
+
+/* ---------------------- CONTENT SECTIONS ---------------------- */
+.content-section {
+  padding: 3rem 8%;
+  line-height: 1.7;
+}
+
+.content-section h2 {
+  color: #002c61;
+  margin-bottom: 1rem;
+}
+
+/* ---------------------- DELEGATES SECTION ---------------------- */
+.delegates-section {
+  padding: 3rem 8%;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.delegate-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.delegate img,
+.delegate video {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.delegate h5 {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #003366;
+}
+
+/* ============================================================= */
+/* ===============   MAIN CONTENT + SIDEBAR WRAPPER   =========== */
+/* ============================================================= */
+
+.content-sidebar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 3rem 8%;
+}
+
+.content-main {
+  flex: 1;
+  max-width: 900px;
+}
+
+/* ---------------------- SIDEBAR BOX ---------------------- */
+.sidebar-links {
+  width: 320px;
+  background: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  height: fit-content;
+  position: sticky;
+  top: 120px;
+}
+
+.sidebar-links h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.sidebar-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-links li {
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-links li:last-child {
+  border-bottom: none;
+}
+
+.sidebar-links li::before {
+  content: "›";
+  font-size: 20px;
+  color: #333;
+}
+
+.sidebar-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.sidebar-links a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+/* ============================================================= */
+/* ===============   MOBILE RESPONSIVE SETTINGS    ============= */
+/* ============================================================= */
 
 @media (max-width: 900px) {
   .top-bar {
@@ -244,9 +257,20 @@
     padding: 8px 20px;
     margin-bottom: 10px;
   }
+
+  /* Sidebar under content */
+  .content-sidebar-wrapper {
+    flex-direction: column;
+    padding: 2rem 8%;
+  }
+
+  .sidebar-links {
+    width: 100%;
+    position: relative;
+    top: 0;
+  }
 }
 
-/* For very small devices (mobile under 480px) */
 @media (max-width: 480px) {
   .top-bar {
     font-size: 13px;
