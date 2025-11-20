@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="footer-links">
           <h3>Quick Link</h3>
           <ul>
-            <li><a href="#">About Us</a></li>
+            <li><a href="#/about">About Us</a></li>
             <li><a href="#">Upcoming Conferences</a></li>
             <li><a href="#">Registration</a></li>
             <li><a href="#">Benefits of Participation</a></li>
@@ -32,7 +32,7 @@ export default function Footer() {
           <h3>Get In Touch</h3>
           <p>
             <strong>Email:</strong>{" "}
-            <a href="mailto:info@sfe.net.in">intelmeetglobal@gmail.com</a>
+            <a href="mailto:support@intelmeetglobal.com">support@intelmeetglobal.com</a>
           </p>
           <p>
             <strong>Phone:</strong> +91 94424 17477

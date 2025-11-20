@@ -1,0 +1,176 @@
+.about-container {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.about-card {
+  background: #ffffff;
+  padding: 30px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+
+.about-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #002855;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #002855;
+  margin-bottom: 12px;
+}
+
+.section-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.about-list {
+  margin-left: 20px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.about-list li {
+  margin-bottom: 6px;
+}
+
+.contact-list {
+  margin-left: 20px;
+  line-height: 1.8;
+}
+
+.contact-list li {
+  font-size: 15px;
+}
+
+.about-page {
+  font-family: "Poppins", sans-serif;
+  background: #f8f9fc;
+}
+
+/* Common card style */
+.about-section {
+  background: white;
+  padding: 2rem 2.5rem;
+  margin: 2rem auto;
+  width: 80%;
+  max-width: 900px;
+  border-radius: 18px;
+  box-shadow: 0px 8px 24px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.about-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 12px 28px rgba(0,0,0,0.15);
+}
+
+/* Titles */
+.about-section h2 {
+  font-size: 1.7rem;
+  color: #0c204a;
+  margin-bottom: 1rem;
+}
+
+/* Text */
+.about-section p {
+  color: #444;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+/* Lists */
+.styled-list li {
+  margin: 8px 0;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+/* Contact List */
+.contact-list li {
+  font-size: 1.1rem;
+  margin: 6px 0;
+  font-weight: 500;
+}
+
+/* Fade Animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.9s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero Section */
+.hero {
+  height: 45vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  text-align: center;
+  color: white;
+  background: rgba(0,0,0,0.55);
+  padding: 20px 40px;
+  border-radius: 12px;
+}
+
+.hero-content h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+}
+
+.about-container {
+  margin-top: -40px !important;   /* softer pull-up */
+  padding-top: 0 !important;
+}
+
+.about-card {
+  width: 100%;
+}
+
+.about-page .navbar {
+  margin-bottom: 20px;
+}
+
+/* FIX: Add spacing between top bar and navbar on mobile */
+@media (max-width: 600px) {
+  .top-bar {
+    padding-bottom: 12px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .navbar {
+    margin-top: 12px !important;
+    padding-top: 8px !important;
+  }
+}
+
+.hidden-placeholder {
+  visibility: hidden;   /* hides the text but keeps the space */
+}
+
+
