@@ -649,4 +649,7 @@
   margin-bottom: 6px;
 }
 
+.hidden-placeholder {
+  visibility: hidden;   /* hides the text but keeps the space */
+}
 

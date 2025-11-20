@@ -26,6 +26,7 @@ export default function Login() {
           </span>
           | <a href="tel:+919442417477" className="phone-link">+91 9442417477</a>
         </div>
+        <div><span className="hidden-placeholder">f</span></div>
         <div>
           <a href="#"><FaFacebookF /></a>
           <a href="#"><FaTwitter /></a>
