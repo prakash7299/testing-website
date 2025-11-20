@@ -10,7 +10,7 @@ export default function Footer() {
         {/* Left Section */}
         <div className="footer-left">
           <p>
-            The <b>ICELL-25</b>, hosted by the <b>Society for Education (SFE)</b>,
+            IntelMeet Global Conferences organizes international academic conferences supporting global research presentation and publication
           </p>
         </div>
 
@@ -18,14 +18,12 @@ export default function Footer() {
         <div className="footer-links">
           <h3>Quick Link</h3>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Conference</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Upcoming Conferences</a></li>
             <li><a href="#">Registration</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Journal</a></li>
-            <li><a href="#">Submission</a></li>
+            <li><a href="#">Benefits of Participation</a></li>
             <li><a href="#">Apply for Committee</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#">Apply for Speaker</a></li>
           </ul>
         </div>
 
@@ -34,10 +32,10 @@ export default function Footer() {
           <h3>Get In Touch</h3>
           <p>
             <strong>Email:</strong>{" "}
-            <a href="mailto:info@sfe.net.in">info@sfe.net.in</a>
+            <a href="mailto:info@sfe.net.in">intelmeetglobal@gmail.com</a>
           </p>
           <p>
-            <strong>Phone:</strong> +91 9677007228
+            <strong>Phone:</strong> +91 94424 17477
           </p>
           <div className="social-icons">
             <a href="#"><FaFacebookF /></a>
