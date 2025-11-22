@@ -6,7 +6,7 @@
 
 /* ---------------------- TOP BAR ---------------------- */
 .top-bar {
-  background-color: #0056b3;
+  background-color: #005b83;
   color: white;
   font-size: 14px;
   padding: 5px 60px;
@@ -62,6 +62,7 @@
 .navbar ul li a:hover {
   color: #007bff;
 }
+
 
 .btn-register {
   background-color: #007bff;
@@ -652,4 +653,331 @@
 .hidden-placeholder {
   visibility: hidden;   /* hides the text but keeps the space */
 }
+
+/* Dropdown */
+.navbar ul li {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  display: none;
+  flex-direction: column;
+  min-width: 220px;
+  z-index: 999;
+}
+
+.dropdown-menu a {
+  padding: 10px 16px;
+  text-decoration: none;
+  color: #222;
+  font-size: 14px;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  background: #f4f7ff;
+}
+
+/* Show dropdown on hover */
+.navbar ul li:hover .dropdown-menu {
+  display: flex;
+}
+.dropdown{
+  text-decoration: none;
+  color: #000d33;
+  font-weight: 500;
+  font-size: 14px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Label behaves like other nav links */
+.dropdown-label {
+  color: #000d33;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 8px 0;
+  display: inline-block;
+}
+
+.dropdown-label:hover {
+  color: #007bff;
+}
+
+/* Dropdown menu box */
+.dropdown-menu {
+  position: absolute;
+  top: 35px;   /* reduced to eliminate hover gap */
+  left: 0;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  display: none;
+  flex-direction: column;
+  min-width: 220px;
+  z-index: 9999;
+  padding: 6px 0;
+}
+
+/* Menu items */
+.dropdown-menu a {
+  padding: 10px 18px;
+  text-decoration: none;
+  color: #222;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background: #eef3ff;
+  color: #007bff;
+}
+
+/* KEEP DROPDOWN OPEN ON HOVER */
+.dropdown:hover .dropdown-menu,
+.dropdown-menu:hover {
+  display: flex !important;
+}
+
+/* Make Paper Submission align with other nav items */
+.navbar ul li .dropdown-toggle {
+  cursor: pointer;
+  color: #000d33;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 10px 0;
+  display: inline-block;
+}
+
+.navbar ul li .dropdown-toggle:hover {
+  color: #007bff;
+}
+
+/* Fix dropdown link alignment */
+.dropdown-toggle {
+  color: #000d33;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 0 0;       /* ensures exact alignment */
+  line-height: 20px;  /* match height of other menu items */
+  cursor: pointer;
+}
+
+/* Remove underline on hover */
+.dropdown-toggle:hover {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* FIX: make Paper Submission align properly */
+.navbar ul li,
+.navbar ul li a,
+.dropdown-toggle {
+  padding: 10px 0 !important;
+  line-height: 24px !important;
+  display: inline-block;
+}
+
+/* FIX dropdown arrow spacing */
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* FIX dropdown menu position (prevent going down) */
+.dropdown-menu {
+  top: 38px !important;           
+}
+
+/* ---------------------- NAVBAR ---------------------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 10px 60px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  flex-wrap: wrap;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.navbar ul li {
+  position: relative;
+}
+
+.navbar ul li a,
+.dropdown-toggle {
+  text-decoration: none;
+  color: #000d33;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 0;             /* remove unnecessary height */
+  line-height: 20px;      /* match height of others */
+}
+
+/* ---------------------- DROPDOWN ---------------------- */
+
+.dropdown-menu {
+  position: absolute;
+  top: 32px;   /* properly aligned */
+  left: 0;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  display: none;
+  flex-direction: column;
+  min-width: 220px;
+  z-index: 9999;
+  padding: 6px 0;
+}
+
+.dropdown-menu a {
+  padding: 10px 18px;
+  white-space: nowrap;
+  display: block;
+  color: #333;
+}
+
+.dropdown-menu a:hover {
+  background: #eef3ff;
+  color: #007bff;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex !important;
+}
+
+/* ========================== MOBILE FIX ========================== */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    flex-direction: column;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;                 /* reduce spacing */
+    width: 100%;
+  }
+
+  .navbar ul li {
+    padding: 4px 0;           /* reduce vertical spacing */
+  }
+
+  .navbar ul li a,
+  .dropdown-toggle {
+    padding: 4px 0 !important;
+    margin: 0 !important;
+    line-height: 18px !important;
+    font-size: 15px;
+  }
+
+  /* DROPDOWN FIX FOR MOBILE */
+  .dropdown-menu {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: none;
+    background: #f9f9f9;
+    border-radius: 0;
+  }
+
+  .dropdown-menu a {
+    padding: 12px 0;
+    text-align: center;
+  }
+}
+
+/* ================================
+   PREMIUM MOBILE DROPDOWN FIX
+=================================*/
+
+@media (max-width: 768px) {
+
+  /* Make the navbar stack cleanly */
+  .navbar ul {
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100%;
+  }
+
+  .navbar ul li {
+    width: 100%;
+    text-align: center;
+    position: relative;
+  }
+
+  /* Dropdown parent link */
+  .dropdown-toggle {
+    padding: 12px 0 !important;
+    display: block;
+    width: 100%;
+  }
+
+  /* Mobile dropdown menu behaves like normal list items */
+  .dropdown-menu {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    
+    width: 100%;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+
+    padding: 0 !important;
+    margin-top: 6px;
+    display: none; /* hidden until hover */
+  }
+
+  /* Dropdown items spacing */
+  .dropdown-menu a {
+    padding: 10px 0 !important;
+    text-align: center !important;
+    font-size: 15px;
+    background: #f4f6ff;
+    margin-bottom: 6px;
+    border-radius: 6px;
+    width: 100%;
+  }
+
+  .dropdown-menu a:hover {
+    background: #e4ecff !important;
+  }
+
+  /* Keep open on hover/tap */
+  .dropdown:hover .dropdown-menu {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
+
+
+
 

@@ -12,8 +12,9 @@ import {
 } from "react-icons/fa";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
+import Registration from "./Registration";
 
-export default function About() {
+export default function PaperSubmission() {
   return (
     <div className="page-container">
 
@@ -68,69 +69,16 @@ export default function About() {
         </a>
       </div>
 
-      {/* ---------------- HERO ---------------- */}
-      <section className="hero" style={{ backgroundImage: `url(${photo})` }}>
-        <div className="hero-content">
-          <h1>About IntelMeet Global Conferences</h1>
-          <p>Empowering Global Research & Academic Innovation</p>
-        </div>
-      </section>
+    {/* ---------------- HERO ---------------- */}
+          <section className="hero" style={{ backgroundImage: `url(${photo})` }}>
+            <div className="hero-content">
+              <h1>About IntelMeet Global Conferences</h1>
+              <p>Empowering Global Research & Academic Innovation</p>
+            </div>
+          </section>
 
-      {/* ---------------- FULL PAGE WIDTH WRAPPER (Same as HOME) ---------------- */}
       <div className="content-sidebar-wrapper">
-
-        {/* ---------------- LEFT CONTENT ---------------- */}
-        <div className="content-main">
-
-            <section className="cfp-section">
-              <h2 className="cfp-title">Who We Are</h2>
-              <p className="cfp-text">
-                IntelMeet Global Conferences is a leading platform dedicated to promoting 
-                high-quality research, innovation, and international academic communication.
-              </p>
-              <p className="cfp-text">
-                Our events bring together scholars, researchers, professionals, and students across 
-                the globe, enabling impactful knowledge exchange and publication opportunities.
-              </p>
-            </section>
-
-            <section className="cfp-section">
-              <h2 className="cfp-title">Our Mission</h2>
-              <p className="cfp-text">
-                To support and promote high-quality scholarly research by organizing 
-                international conferences that connect authors with a global academic audience.
-              </p>
-            </section>
-
-            <section className="cfp-section">
-              <h2 className="cfp-title">Our Vision</h2>
-              <p className="cfp-text">
-                To become a trusted global organizer known for excellence, simplicity, and strong 
-                academic value — enhancing global research visibility.
-              </p>
-            </section>
-
-            <section className="cfp-section">
-              <h2 className="cfp-title">What We Do</h2>
-              <ul className="cfp-list">
-                <li className="cfp-text">Organize international academic conferences</li>
-                <li className="cfp-text">Provide research presentation opportunities</li>
-                <li className="cfp-text">Support authors with submission and peer review</li>
-                <li className="cfp-text">Facilitate publication in indexed journals</li>
-                <li className="cfp-text">Connect global researchers & professionals</li>
-              </ul>
-            </section>
-
-            <section className="cfp-section">
-              <h2 className="cfp-title">Contact Us</h2>
-              <p className="cfp-text">For inquiries, submissions, or support:</p>
-              <ul className="cfp-list">
-                <li className="cfp-text">📧 intelmeetglobal@gmail.com</li>
-                <li className="cfp-text">🌐 www.intelmeet.com</li>
-              </ul>
-            </section>
-
-        </div>
+        <Registration />
 
         {/* ---------------- RIGHT SIDEBAR (Same as HOME) ---------------- */}
         <div className="sidebar-links">

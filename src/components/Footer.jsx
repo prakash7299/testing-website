@@ -45,7 +45,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© 2025 SFE - All rights reserved.</p>
+        <p>Copyright © 2025 IntelMeet Global Conferences - All Rights Reserved.</p>
         <p>
           <a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a>
         </p>

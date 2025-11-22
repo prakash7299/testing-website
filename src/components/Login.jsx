@@ -8,7 +8,13 @@ import confimage3 from "../assets/confimage-3.jpeg";
 import Footer from "../components/Footer";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube  } from "react-icons/fa";
+import { 
+  FaFacebookF, 
+  FaLinkedinIn, 
+  FaTwitter, 
+  FaYoutube,
+  FaInstagram
+} from "react-icons/fa";
 import "./SidebarLinks.css"; // Add sidebar CSS file
 
 export default function Login() {
@@ -28,7 +34,8 @@ export default function Login() {
         </div>
         <div><span className="hidden-placeholder">f</span></div>
         <div>
-          <a href="#"><FaFacebookF /></a>
+          <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+          <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
           <a href="#"><FaTwitter /></a>
           <a href="#"><FaLinkedinIn /></a>
           <a href="#"><FaYoutube /></a>
@@ -40,22 +47,27 @@ export default function Login() {
         <img src={intelmeet} alt="Logo" className="logo" />
         <ul>
           <li><a href="#">Home</a></li>
-          <li><Link to="/about">About Us</Link></li>
+          <li><Link className="nav-link" to="/about">About Us</Link></li>
           <li><a href="#">Upcoming Conferences</a></li>
-          <li><a href="#">Paper Submission</a></li>
-          <li><a href="#">Benefits</a></li>
+          <li className="dropdown">
+  <span className="dropdown-toggle">Paper Submission ▾</span>
+
+  <div className="dropdown-menu">
+    <Link className="nav-link" to="/papersubmission">📄 Submission Form</Link>
+    <Link className="nav-link" to="/papersubmission-guidelines">📘 Submission Guidelines</Link>
+  </div>
+</li>
+
+
+
+          <li><Link className="nav-link" to="/benefits">Benifits</Link></li>
           <li><a href="#">Speaker</a></li>
           <li><a href="#">Committee</a></li>
           <li><a href="#">Publications</a></li>
           <li><a href="#">Contact Us</a></li>
         </ul>
 
-        <a
-          href="https://docs.google.com/forms/d/1cnm3AfTKKIBITCzCOMlnGouGa2qiuDbEiIjsozMQtTo/edit"
-          className="btn-register"
-        >
-          Registration
-        </a>
+        <Link to="/registration" className="btn-register">Registration</Link>
       </div>
 
       {/* Hero Section */}
