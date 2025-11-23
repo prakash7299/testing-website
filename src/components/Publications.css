@@ -1,0 +1,111 @@
+/* Publications.css */
+
+.pub-main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.pub-block {
+  background: #fff;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+}
+
+.pub-block h2 {
+  font-size: 24px;
+  color: #0b3f77;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.pub-block p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.7;
+}
+
+/* SUPPORT BOX */
+.pub-support {
+  background: #f7fbff;
+  padding: 32px;
+  border-left: 6px solid #0b3f77;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.pub-support h2 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0b3f77;
+  margin-bottom: 12px;
+}
+
+.pub-support p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* SIDEBAR */
+.sidebar-links {
+  background: #fff;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  height: fit-content;
+}
+
+.sidebar-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-links li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.sidebar-links a {
+  color: #0b3f77;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sidebar-links a:hover {
+  color: #005fcc;
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+  .content-sidebar-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .sidebar-links {
+    margin-top: 30px;
+  }
+}
+
+/* OVERVIEW SECTION */
+.pub-overview {
+  background: #fff;
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0px 8px 22px rgba(0, 0, 0, 0.06);
+  margin-bottom: 30px;
+}
+
+.pub-main-title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #0b3f77;
+  margin-bottom: 12px;
+}
+
+.pub-main-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+}
+

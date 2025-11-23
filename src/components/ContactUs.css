@@ -1,0 +1,139 @@
+/***** CONTACT US PAGE STYLES *****/
+
+/* Wrapper */
+.contact-wrapper {
+  max-width: 1250px;
+  margin: 40px auto 60px;
+  padding: 0 22px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+/* HERO */
+.contact-hero {
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+.contact-hero-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  z-index: 5;
+}
+.contact-hero-content h1 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+/* MAIN CONTENT */
+.contact-main {
+  background: #fff;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contact-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0b3f77;
+  margin-bottom: 20px;
+}
+
+.contact-section {
+  margin-bottom: 30px;
+}
+.contact-section h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #0b3f77;
+}
+.contact-section p,
+.contact-section li {
+  font-size: 16px;
+  line-height: 1.65;
+  margin-bottom: 6px;
+}
+
+/* Contact Form */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #d8d8d8;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+.contact-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+.contact-form button {
+  background: #007bff;
+  border: none;
+  padding: 10px 26px;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.contact-form button:hover {
+  background: #005fcc;
+}
+
+/* Sidebar */
+.sidebar-links {
+  background: #fff;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  height: fit-content;
+}
+.sidebar-links h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #0b3f77;
+}
+.sidebar-links ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar-links li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+.sidebar-links li a {
+  text-decoration: none;
+  color: #0b2132;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* MOBILE */
+@media (max-width: 850px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar-links {
+    margin-top: 20px;
+  }
+}

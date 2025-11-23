@@ -1,0 +1,476 @@
+/* MAIN LAYOUT */
+.uc-wrapper {
+  max-width: 1250px;
+  margin: -30px auto 60px;
+  padding: 0 22px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+/* HERO */
+.uc-hero {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.uc-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+.uc-hero-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  z-index: 5;
+}
+.uc-hero-content h1 {
+  font-size: 34px;
+  font-weight: 800;
+}
+
+/* MAIN (LEFT SIDE) */
+.uc-main {
+  background: #fff;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+}
+.uc-section-title {
+  margin-bottom: 25px;
+  font-size: 26px;
+  color: #0b3f77;
+  font-weight: 800;
+}
+
+/* CARD */
+.uc-card {
+  display: flex;
+  gap: 20px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 28px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+  transition: 0.3s ease;
+}
+.uc-card:hover {
+  transform: translateY(-4px);
+}
+.uc-card-img {
+  width: 240px;
+  height: 160px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.uc-card-body {
+  flex: 1;
+}
+.uc-card-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0b2132;
+  margin-bottom: 10px;
+}
+
+/* TEXT META */
+.uc-meta p {
+  margin: 5px 0;
+  font-size: 15px;
+}
+.uc-meta b {
+  color: #0b3f77;
+}
+
+/* BUTTONS */
+.btn-row {
+  margin: 10px 0 16px;
+}
+.btn-submit,
+.btn-register-now {
+  width: 190px;
+  padding: 10px 0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+}
+
+.btn-submit {
+  background: #007bff;
+}
+.btn-register-now {
+  background: #1cbf60;
+}
+
+/* SIDEBAR */
+.uc-sidebar .sidebar-card {
+  background: white;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* MOBILE VIEW */
+@media (max-width: 850px) {
+  .uc-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .uc-card {
+    flex-direction: column;
+  }
+  .uc-card-img {
+    width: 100%;
+    height: 200px;
+  }
+  .btn-submit,
+  .btn-register-now {
+    width: 100%;
+  }
+}
+
+
+/* MAIN LAYOUT */
+.uc-wrapper {
+  max-width: 1250px;
+  margin: 40px auto 60px;   /* ← FIXED: Removed negative margin */
+  padding: 0 22px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+/* HERO */
+.uc-hero {
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;   /* ← FIX: Pushes content down */
+  padding-top: 40px;
+}
+.uc-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+.uc-hero-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  z-index: 5;
+}
+.uc-hero-content h1 {
+  font-size: 34px;
+  font-weight: 800;
+}
+
+/* MAIN CONTENT */
+.uc-main {
+  background: #fff;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+}
+.uc-section-title {
+  margin-bottom: 25px;
+  font-size: 26px;
+  color: #0b3f77;
+  font-weight: 800;
+}
+
+/* CARD */
+.uc-card {
+  display: flex;
+  gap: 25px;
+  background: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  margin-bottom: 32px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+.uc-card:hover {
+  transform: translateY(-4px);
+}
+.uc-card-img {
+  width: 260px;
+  height: 170px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+.uc-card-body {
+  flex: 1;
+}
+.uc-card-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0b2132;
+  margin-bottom: 12px;
+}
+
+/* META TEXT */
+.uc-meta p {
+  margin: 6px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.uc-meta b {
+  color: #0b3f77;
+}
+
+/* BUTTON ROW */
+.btn-row {
+  margin: 12px 0 18px;
+}
+
+/* BUTTONS */
+.btn-submit,
+.btn-register-now {
+  width: 220px;
+  padding: 12px 0;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.btn-submit {
+  background: #0069ff;
+}
+
+.btn-register-now {
+  background: #16c065;
+}
+
+/* SIDEBAR */
+.sidebar-links {
+  background: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  height: fit-content;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+}
+
+.sidebar-links h3 {
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.sidebar-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-links li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 850px) {
+  .uc-wrapper {
+    grid-template-columns: 1fr;
+    margin: 20px auto 40px;
+  }
+  .uc-card {
+    flex-direction: column;
+  }
+  .uc-card-img {
+    width: 100%;
+    height: 220px;
+  }
+  .btn-submit,
+  .btn-register-now {
+    width: 100%;
+  }
+}
+/* TWO COLUMN DEADLINE GRID */
+.uc-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-top: 20px;
+  align-items: start;
+}
+
+/* Make labels consistent */
+.uc-info-grid p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  color: #333;
+}
+
+/* Buttons full width inside each column */
+.full-btn {
+  width: 100%;
+}
+
+/* Buttons styling */
+.btn-submit,
+.btn-register-now {
+  padding: 12px 0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+}
+
+.btn-submit {
+  background: #007bff;
+}
+
+.btn-register-now {
+  background: #1cbf60;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 850px) {
+  .uc-info-grid {
+    grid-template-columns: 1fr;
+  }
+  .full-btn {
+    width: 100%;
+  }
+}
+
+/* DEADLINE ROW */
+.deadline-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  margin-top: 25px;
+  align-items: start;
+}
+
+/* DEADLINE BOX */
+.deadline-box {
+  background: #f8fbff;
+  padding: 18px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  text-align: left;
+}
+
+.deadline-label {
+  margin: 0;
+  font-size: 15px;
+  color: #0b3f77;
+}
+
+.deadline-date {
+  font-size: 15px;
+  margin: 2px 0 12px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Buttons inside deadline box */
+.deadline-box .btn-submit,
+.deadline-box .btn-register-now {
+  width: 100%;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.remaining-time {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ff5722;
+}
+
+.remaining-time.green {
+  color: #16b34b;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .deadline-row {
+    grid-template-columns: 1fr;
+  }
+  .deadline-box {
+    margin-bottom: 15px;
+  }
+}
+
+/* DEADLINE SPLIT BOX */
+.uc-deadline-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-top: 25px;
+  padding: 22px;
+  background: #f9fbff;
+  border-radius: 16px;
+  border: 1px solid #e5e9f0;
+}
+
+.uc-deadline-col {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+.uc-deadline-col h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0b3f77;
+  margin-bottom: 5px;
+}
+
+.uc-date {
+  font-size: 15px;
+  margin-bottom: 12px;
+  color: #333;
+  font-weight: 600;
+}
+
+.uc-remaining {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #d62828;
+}
+
+.uc-remaining.green {
+  color: #1cbf60;
+}
+
+.uc-deadline-col .btn-submit,
+.uc-deadline-col .btn-register-now {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .uc-deadline-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+

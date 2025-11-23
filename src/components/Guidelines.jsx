@@ -38,36 +38,32 @@ export default function Guidelines() {
       </div>
 
       {/* ---------------- NAVBAR ---------------- */}
-      <div className="navbar">
-        <img src={intelmeet} alt="Logo" className="logo" />
-
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About Us</Link></li>
-          <li><a href="#">Upcoming Conferences</a></li>
-
-          <li className="dropdown">
-            <span className="dropdown-toggle">Paper Submission ▾</span>
-            <div className="dropdown-menu">
-              <Link className="nav-link" to="/papersubmission">📄 Submission Form</Link>
-              <Link className="nav-link" to="/papersubmission-guidelines">📘 Submission Guidelines</Link>
+            <div className="navbar">
+              <img src={intelmeet} alt="Logo" className="logo" />
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><Link className="nav-link" to="/about">About Us</Link></li>
+                <li><Link className="nav-link" to="/upcoming-conferences">Upcoming Conferences</Link></li>
+                <li className="dropdown">
+                  <span className="dropdown-toggle">Paper Submission ▾</span>
+      
+                  <div className="dropdown-menu">
+                    <Link className="nav-link" to="/papersubmission">📄 Submission Form</Link>
+                    <Link className="nav-link" to="/papersubmission-guidelines">📘 Submission Guidelines</Link>
+                  </div>
+                </li>
+      
+      
+      
+                <li><Link className="nav-link" to="/benefits">Benifits</Link></li>
+                <li><Link className="nav-link" to="/speaker">Speaker</Link></li>
+                <li><Link className="nav-link" to="/committee">Committee</Link></li>
+                <li><Link className="nav-link" to="/publications">Publications</Link></li>
+                <li><Link className="nav-link" to="/contact">Contact Us</Link></li>
+              </ul>
+      
+              <Link to="/registration" className="btn-register">Registration</Link>
             </div>
-          </li>
-
-          <li><a href="#">Benefits</a></li>
-          <li><a href="#">Speaker</a></li>
-          <li><a href="#">Committee</a></li>
-          <li><a href="#">Publications</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-
-        <a
-          href="https://docs.google.com/forms/d/1cnm3AfTKKIBITCzCOMlnGouGa2qiuDbEiIjsozMQtTo/edit"
-          className="btn-register"
-        >
-          Registration
-        </a>
-      </div>
 
       {/* ---------------- HERO ---------------- */}
       <section className="hero" style={{ backgroundImage: `url(${photo})` }}>
@@ -224,16 +220,16 @@ export default function Guidelines() {
 
         {/* ---------------- RIGHT SIDEBAR ---------------- */}
         <div className="sidebar-links">
-          <h3>Quick Link</h3>
-          <ul>
-            <li><a href="#">Key Benefits of Participation</a></li>
-            <li><a href="#">Apply to Become a Speaker</a></li>
-            <li><a href="#">Instructions for Participants</a></li>
-            <li><a href="#">Author Guidelines</a></li>
-            <li><a href="#">Apply for Committee Member</a></li>
-            <li><a href="#">Frequently Asked Questions (FAQs)</a></li>
-          </ul>
-        </div>
+                  <h3>Quick Link</h3>
+                  <ul>
+                    <li><Link className="nav-link" to="/benefits">Key Benefits of Participation</Link></li>
+                    <li><Link className="nav-link" to="/apply-speaker">Apply to Become a Speaker</Link></li>
+                    <li><Link className="nav-link" to="/instructions">Instructions for Participants</Link></li>
+                    <li><Link className="nav-link" to="/papersubmission-guidelines">Author Guidelines</Link></li>
+                    <li><Link className="nav-link" to="/committee-application">Apply for Committee Member</Link></li>
+                    <li><Link className="nav-link" to="/faq">Frequently Asked Questions (FAQs)</Link></li>
+                  </ul>
+                </div>
 
       </div>
 

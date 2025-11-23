@@ -1,0 +1,78 @@
+/* Speaker.css */
+
+.speaker-header {
+  margin-bottom: 25px;
+}
+
+.speaker-header h2 {
+  font-size: 30px;
+  color: #0b3f77;
+  font-weight: 800;
+}
+
+.speaker-header p {
+  font-size: 16px;
+  margin: 10px 0 20px;
+}
+
+.apply-btn {
+  background: #0066ff;
+  padding: 10px 22px;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.apply-btn:hover {
+  background: #004ecc;
+}
+
+/* SPEAKER GRID */
+.speaker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.speaker-card {
+  background: #fff;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transition: 0.3s;
+}
+
+.speaker-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.speaker-card h3 {
+  color: #0b3f77;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.speaker-card .inst {
+  margin-top: 6px;
+  color: #444;
+  font-size: 15px;
+}
+
+.speaker-card .country {
+  color: #666;
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .speaker-grid {
+    grid-template-columns: 1fr;
+  }
+}

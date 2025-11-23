@@ -1,0 +1,86 @@
+/* ParticipantsInstructions.css */
+
+.instructions-wrapper {
+  background: #fff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+}
+
+.inst-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0b3f77;
+  margin-bottom: 25px;
+}
+
+.inst-block {
+  background: #ffffff;
+  padding: 20px 25px;
+  margin-bottom: 25px;
+  border-left: 4px solid #0b3f77;
+  border-radius: 10px;
+}
+
+.inst-block h3 {
+  font-size: 20px;
+  color: #0b3f77;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.inst-block ul {
+  padding-left: 20px;
+}
+
+.inst-block ul li {
+  font-size: 15px;
+  margin-bottom: 6px;
+  line-height: 1.6;
+  color: #0b2132;
+}
+
+.inst-block p {
+  font-size: 15px;
+  color: #0b2132;
+  line-height: 1.6;
+}
+
+/* -------- SIDEBAR (reuse style structure) -------- */
+.sidebar-links {
+  background: #fff;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  height: fit-content;
+}
+
+.sidebar-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-links li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.sidebar-links a {
+  text-decoration: none;
+  color: #0b3f77;
+  font-weight: 600;
+}
+
+.sidebar-links a:hover {
+  color: #005fcc;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+  .content-sidebar-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .sidebar-links {
+    margin-top: 30px;
+  }
+}
