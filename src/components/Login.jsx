@@ -8,6 +8,7 @@ import confimage3 from "../assets/confimage-3.jpeg";
 import Footer from "../components/Footer";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
+import HeroSlider from "../components/HeroSlider";
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -67,22 +68,14 @@ export default function Login() {
           <li><Link className="nav-link" to="/contact">Contact Us</Link></li>
         </ul>
 
-        <Link to="/registration" className="btn-register">Registration</Link>
+        <Link to="/registration-fees" className="btn-register">Registration</Link>
       </div>
 
-      {/* Hero Section */}
-      <section className="hero" style={{ backgroundImage: `url(${photo})` }}>
-        <div className="hero-content">
-          <h1>
-            International Conference on Emerging Technologies, Pharmacology
-            Education and Business (ICETPEB-25)
-          </h1>
-          <p>
-            November 20, 2025, in Barcelona, Spain, in Hybrid Mode (both
-            in-person and online)
-          </p>
-        </div>
-      </section>
+      <HeroSlider
+  title="ICETPEB-25 Conference"
+  subtitle="20 Nov 2025 • Barcelona, Spain • Hybrid Mode"
+  showButtons={true}
+/>
 
       {/* -------------------- MAIN CONTENT + SIDEBAR WRAPPER -------------------- */}
       <div className="content-sidebar-wrapper">
@@ -135,8 +128,8 @@ export default function Login() {
             </p>
 
             <div className="cfp-buttons">
-              <a href="#" className="cfp-btn-primary">Submit Abstract</a>
-              <a href="#" className="cfp-btn-secondary">View Author Guidelines</a>
+              <Link className="btn-register" to="/papersubmission">📄 Submission Form</Link>
+              <Link className="btn-register" to="/papersubmission-guidelines">📘 Submission Guidelines</Link>
             </div>
           </section>
 
@@ -146,38 +139,43 @@ export default function Login() {
             {/* Conference 1 */}
             <div className="conference-card">
               <h3 className="conf-name">
-                <span className="icon">📌</span> International Conference on AI & Data Science (ICAIDS 2025)
+                <span className="icon">📌</span> International Conference on Engineering & Technology (ICET)
               </h3>
-              <p className="conf-detail"><span className="icon">📅</span> March 15, 2025</p>
-              <p className="conf-detail"><span className="icon">📚</span> AI, Machine Learning, Deep Learning, Data Analytics</p>
-              <a className="conf-link" href="#">🔗 View Details</a>
+              <p className="conf-detail"><span className="icon">📅</span> 28 November 2025</p>
+              <p className="conf-detail"><span className="icon">📚</span> Engineering, Technology, and Applied Sciences</p>
+              <Link className="conf-link" to="/upcoming-conferences">
+  🔗 View Details
+</Link>
             </div>
 
             {/* Conference 2 */}
             <div className="conference-card">
               <h3 className="conf-name">
-                <span className="icon">📌</span> International Conference on Engineering, Technology & Innovations (ICETI 2025)
+                <span className="icon">📌</span> International Conference on Science, Computing & Data Analytics (ICSDA)
               </h3>
-              <p className="conf-detail"><span className="icon">📅</span> April 21, 2025</p>
+              <p className="conf-detail"><span className="icon">📅</span> 5 December 2025</p>
               <p className="conf-detail">
-                <span className="icon">📚</span> CSE, ECE, Mechanical, Civil, IT, Robotics
+                <span className="icon">📚</span> Computing, Data Analytics, and Scientific Research
               </p>
-              <a className="conf-link" href="#">🔗 View Details</a>
+              <Link className="conf-link" to="/upcoming-conferences">
+  🔗 View Details
+</Link>
             </div>
 
             {/* Conference 3 */}
             <div className="conference-card">
               <h3 className="conf-name">
-                <span className="icon">📌</span> International Conference on Business, Management & Humanities (ICBMH 2025)
+                <span className="icon">📌</span> International Conference on Management, Business & Social Innovation (ICMBSI)
               </h3>
-              <p className="conf-detail"><span className="icon">📅</span> May 11, 2025</p>
+              <p className="conf-detail"><span className="icon">📅</span> 8 December 2025</p>
               <p className="conf-detail">
-                <span className="icon">📚</span> Management, Finance, HR, Psychology, Education
+                <span className="icon">📚</span> Management, Business, Economics, and Social Innovation
               </p>
-              <a className="conf-link" href="#">🔗 View Details</a>
+              <Link className="conf-link" to="/upcoming-conferences">
+  🔗 View Details
+</Link>
             </div>
-
-            <a href="#" className="view-all">[View All Conferences]</a>
+              <Link className="view-all" to="/upcoming-conferences">[View All Conferences]</Link>
           </section>
 
           <section className="cfp-section">
@@ -193,7 +191,7 @@ export default function Login() {
               <li>Inclusion in conference proceedings</li>
             </ul>
 
-            <a href="#" className="why-link">[Know More]</a>
+            <Link className="why-link" to="/benefits">[Know More]</Link>
           </section>
 
           {/* ---------------- Conference Speakers ---------------- */}
@@ -204,8 +202,7 @@ export default function Login() {
               Featuring distinguished academicians, researchers, and professionals who
               contribute expertise and insights to IntelMeet conferences.
             </p>
-
-            <a href="#" className="info-link">[View All Speakers]</a>
+             <Link className="info-link" to="/speaker">[View All Speakers]</Link>
 
             <div className="info-divider"></div>
           </section>
@@ -218,8 +215,7 @@ export default function Login() {
               Our conferences are supported by an experienced academic and professional committee
               representing leading institutions and research bodies.
             </p>
-
-            <a href="#" className="info-link">[Meet the Committee]</a>
+            <Link className="info-link" to="/committee">[Meet the Committee]</Link>
 
             <div className="info-divider"></div>
           </section>
@@ -233,7 +229,7 @@ export default function Login() {
               View complete conference proceedings and individual research papers.
             </p>
 
-            <a href="#" className="info-link">— View Publications</a>
+            <Link className="info-link" to="/publications">— View Publications</Link>
 
             <div className="info-divider"></div>
           </section>

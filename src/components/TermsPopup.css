@@ -1,0 +1,104 @@
+/* Overlay Background */
+.terms-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 5000;
+}
+
+/* Modal Box */
+.terms-popup {
+  width: 80%;
+  max-width: 1100px;
+  max-height: 85vh;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  animation: popupFade 0.25s ease-out;
+}
+
+/* Animation */
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Fully scrollable area */
+.terms-content {
+  padding: 25px;
+  overflow-y: auto;
+  max-height: calc(85vh - 90px);
+}
+
+.terms-heading {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Close Button (top) */
+.terms-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  font-size: 22px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.terms-close-btn:hover {
+  background: #0059c9;
+}
+
+/* Bottom Close Section */
+.terms-bottom-close-container {
+  padding: 12px;
+  text-align: center;
+  background: #f9f9f9;
+  border-top: 1px solid #e5e5e5;
+}
+
+.terms-bottom-close-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 26px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.terms-bottom-close-btn:hover {
+  background: #0056c7;
+}
+
+/* Scrollbar Style */
+.terms-content::-webkit-scrollbar {
+  width: 6px;
+}
+.terms-content::-webkit-scrollbar-thumb {
+  background: #b5b5b5;
+  border-radius: 10px;
+}

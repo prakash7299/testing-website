@@ -2,6 +2,7 @@ import React from "react";
 import "./Committee.css";
 import "./Speaker.css";
 import "./Login.css"; 
+import "./UpcomingConferences.css";
 import intelmeet from "../assets/intelmeet.jpeg";
 import photo from "../assets/confimage-1.jpeg";
 
@@ -61,12 +62,12 @@ export default function Committee() {
                 <li><Link className="nav-link" to="/contact">Contact Us</Link></li>
               </ul>
       
-              <Link to="/registration" className="btn-register">Registration</Link>
+              <Link to="/registration-fees" className="btn-register">Registration</Link>
             </div>
 
       {/* ---------- HERO ---------- */}
-      <section className="hero" style={{ backgroundImage: `url(${photo})` }}>
-        <div className="hero-content">
+      <section className="uc-hero" style={{ backgroundImage: `url(${photo})` }}>
+        <div className="uc-hero-content">
           <h1>Our Organizing Committee Members</h1>
           <p>Meet the dedicated professionals supporting IntelMeet Global Conferences</p>
         </div>

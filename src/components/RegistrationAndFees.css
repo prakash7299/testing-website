@@ -1,0 +1,281 @@
+/* Base padding to match About.jsx look */
+.reg-section {
+  padding: 2rem;
+}
+
+/* Card container for table */
+.reg-card {
+  background: #fff;
+  border-radius: 12px;
+  margin: 1rem 0;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  overflow: hidden;
+}
+
+/* wrapper to allow horizontal scrolling on narrow screens */
+.reg-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* table core style */
+.reg-table {
+  width: 100%;
+  min-width: 720px; /* keeps three-column layout; will make table scroll horizontally on small screens */
+  border-collapse: collapse;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+/* header */
+.reg-table thead th {
+  background: linear-gradient(180deg, #eef6ff 0%, #f6fbff 100%);
+  color: #08325a;
+  font-weight: 700;
+  padding: 18px 18px;
+  text-align: left;
+  border-bottom: 2px solid rgba(6,58,98,0.06);
+  font-size: 16px;
+}
+
+/* body cells */
+.reg-table td {
+  padding: 18px 18px;
+  border-bottom: 1px solid rgba(6,58,98,0.06);
+  color: #23323f;
+  font-size: 15px;
+  vertical-align: middle;
+}
+
+/* price column align center-right visually */
+.price-col {
+  white-space: nowrap;
+  text-align: left;
+}
+
+/* interactive rows */
+.reg-table tbody tr {
+  cursor: pointer;
+  transition: background 0.12s ease, transform 0.06s ease;
+}
+.reg-table tbody tr:hover {
+  background: #fbfdff;
+  transform: translateY(-1px);
+}
+
+/* selected highlight */
+.selected-row {
+  background: linear-gradient(90deg, rgba(226,242,255,0.6), rgba(245,250,255,0.6));
+  outline: 3px solid rgba(0,122,255,0.08);
+}
+
+/* muted smaller text */
+.muted {
+  display: block;
+  font-size: 12px;
+  color: #6b7a86;
+  margin-top: 6px;
+}
+
+/* content titles and paragraphs */
+.cfp-title {
+  font-size: 22px;
+  color: #08325a;
+  margin-bottom: 0.6rem;
+}
+.cfp-text {
+  color: #41535f;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+/* click hint */
+.click-msg {
+  margin-top: 12px;
+  background: #fbfdff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(6,58,98,0.03);
+  font-size: 14px;
+  display: inline-block;
+}
+
+/* STEP 2 form box */
+.step2-section {
+  margin-top: 22px;
+  padding: 18px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(7,34,75,0.04);
+}
+
+/* form */
+.reg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row label {
+  font-weight: 600;
+  color: #213046;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* inputs */
+.reg-form input[type="text"],
+.reg-form input[type="email"],
+.reg-form textarea,
+.reg-form input[type="file"] {
+  width: 100%;
+  max-width: 720px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d6e0e9;
+  font-size: 14px;
+  color: #213046;
+  background: #fafcff;
+  box-sizing: border-box;
+}
+
+.reg-form textarea {
+  min-height: 100px;
+  resize: vertical;
+  padding-top: 10px;
+}
+
+/* terms */
+.terms-line {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 14px;
+  color: #31434f;
+}
+
+/* actions */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  align-items: center;
+}
+
+.btn-submit {
+  background: #007bff;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(2,45,96,0.12);
+}
+.btn-submit:hover { background: #0066d6; }
+
+.btn-reset {
+  background: #fff;
+  border: 1px solid #d0d6db;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* covers + support blocks */
+.covers-contact {
+  margin-top: 18px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.covers, .contact-support {
+  flex: 1 1 280px;
+  background: #fbfdff;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(6,58,98,0.03);
+}
+
+.covers h4, .contact-support h4 {
+  color: #08325a;
+  margin-bottom: 8px;
+}
+
+.covers ul {
+  margin-left: 18px;
+  color: #31434f;
+  line-height: 1.5;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+/* Desktop: keep content narrow like About.jsx */
+@media (min-width: 1100px) {
+  .about-section { width: 80%; max-width: 1100px; margin: 2rem auto; }
+}
+
+/* Tablets */
+@media (max-width: 1099px) {
+  .about-section { width: 92%; margin: 1.6rem auto; }
+  .reg-table { min-width: 680px; }
+}
+
+/* Mobile: make layout single column, allow horizontal scroll for table */
+@media (max-width: 640px) {
+
+  /* reduce hero height a bit on small screens */
+  .hero { height: 34vh; }
+
+  .about-section { width: 94%; padding: 1.2rem; margin: 1.2rem auto; border-radius: 14px; }
+
+  /* keep table usable: allow horizontal scroll, but reduce min-width slightly */
+  .reg-table { min-width: 620px; font-size: 14px; }
+
+  /* tighten paddings for table cells */
+  .reg-table thead th, .reg-table td {
+    padding: 12px 12px;
+  }
+
+  /* form becomes full width card and centered */
+  .step2-section {
+    padding: 18px;
+    border-radius: 12px;
+    width: 94%;
+    margin: 14px auto 24px;
+  }
+
+  .reg-form input, .reg-form textarea {
+    width: 100%;
+  }
+
+  .click-msg {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* very small phones */
+@media (max-width: 380px) {
+  .reg-table { min-width: 560px; }
+  .reg-table thead th { font-size: 14px; padding: 10px; }
+  .reg-table td { padding: 10px; font-size: 14px; }
+}
+
+.reg-table td, 
+.reg-table th {
+  white-space: normal !important;   /* allow wrapping */
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.reg-table {
+  table-layout: auto !important;   /* let browser auto-fit */
+}

@@ -2,6 +2,7 @@
 import React from "react";
 import "./Publications.css";
 import "./Login.css";
+import "./UpcomingConferences.css";
 import intelmeet from "../assets/intelmeet.jpeg";
 import photo from "../assets/confimage-1.jpeg";
 import { Link } from "react-router-dom";
@@ -53,12 +54,12 @@ export default function Publications() {
                 <li><Link className="nav-link" to="/contact">Contact Us</Link></li>
               </ul>
       
-              <Link to="/registration" className="btn-register">Registration</Link>
+              <Link to="/registration-fees" className="btn-register">Registration</Link>
             </div>
 
       {/* -------- HERO -------- */}
-      <section className="hero" style={{ backgroundImage: `url(${photo})` }}>
-        <div className="hero-content">
+      <section className="uc-hero" style={{ backgroundImage: `url(${photo})` }}>
+        <div className="uc-hero-content">
           <h1>Publications</h1>
           <p>Enhancing academic visibility and global research contribution</p>
         </div>

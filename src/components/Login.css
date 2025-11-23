@@ -978,6 +978,25 @@
   }
 }
 
+/* FIX TOP BAR CENTER ALIGNMENT ON MOBILE */
+@media (max-width: 600px) {
+  .top-bar {
+    justify-content: center !important;
+    text-align: center;
+    gap: 10px; /* adjust spacing */
+  }
+
+  .top-bar > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .top-bar a {
+    margin-right: 12px;
+  }
+}
+
 
 
 

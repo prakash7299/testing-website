@@ -1,6 +1,7 @@
 import React from "react";
 import "./Login.css";
 import "./Benefits.css";  // NEW premium styling
+import "./UpcomingConferences.css";
 import photo from "../assets/confimage-1.jpeg";
 import intelmeet from "../assets/intelmeet.jpeg";
 import Footer from "./Footer";
@@ -55,11 +56,11 @@ export default function Benefits() {
                 <li><Link className="nav-link" to="/contact">Contact Us</Link></li>
               </ul>
       
-              <Link to="/registration" className="btn-register">Registration</Link>
+              <Link to="/registration-fees" className="btn-register">Registration</Link>
             </div>
       {/* ---------------- HERO ---------------- */}
-      <section className="hero" style={{ backgroundImage: `url(${photo})` }}>
-        <div className="hero-content">
+      <section className="uc-hero" style={{ backgroundImage: `url(${photo})` }}>
+        <div className="uc-hero-content">
           <h1>Benefits of Participation</h1>
           <p>Professional Advancement • Academic Recognition • Global Research Visibility</p>
         </div>

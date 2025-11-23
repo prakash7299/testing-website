@@ -1,0 +1,96 @@
+/* FIXED HERO — PERFECT IMAGE FIT */
+.smart-hero {
+  width: 100%;
+  height: 50vh;
+
+  /* Smart image fitting */
+  background-size: contain;         /* show full image */
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color: #000;           /* fills empty space */
+  position: relative;
+}
+
+/* Overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+/* Buttons positioned EXACTLY under conference text */
+.hero-buttons-position {
+  position: absolute;
+
+  /* Moves buttons to visually correct position */
+  top: 40vh;             /* WORKS FOR ALL BANNER STYLES */
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 3;
+  display: flex;
+  gap: 16px;
+}
+
+/* Buttons */
+.hero-btn {
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.primary-btn {
+  background: #007bff;
+  color: #fff;
+}
+
+.primary-btn:hover {
+  background: #005fcc;
+}
+
+.secondary-btn {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.secondary-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Mobile Fix */
+@media (max-width: 600px) {
+  .smart-hero {
+    height: 25vh;
+    background-position: center;
+  }
+
+  .hero-buttons-position {
+    top: 15vh;
+  }
+}
+@media (max-width: 600px) {
+  .smart-hero {
+    height: 28vh;
+    padding-bottom: 20px;
+    background-position: center top;
+  }
+
+  .hero-buttons-position {
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+    align-items: center;
+  }
+
+  .hero-btn {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+  }
+}

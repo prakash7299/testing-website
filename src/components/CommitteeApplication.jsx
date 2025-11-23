@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import "./CommitteeApplication.css";
 import "./Login.css";
-
+import "./UpcomingConferences.css";
 import intelmeet from "../assets/intelmeet.jpeg";
 import photo from "../assets/confimage-1.jpeg";
 
@@ -57,12 +57,12 @@ export default function CommitteeApplication() {
                 <li><Link className="nav-link" to="/contact">Contact Us</Link></li>
               </ul>
       
-              <Link to="/registration" className="btn-register">Registration</Link>
+              <Link to="/registration-fees" className="btn-register">Registration</Link>
             </div>
 
       {/* -------- HERO -------- */}
-      <section className="hero" style={{ backgroundImage: `url(${photo})` }}>
-        <div className="hero-content">
+      <section className="uc-hero" style={{ backgroundImage: `url(${photo})` }}>
+        <div className="uc-hero-content">
           <h1>Apply for Committee Membership</h1>
           <p>Join the IntelMeet Organizing Committee</p>
         </div>

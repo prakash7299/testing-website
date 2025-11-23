@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import "./ApplySpeaker.css";
 import "./Login.css";
+import "./UpcomingConferences.css";
 import photo from "../assets/confimage-1.jpeg";
 import intelmeet from "../assets/intelmeet.jpeg";
 import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
@@ -56,12 +57,12 @@ export default function ApplySpeaker() {
                 <li><Link className="nav-link" to="/contact">Contact Us</Link></li>
               </ul>
       
-              <Link to="/registration" className="btn-register">Registration</Link>
+              <Link to="/registration-fees" className="btn-register">Registration</Link>
             </div>
 
       {/* HERO */}
-      <section className="hero" style={{ backgroundImage: `url(${photo})` }}>
-        <div className="hero-content">
+      <section className="uc-hero" style={{ backgroundImage: `url(${photo})` }}>
+        <div className="uc-hero-content">
           <h1>Apply to Become a Speaker</h1>
           <p>Join as a speaker and inspire global researchers</p>
         </div>

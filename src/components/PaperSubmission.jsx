@@ -1,6 +1,7 @@
 import React from "react";
 import "./About.css";
 import "./Login.css"; // Reuse same layout styles (navbar, top bar, hero, sidebar, wrapper)
+import "./UpcomingConferences.css";
 import photo from "../assets/confimage-1.jpeg";
 import intelmeet from "../assets/intelmeet.jpeg";
 import { 
@@ -63,12 +64,12 @@ export default function PaperSubmission() {
                 <li><Link className="nav-link" to="/contact">Contact Us</Link></li>
               </ul>
       
-              <Link to="/registration" className="btn-register">Registration</Link>
+              <Link to="/registration-fees" className="btn-register">Registration</Link>
             </div>
 
     {/* ---------------- HERO ---------------- */}
-          <section className="hero" style={{ backgroundImage: `url(${photo})` }}>
-            <div className="hero-content">
+          <section className="uc-hero" style={{ backgroundImage: `url(${photo})` }}>
+            <div className="uc-hero-content">
               <h1>About IntelMeet Global Conferences</h1>
               <p>Empowering Global Research & Academic Innovation</p>
             </div>

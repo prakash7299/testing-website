@@ -1,4 +1,3 @@
-// src/components/UpcomingConferences.jsx
 import React from "react";
 import "./UpcomingConferences.css";
 import "./Login.css";
@@ -14,21 +13,24 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 
-// =====================
-// Remaining Days Logic
-// =====================
+/* =====================
+   Helper: remaining days
+   ===================== */
 function calculateRemainingDays(dateStr) {
   const date = new Date(dateStr);
   const today = new Date();
-  const diff = Math.ceil((date - today) / (1000 * 60 * 60 * 24));
-
+  // normalize times (avoid timezone small diffs)
+  const utc1 = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
+  const utc2 = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
+  const diff = Math.ceil((utc2 - utc1) / (1000 * 60 * 60 * 24));
   if (diff <= 0) return "Closed";
   return diff;
 }
 
-// =====================
-// Conference Data
-// =====================
+/* =====================
+   Conference Data
+   (unchanged, per request)
+   ===================== */
 const conferences = [
   {
     id: 1,
@@ -62,8 +64,7 @@ const conferences = [
 export default function UpcomingConferences() {
   return (
     <div className="page-container">
-
-      {/* ===================== TOP BAR ===================== */}
+      {/* TOP BAR */}
       <div className="top-bar">
         <div>
           <a href="mailto:support@intelmeetglobal.com">
@@ -75,46 +76,47 @@ export default function UpcomingConferences() {
           </a>
         </div>
 
-        <div><span className="hidden-placeholder">f</span></div>
+        <div>
+          <span className="hidden-placeholder">f</span>
+        </div>
 
         <div className="top-icons">
-          <a><FaFacebookF /></a>
-          <a><FaInstagram /></a>
-          <a><FaTwitter /></a>
-          <a><FaLinkedinIn /></a>
-          <a><FaYoutube /></a>
+          <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noreferrer"><FaFacebookF /></a>
+          <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noreferrer"><FaInstagram /></a>
+          <a href="#"><FaTwitter /></a>
+          <a href="#"><FaLinkedinIn /></a>
+          <a href="#"><FaYoutube /></a>
         </div>
       </div>
 
-      {/* ===================== NAVBAR ===================== */}
-            <div className="navbar">
-              <img src={intelmeet} alt="Logo" className="logo" />
-              <ul>
-                <li><a href="#">Home</a></li>
-                <li><Link className="nav-link" to="/about">About Us</Link></li>
-                <li><Link className="nav-link" to="/upcoming-conferences">Upcoming Conferences</Link></li>
-                <li className="dropdown">
-                  <span className="dropdown-toggle">Paper Submission ▾</span>
-      
-                  <div className="dropdown-menu">
-                    <Link className="nav-link" to="/papersubmission">📄 Submission Form</Link>
-                    <Link className="nav-link" to="/papersubmission-guidelines">📘 Submission Guidelines</Link>
-                  </div>
-                </li>
-      
-      
-      
-                <li><Link className="nav-link" to="/benefits">Benifits</Link></li>
-                <li><Link className="nav-link" to="/speaker">Speaker</Link></li>
-                <li><Link className="nav-link" to="/committee">Committee</Link></li>
-                <li><Link className="nav-link" to="/publications">Publications</Link></li>
-                <li><Link className="nav-link" to="/contact">Contact Us</Link></li>
-              </ul>
-      
-              <Link to="/registration" className="btn-register">Registration</Link>
-            </div>
+      {/* NAVBAR */}
+      <div className="navbar">
+        <img src={intelmeet} alt="IntelMeet logo" className="logo" />
 
-      {/* ===================== HERO BANNER ===================== */}
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About Us</Link></li>
+          <li><Link to="/upcoming-conferences">Upcoming Conferences</Link></li>
+
+          <li className="dropdown">
+            <span className="dropdown-toggle">Paper Submission ▾</span>
+            <div className="dropdown-menu">
+              <Link className="nav-link" to="/papersubmission">📄 Submission Form</Link>
+              <Link className="nav-link" to="/papersubmission-guidelines">📘 Submission Guidelines</Link>
+            </div>
+          </li>
+
+          <li><Link to="/benefits">Benefits</Link></li>
+          <li><Link to="/speaker">Speaker</Link></li>
+          <li><Link to="/committee">Committee</Link></li>
+          <li><Link to="/publications">Publications</Link></li>
+          <li><Link to="/contact">Contact Us</Link></li>
+        </ul>
+
+        <Link to="/registration-fees" className="btn-register">Registration</Link>
+      </div>
+
+      {/* HERO */}
       <section
         className="uc-hero"
         style={{ backgroundImage: `url(${photo})` }}
@@ -125,90 +127,65 @@ export default function UpcomingConferences() {
         </div>
       </section>
 
-      {/* ===================== MAIN GRID ===================== */}
+      {/* MAIN GRID */}
       <div className="uc-wrapper">
-
-        {/* LEFT SIDE (MAIN CONTENT) */}
+        {/* LEFT MAIN */}
         <div className="uc-main">
           <h2 className="uc-section-title">Upcoming Conferences</h2>
 
           {conferences.map((c) => (
-            <div key={c.id} className="uc-card">
-
-              <img src={photo} className="uc-card-img" alt="Conference" />
+            <article key={c.id} className="uc-card" aria-labelledby={`conf-${c.id}`}>
+              <img src={photo} className="uc-card-img" alt={`${c.title} banner`} />
 
               <div className="uc-card-body">
-                <h3 className="uc-card-title">{c.title}</h3>
+                <h3 id={`conf-${c.id}`} className="uc-card-title">{c.title}</h3>
 
                 <div className="uc-meta">
-                  <p><b>Conference Date:</b> {c.conferenceDate}</p>
-                  <p><b>Call for Papers:</b> {c.callForPapers}</p>
+                  <p><strong>Conference Date:</strong> {c.conferenceDate}</p>
+                  <p><strong>Call for Papers:</strong> {c.callForPapers}</p>
                 </div>
 
-                {/* ===================== DEADLINE SPLIT SECTION ===================== */}
-                <div className="deadline-row">
-
-                  {/* SUBMISSION DEADLINE */}
+                {/* DEADLINE GRID */}
+                <div className="deadline-row" role="group" aria-label="deadlines">
                   <div className="deadline-box">
-                    <p className="deadline-label">
-                      <b>Submission Deadline:</b>
-                    </p>
+                    <p className="deadline-label"><strong>Submission Deadline:</strong></p>
                     <p className="deadline-date">{c.submissionDeadline}</p>
-
-                    <button
-                      className="btn-submit"
-                      onClick={() =>
-                        (window.location.href = "/papersubmission")
-                      }
-                    >
-                      Submit Now
-                    </button>
-
+                    <Link className="btn-submit full-btn" to="/papersubmission">Submit Now</Link>
                     <p className="remaining-time">
-                      {calculateRemainingDays(c.submissionDeadline)} days left
+                      {calculateRemainingDays(c.submissionDeadline) === "Closed"
+                        ? "Closed"
+                        : `${calculateRemainingDays(c.submissionDeadline)} days left`}
                     </p>
                   </div>
 
-                  {/* REGISTRATION DEADLINE */}
                   <div className="deadline-box">
-                    <p className="deadline-label">
-                      <b>Registration Deadline:</b>
-                    </p>
+                    <p className="deadline-label"><strong>Registration Deadline:</strong></p>
                     <p className="deadline-date">{c.registrationDeadline}</p>
-
-                    <button
-                      className="btn-register-now"
-                      onClick={() =>
-                        (window.location.href = "/papersubmission")
-                      }
-                    >
-                      Register Now
-                    </button>
-
+                    <Link className="btn-register-now full-btn" to="/registration-fees">Register Now</Link>
                     <p className="remaining-time green">
-                      {calculateRemainingDays(c.registrationDeadline)} days left
+                      {calculateRemainingDays(c.registrationDeadline) === "Closed"
+                        ? "Closed"
+                        : `${calculateRemainingDays(c.registrationDeadline)} days left`}
                     </p>
                   </div>
-
                 </div>
               </div>
-
-            </div>
+            </article>
           ))}
         </div>
 
-        {/* RIGHT SIDE SIDEBAR */}
-        <div className="sidebar-links">
-                  <h3>Quick Link</h3>
-                  <ul>
-                    <li><Link className="nav-link" to="/benefits">Key Benefits of Participation</Link></li>
-                    <li><Link className="nav-link" to="/apply-speaker">Apply to Become a Speaker</Link></li>
-                    <li><Link className="nav-link" to="/instructions">Instructions for Participants</Link></li>
-                    <li><Link className="nav-link" to="/papersubmission-guidelines">Author Guidelines</Link></li>
-                    <li><Link className="nav-link" to="/committee-application">Apply for Committee Member</Link></li>
-                    <li><Link className="nav-link" to="/faq">Frequently Asked Questions (FAQs)</Link></li>
-                  </ul>
-                </div>
+        {/* RIGHT SIDEBAR */}
+        <aside className="sidebar-links" aria-label="Quick links">
+          <h3>Quick Link</h3>
+          <ul>
+            <li><Link className="nav-link" to="/benefits">Key Benefits of Participation</Link></li>
+            <li><Link className="nav-link" to="/apply-speaker">Apply to Become a Speaker</Link></li>
+            <li><Link className="nav-link" to="/instructions">Instructions for Participants</Link></li>
+            <li><Link className="nav-link" to="/papersubmission-guidelines">Author Guidelines</Link></li>
+            <li><Link className="nav-link" to="/committee-application">Apply for Committee Member</Link></li>
+            <li><Link className="nav-link" to="/faq">Frequently Asked Questions (FAQs)</Link></li>
+          </ul>
+        </aside>
       </div>
 
       <Footer />
