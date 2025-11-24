@@ -5,206 +5,324 @@ import "./Login.css";
 import "./UpcomingConferences.css";
 import intelmeet from "../assets/intelmeet.jpeg";
 import photo from "../assets/confimage-1.jpeg";
-
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaTwitter,
+  FaYoutube,
+  FaInstagram,
+} from "react-icons/fa";
 import Footer from "./Footer";
 
 export default function CommitteeApplication() {
   const [showPopup, setShowPopup] = useState(false);
+  const [status, setStatus] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus(null);
+
+    try {
+      const formData = new FormData(e.target);
+
+      // Your Web3Forms PRO Access Key
+      formData.append("access_key", "8193e4dd-eacc-4198-9d95-d60857b6b682");
+      formData.append("from_name", "IntelMeet Committee Application");
+      formData.append(
+        "subject",
+        `Committee Application – ${formData.get("full_name")}`
+      );
+
+      // FILES auto-sent (Web3Forms PRO supports it)
+      // professional_photo
+      // resume_cv
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus("success");
+        e.target.reset();
+      } else {
+        console.log(result);
+        setStatus("error");
+      }
+    } catch (err) {
+      console.log(err);
+      setStatus("error");
+    }
+  };
 
   return (
     <div className="page-container">
-
-      {/* -------- TOP BAR -------- */}
+      {/* Top Bar */}
       <div className="top-bar">
         <div>
-          <a href="mailto:support@intelmeetglobal.com">support@intelmeetglobal.com</a> |
-          <a href="tel:+919442417477" className="phone-link"> +91 9442417477</a>
+          <a href="mailto:support@intelmeetglobal.com">
+            support@intelmeetglobal.com
+          </a>{" "}
+          |
+          <a href="tel:+919442417477" className="phone-link">
+            {" "}
+            +91 9442417477
+          </a>
         </div>
-        <div><span className="hidden-placeholder">f</span></div>
         <div className="top-icons">
-          <a><FaFacebookF /></a>
-          <a><FaInstagram /></a>
-          <a><FaTwitter /></a>
-          <a><FaLinkedinIn /></a>
-          <a><FaYoutube /></a>
+          <a>
+            <FaFacebookF />
+          </a>
+          <a>
+            <FaInstagram />
+          </a>
+          <a>
+            <FaTwitter />
+          </a>
+          <a>
+            <FaLinkedinIn />
+          </a>
+          <a>
+            <FaYoutube />
+          </a>
         </div>
       </div>
 
-      {/* -------- NAVBAR -------- */}
-            <div className="navbar">
-              <img src={intelmeet} alt="Logo" className="logo" />
-              <ul>
-                <li><a href="#">Home</a></li>
-                <li><Link className="nav-link" to="/about">About Us</Link></li>
-                <li><Link className="nav-link" to="/upcoming-conferences">Upcoming Conferences</Link></li>
-                <li className="dropdown">
-                  <span className="dropdown-toggle">Paper Submission ▾</span>
-      
-                  <div className="dropdown-menu">
-                    <Link className="nav-link" to="/papersubmission">📄 Submission Form</Link>
-                    <Link className="nav-link" to="/papersubmission-guidelines">📘 Submission Guidelines</Link>
-                  </div>
-                </li>
-      
-      
-      
-                <li><Link className="nav-link" to="/benefits">Benifits</Link></li>
-                <li><Link className="nav-link" to="/speaker">Speaker</Link></li>
-                <li><Link className="nav-link" to="/committee">Committee</Link></li>
-                <li><Link className="nav-link" to="/publications">Publications</Link></li>
-                <li><Link className="nav-link" to="/contact">Contact Us</Link></li>
-              </ul>
-      
-              <Link to="/registration-fees" className="btn-register">Registration</Link>
-            </div>
+      {/* Navbar */}
+      <div className="navbar">
+        <img src={intelmeet} className="logo" />
 
-      {/* -------- HERO -------- */}
-      <section className="uc-hero" style={{ backgroundImage: `url(${photo})` }}>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About Us</Link>
+          </li>
+          <li>
+            <Link to="/upcoming-conferences">Upcoming Conferences</Link>
+          </li>
+
+          <li className="dropdown">
+            <span className="dropdown-toggle">Paper Submission ▾</span>
+            <div className="dropdown-menu">
+              <Link to="/papersubmission">📄 Submission Form</Link>
+              <Link to="/papersubmission-guidelines">
+                📘 Submission Guidelines
+              </Link>
+            </div>
+          </li>
+
+          <li>
+            <Link to="/benefits">Benefits</Link>
+          </li>
+          <li>
+            <Link to="/speaker">Speaker</Link>
+          </li>
+          <li>
+            <Link to="/committee">Committee</Link>
+          </li>
+          <li>
+            <Link to="/publications">Publications</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact Us</Link>
+          </li>
+        </ul>
+
+        <Link to="/registration-fees" className="btn-register">
+          Registration
+        </Link>
+      </div>
+
+      {/* Hero */}
+      <section
+        className="uc-hero"
+        style={{ backgroundImage: `url(${photo})` }}
+      >
         <div className="uc-hero-content">
           <h1>Apply for Committee Membership</h1>
           <p>Join the IntelMeet Organizing Committee</p>
         </div>
       </section>
 
-      {/* -------- MAIN AREA -------- */}
+      {/* Main Content */}
       <div className="content-sidebar-wrapper">
-
-        {/* LEFT CONTENT */}
         <div className="content-main">
-
           <section className="apply-header">
             <h1 className="apply-title">Apply for Committee Membership</h1>
             <p className="apply-desc">
-              Please complete the form below to apply for joining the IntelMeet Organizing Committee.
+              Complete the form below to join the IntelMeet Organizing Committee.
             </p>
 
-            {/* BUTTON → OPEN POPUP */}
             <button className="criteria-btn" onClick={() => setShowPopup(true)}>
               View Eligibility Criteria
             </button>
           </section>
 
-          {/* ---------- FORM ---------- */}
-          <div className="form-section">
-
+          {/* FORM START */}
+          <form className="form-section" onSubmit={handleSubmit}>
             <h2 className="section-title">Applicant Information</h2>
+
             <div className="form-box">
               <label>Full Name</label>
-              <input type="text" placeholder="e.g., Mathew William" />
+              <input type="text" name="full_name" required />
 
               <label>Email Address</label>
-              <input type="email" placeholder="e.g., mathew.william@example.com" />
+              <input type="email" name="email" required />
 
               <label>Country</label>
-              <input type="text" placeholder="Select Country" />
+              <input type="text" name="country" required />
 
               <label>Phone Number</label>
-              <input type="text" placeholder="e.g., 987654321" />
+              <input type="text" name="phone" required />
             </div>
 
             <h2 className="section-title">Professional Details</h2>
+
             <div className="form-box">
               <label>Institution / Organization</label>
-              <input type="text" placeholder="e.g., Westbridge University" />
+              <input type="text" name="institution" required />
 
               <label>Department / Field of Expertise</label>
-              <input type="text" placeholder="e.g., Computer Science / Data Analytics" />
+              <input type="text" name="department" required />
 
               <label>Current Position</label>
-              <input type="text" placeholder="e.g., Assistant Professor / PhD Scholar" />
+              <input type="text" name="position" required />
 
-              <label>Academic / Research Experience (Years)</label>
-              <input type="text" placeholder="e.g., 5 Years" />
+              <label>Academic / Research Experience</label>
+              <input type="text" name="experience" required />
             </div>
 
             <h2 className="section-title">Committee Interest</h2>
-            <div className="form-box">
-              <label>Why do you wish to join the committee?</label>
-              <textarea placeholder="e.g., I would like to contribute to academic review and support conference activities."></textarea>
 
-              <label>Have you previously been part of any conference committee?</label>
-              <select>
-                <option>Yes</option>
-                <option>No</option>
+            <div className="form-box">
+              <label>Why do you wish to join?</label>
+              <textarea name="committee_reason" required></textarea>
+
+              <label>Have you been in a committee before?</label>
+              <select name="committee_history" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
               </select>
             </div>
 
+            {/* ===================== NEW UPLOAD FIELDS ===================== */}
             <h2 className="section-title">Uploads</h2>
-            <div className="form-box">
-              <label>Upload Resume / CV</label>
-              <input type="file" />
 
+            <div className="form-box">
               <label>Upload Professional Photo</label>
-              <input type="file" />
+              <input
+                type="file"
+                name="professional_photo"
+                accept=".jpg,.jpeg,.png"
+                required
+              />
+              <small>Accepted: .jpg, .png</small>
+
+              <br />
+
+              <label>Upload Resume / CV</label>
+              <input
+                type="file"
+                name="resume_cv"
+                accept=".pdf,.doc,.docx"
+                required
+              />
+              <small>Accepted: .pdf, .doc, .docx</small>
             </div>
 
             <div className="btn-row">
-              <button className="submit-btn">Submit Now</button>
-              <button className="reset-btn">Reset</button>
+              <button className="submit-btn" type="submit">
+                Submit Now
+              </button>
+              <button className="reset-btn" type="reset">
+                Reset
+              </button>
             </div>
-
-            {/* -------- AFTER SUBMISSION -------- */}
-            <div className="after-submission">
-              <h3>After Submission</h3>
-              <p>
-                Your application will be reviewed by our team. You will be notified by email 
-                regarding the status of your application. If required, we may request additional 
-                supporting information for verification.
-              </p>
-            </div>
-
-          </div>
+          </form>
         </div>
 
-        {/* SIDEBAR */}
+        {/* Sidebar */}
         <div className="sidebar-links">
-                  <h3>Quick Link</h3>
-                  <ul>
-                    <li><Link className="nav-link" to="/benefits">Key Benefits of Participation</Link></li>
-                    <li><Link className="nav-link" to="/apply-speaker">Apply to Become a Speaker</Link></li>
-                    <li><Link className="nav-link" to="/instructions">Instructions for Participants</Link></li>
-                    <li><Link className="nav-link" to="/papersubmission-guidelines">Author Guidelines</Link></li>
-                    <li><Link className="nav-link" to="/committee-application">Apply for Committee Member</Link></li>
-                    <li><Link className="nav-link" to="/faq">Frequently Asked Questions (FAQs)</Link></li>
-                  </ul>
-                </div>
-
+          <h3>Quick Link</h3>
+          <ul>
+            <li>
+              <Link to="/benefits">Key Benefits</Link>
+            </li>
+            <li>
+              <Link to="/apply-speaker">Apply Speaker</Link>
+            </li>
+            <li>
+              <Link to="/instructions">Instructions</Link>
+            </li>
+            <li>
+              <Link to="/papersubmission-guidelines">Guidelines</Link>
+            </li>
+            <li>
+              <Link to="/committee-application">Apply Committee</Link>
+            </li>
+            <li>
+              <Link to="/faq">FAQs</Link>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      {/* -------- POPUP -------- */}
+      <Footer />
+
+      {/* Success / Error POPUP */}
+      {status && (
+        <div className="modal-overlay">
+          <div className="modal-box">
+            <button className="modal-close" onClick={() => setStatus(null)}>
+              ×
+            </button>
+
+            {status === "success" ? (
+              <>
+                <h2 className="modal-title">✔ Application Submitted</h2>
+                <p>Your committee application has been successfully submitted.</p>
+              </>
+            ) : (
+              <>
+                <h2 className="modal-title">❌ Submission Failed</h2>
+                <p>Please try again or contact support@intelmeetglobal.com</p>
+              </>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* POPUP FOR CRITERIA */}
       {showPopup && (
         <div className="popup-overlay">
           <div className="popup-box">
-            <button className="popup-close" onClick={() => setShowPopup(false)}>✕</button>
+            <button className="popup-close" onClick={() => setShowPopup(false)}>
+              ×
+            </button>
 
             <h2>Eligibility & Responsibilities</h2>
 
             <h3>Eligibility Criteria</h3>
             <ul>
-              <li>Must be associated with a university, college, research institution, or professional organization.</li>
-              <li>Minimum recommended experience: <b>2 years</b> in academics, research, or industry.</li>
-              <li>Should have subject expertise or relevant academic background.</li>
-              <li>Should be able to contribute to basic conference tasks when requested.</li>
-              <li>Must maintain professionalism, clear communication, and high ethical conduct.</li>
-              <li>Must be available for online meetings or coordination tasks when needed.</li>
+              <li>Must belong to an academic/research institution.</li>
+              <li>Minimum 2 years of experience.</li>
+              <li>Should have expertise in the field.</li>
             </ul>
 
-            <h3>Roles & Responsibilities</h3>
+            <h3>Responsibilities</h3>
             <ul>
-              <li><b>Review Assistance:</b> Review submitted articles and provide feedback.</li>
-              <li><b>Session Support:</b> Help manage sessions and assist presenters.</li>
-              <li><b>Event Monitoring:</b> Ensure all sessions run smoothly.</li>
-              <li><b>Academic Input:</b> Suggest improvements for academic quality.</li>
-              <li><b>Technical Coordination:</b> Help presenters with technical issues.</li>
-              <li><b>Documentation Support:</b> Assist with basic documentation tasks.</li>
+              <li>Review articles.</li>
+              <li>Session coordination.</li>
+              <li>Monitoring & support.</li>
             </ul>
           </div>
         </div>
       )}
-
-      <Footer />
     </div>
   );
 }

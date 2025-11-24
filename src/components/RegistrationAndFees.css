@@ -279,3 +279,186 @@
 .reg-table {
   table-layout: auto !important;   /* let browser auto-fit */
 }
+
+/* ============================================================
+   DESKTOP TABLE (unchanged)
+   ============================================================ */
+.reg-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Poppins", Arial, sans-serif;
+  table-layout: fixed;
+}
+
+.reg-table thead th {
+  background: linear-gradient(180deg, #eef6ff 0%, #f6fbff 100%);
+  color: #08325a;
+  font-weight: 700;
+  padding: 16px 14px;
+  font-size: 16px;
+  text-align: left;
+  border-bottom: 2px solid rgba(6,58,98,0.06);
+}
+
+.reg-table td {
+  padding: 16px 14px;
+  border-bottom: 1px solid rgba(6,58,98,0.06);
+  font-size: 15px;
+  color: #23323f;
+  vertical-align: middle;
+}
+
+.price-col {
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   MOBILE CARD-VIEW (Option B)
+   ============================================================ */
+@media (max-width: 640px) {
+
+  /* Hide Table */
+  .reg-table,
+  .reg-table thead,
+  .reg-table tbody,
+  .reg-table tr,
+  .reg-table th,
+  .reg-table td {
+    display: block;
+  }
+
+  .reg-table thead {
+    display: none; /* hide header row */
+  }
+
+  /* Entire card for each row */
+  .reg-table tr {
+    background: #ffffff;
+    margin-bottom: 12px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    border: 1px solid #f2f4f7;
+  }
+
+  /* Category Title */
+  .reg-table td:nth-child(1) {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 8px;
+    border: none;
+    padding: 0;
+  }
+
+  /* Early & General Price */
+  .reg-table td:nth-child(2),
+  .reg-table td:nth-child(3) {
+    font-size: 14px;
+    padding: 2px 0;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+  }
+
+  /* Add labels automatically */
+  .reg-table td:nth-child(2)::before {
+    content: "Early: ";
+    font-weight: 600;
+    color: #08325a;
+  }
+
+  .reg-table td:nth-child(3)::before {
+    content: "General: ";
+    font-weight: 600;
+    color: #08325a;
+  }
+
+  /* Remove hover lifting */
+  .reg-table tr:hover {
+    transform: none;
+    background: #fff;
+  }
+}
+
+/* =========================================================
+   ULTIMATE MOBILE FIX — FORCE REMOVE ALL TABLE BEHAVIOR
+   ========================================================= */
+@media (max-width: 640px) {
+
+  /* Kill all min-width from other files */
+  .reg-table,
+  .reg-table * {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  /* Remove table layout entirely */
+  .reg-table {
+    display: block !important;
+    table-layout: auto !important;
+    border-collapse: separate !important;
+  }
+
+  .reg-table thead {
+    display: none !important;
+  }
+
+  .reg-table tbody {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  /* Each row becomes a card */
+  .reg-table tr {
+    display: block !important;
+    background: #fff !important;
+    margin: 12px 0 !important;
+    padding: 16px 18px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06) !important;
+    border: 1px solid #e9eef3 !important;
+  }
+
+  /* Category Title */
+  .reg-table td:nth-child(1) {
+    display: block !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  /* Price rows */
+  .reg-table td:nth-child(2),
+  .reg-table td:nth-child(3) {
+    display: flex !important;
+    justify-content: space-between !important;
+    padding: 6px 0 !important;
+    font-size: 14px !important;
+    border: none !important;
+  }
+
+  /* Add labels */
+  .reg-table td:nth-child(2)::before {
+    content: "Early:" !important;
+    font-weight: 600 !important;
+    color: #08325a !important;
+  }
+
+  .reg-table td:nth-child(3)::before {
+    content: "General:" !important;
+    font-weight: 600 !important;
+    color: #08325a !important;
+  }
+
+  /* Force remove hover transform */
+  .reg-table tr:hover {
+    transform: none !important;
+    background: #fff !important;
+  }
+}
+

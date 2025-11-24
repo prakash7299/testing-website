@@ -131,16 +131,6 @@ export default function Registration() {
                 <input type="email" name="email" placeholder="e.g., name@mail.com" required />
               </label>
 
-              <label>
-                Country *
-                <select name="country" required onChange={handleCountryChange}>
-                  <option value="">Select Country</option>
-                  {Object.keys(countryCodes).map((country) => (
-                    <option key={country}>{country}</option>
-                  ))}
-                </select>
-              </label>
-
               {/* Mobile + Code */}
               <label className="full-width">
                 Contact Number *
