@@ -73,21 +73,11 @@ export default function CommitteeApplication() {
           </a>
         </div>
         <div className="top-icons">
-          <a>
-            <FaFacebookF />
-          </a>
-          <a>
-            <FaInstagram />
-          </a>
-          <a>
-            <FaTwitter />
-          </a>
-          <a>
-            <FaLinkedinIn />
-          </a>
-          <a>
-            <FaYoutube />
-          </a>
+          <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+                   <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+                   <a href="https://x.com/intelmeet"><FaTwitter /></a>
+                   <a href="https://www.linkedin.com/in/intelmeet-global/"><FaLinkedinIn /></a>
+                   <a href="https://www.youtube.com/@intelmeetglobal"><FaYoutube /></a>
         </div>
       </div>
 
@@ -185,26 +175,26 @@ export default function CommitteeApplication() {
 
             <div className="form-box">
               <label>Institution / Organization</label>
-              <input type="text" name="institution" required />
+              <input type="text" name="institution" />
 
               <label>Department / Field of Expertise</label>
-              <input type="text" name="department" required />
+              <input type="text" name="department" />
 
               <label>Current Position</label>
-              <input type="text" name="position" required />
+              <input type="text" name="position" />
 
               <label>Academic / Research Experience</label>
-              <input type="text" name="experience" required />
+              <input type="text" name="experience" />
             </div>
 
             <h2 className="section-title">Committee Interest</h2>
 
             <div className="form-box">
               <label>Why do you wish to join?</label>
-              <textarea name="committee_reason" required></textarea>
+              <textarea name="committee_reason"></textarea>
 
               <label>Have you been in a committee before?</label>
-              <select name="committee_history" required>
+              <select name="committee_history">
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
               </select>
@@ -218,8 +208,6 @@ export default function CommitteeApplication() {
               <input
                 type="file"
                 name="professional_photo"
-                accept=".jpg,.jpeg,.png"
-                required
               />
               <small>Accepted: .jpg, .png</small>
 
@@ -229,10 +217,7 @@ export default function CommitteeApplication() {
               <input
                 type="file"
                 name="resume_cv"
-                accept=".pdf,.doc,.docx"
-                required
               />
-              <small>Accepted: .pdf, .doc, .docx</small>
             </div>
 
             <div className="btn-row">

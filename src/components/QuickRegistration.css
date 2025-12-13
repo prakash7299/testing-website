@@ -1,0 +1,49 @@
+/* QuickRegistration.css
+   Scoped styles (prefixed .conf-quickreg) - already imported inside the component
+*/
+
+.conf-quickreg {
+  --bg: linear-gradient(180deg, #ffffff, #fbfffe);
+  background: var(--bg);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(6,59,50,0.04);
+  box-shadow: 0 12px 36px rgba(11,93,79,0.04);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-size:14px;
+}
+
+.conf-quickreg .qr-header { display:flex; align-items:center; gap:10px; }
+.conf-quickreg .qr-badge {
+  width:44px; height:44px; border-radius:10px;
+  background: linear-gradient(135deg,#0b6b55,#12b886);
+  display:grid; place-items:center; color:#fff; font-weight:900; font-size:18px; box-shadow: inset 0 -10px 30px rgba(0,0,0,0.08);
+}
+.conf-quickreg .qr-title { font-weight:900; color:#0b5d4f; font-size:15px; }
+
+.conf-quickreg form { display:flex; flex-direction:column; gap:10px; }
+.conf-quickreg input[type="text"], .conf-quickreg input[type="email"] {
+  padding:10px 12px; border-radius:8px; border:1px solid rgba(11,93,79,0.06);
+  background: rgba(245,251,249,0.98);
+  font-size:14px; color:var(--conf-teal-900);
+}
+
+.conf-quickreg .qr-actions { display:flex; gap:8px; align-items:center; margin-top:4px; }
+.conf-quickreg .qr-btn {
+  background: linear-gradient(90deg,#0b6b55,#12b886);
+  color:#fff; padding:10px 12px; border-radius:10px; font-weight:800; border:0; cursor:pointer; display:inline-flex; align-items:center; gap:8px;
+  box-shadow: 0 12px 36px rgba(11,93,79,0.12);
+}
+.conf-quickreg .qr-ghost { background:transparent; color:var(--conf-teal-700); border:1px solid rgba(11,93,79,0.06); padding:10px 12px; border-radius:10px; font-weight:800; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; }
+
+.conf-quickreg .qr-note { font-size:12px; color:#3e6a61; margin-top:6px; }
+.conf-quickreg .qr-status { display:block; padding:8px 10px; border-radius:8px; font-weight:700; font-size:13px; margin-top:6px; }
+.conf-quickreg .qr-success { background: linear-gradient(90deg,#e6fbf0,#ecfff7); color:#0b6b55; border:1px solid rgba(11,107,85,0.06); }
+.conf-quickreg .qr-error { background: linear-gradient(90deg,#fff3f0,#fff8f6); color:#a62f1a; border:1px solid rgba(166,47,26,0.06); }
+
+/* compact variant */
+.conf-quickreg.compact { padding:8px; border-radius:10px; }
+.conf-quickreg.compact input { padding:9px; font-size:13px; }
+.conf-quickreg.compact .qr-btn { padding:9px 10px; font-size:13px; }

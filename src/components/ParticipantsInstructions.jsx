@@ -21,11 +21,11 @@ export default function ParticipantsInstructions() {
         </div>
         <div><span className="hidden-placeholder">f</span></div>
         <div className="top-icons">
-          <a><FaFacebookF /></a>
-          <a><FaInstagram /></a>
-          <a><FaTwitter /></a>
-          <a><FaLinkedinIn /></a>
-          <a><FaYoutube /></a>
+           <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+                    <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+                    <a href="https://x.com/intelmeet"><FaTwitter /></a>
+                    <a href="https://www.linkedin.com/in/intelmeet-global/"><FaLinkedinIn /></a>
+                    <a href="https://www.youtube.com/@intelmeetglobal"><FaYoutube /></a>
         </div>
       </div>
 
@@ -47,7 +47,7 @@ export default function ParticipantsInstructions() {
       
       
       
-                <li><Link className="nav-link" to="/benefits">Benifits</Link></li>
+                <li><Link className="nav-link" to="/benefits">Benefits</Link></li>
                 <li><Link className="nav-link" to="/speaker">Speaker</Link></li>
                 <li><Link className="nav-link" to="/committee">Committee</Link></li>
                 <li><Link className="nav-link" to="/publications">Publications</Link></li>

@@ -1,0 +1,1121 @@
+/* ConferenceEvent.css
+   Premium styles (full). This contains the carousel/glimpses styles plus the rest of the theme.
+*/
+
+/* --- Theme tokens --- */
+:root{
+  --conf-bg:#f7fbf9;
+  --conf-teal-900:#042b26;
+  --conf-teal-700:#0b5d4f;
+  --conf-teal-500:#12a37b;
+  --conf-gold:#f6d28a;
+  --conf-muted:#6b7a74;
+  --conf-card-bg:#ffffff;
+  --conf-shadow:0 20px 56px rgba(6,59,50,0.06);
+  --conf-radius:14px;
+  --conf-max:1180px;
+  --conf-transition:0.26s cubic-bezier(.2,.9,.25,1);
+  --conf-accent:#0b6b55;
+  --conf-topbar-gap:12px;
+}
+
+/* base */
+.conf-page{ font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:var(--conf-teal-900); background:var(--conf-bg); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+.conf-page *{ box-sizing:border-box; }
+
+/* skip link */
+.skip-link{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+.skip-link:focus{ left:12px; top:12px; width:auto; height:auto; background:var(--conf-teal-900); color:#fff; padding:6px 10px; border-radius:6px; z-index:9999; }
+
+/* TOPBAR: contact and socials inline (flow) */
+.conf-topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--conf-topbar-gap);
+  padding:14px 18px;
+  background:linear-gradient(90deg,#063a34,#0b5d4f);
+  color:#eaf9f2;
+  border-bottom-left-radius:12px;
+  border-bottom-right-radius:12px;
+  box-shadow:0 10px 30px rgba(4,40,35,0.12);
+  z-index:120;
+}
+
+/* contact inline */
+.conf-contact-inline{ display:flex; align-items:center; gap:10px; font-weight:700; font-size:14px; }
+.conf-contact-inline a{ color:#eaf9f2; text-decoration:none; font-weight:700; }
+
+/* social cluster (flow) */
+.conf-top-socials{ display:flex; align-items:center; gap:10px; }
+.conf-top-socials a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:40px;
+  height:40px;
+  border-radius:10px;
+  background: rgba(255,255,255,0.06);
+  color:#eaf9f2;
+  text-decoration:none;
+  box-shadow: 0 6px 22px rgba(2,10,8,0.14);
+  transition: transform .18s ease, background .18s ease;
+}
+.conf-top-socials a svg{ width:16px; height:16px; display:block; }
+.conf-top-socials a:hover{ transform:translateY(-3px); background: rgba(255,255,255,0.10); }
+
+/* NAVBAR */
+.conf-navbar{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  padding:18px;
+  position:relative;
+  z-index:60;
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(247,252,250,0.98));
+  border-bottom:1px solid rgba(6,59,50,0.03);
+}
+.conf-nav-left{ flex:0 0 auto; display:flex; align-items:center; gap:12px; }
+.conf-logo{ height:56px; display:block; object-fit:contain; }
+
+/* links center */
+.nav-links{ flex:1 1 auto; }
+.nav-links ul{ display:flex; gap:10px; list-style:none; align-items:center; justify-content:center; margin:0; padding:0; flex-wrap:wrap; }
+.nav-links a, .nav-links span{ color:var(--conf-teal-900); font-weight:700; text-decoration:none; padding:8px 12px; border-radius:10px; transition:var(--conf-transition); font-size:14px; }
+.nav-links a:hover{ background: rgba(11,93,79,0.06); }
+.conf-active-section{ background: linear-gradient(90deg, rgba(11,93,79,0.12), rgba(11,93,79,0.06)); color: var(--conf-teal-700); box-shadow:0 10px 28px rgba(11,93,79,0.06); }
+
+/* nav right */
+.conf-nav-right{ display:flex; gap:12px; align-items:center; justify-content:flex-end; }
+.conf-btn-register{ background:linear-gradient(90deg,#0b6b55,#12b886); color:#fff; padding:10px 14px; border-radius:12px; text-decoration:none; font-weight:800; box-shadow:0 12px 36px rgba(11,93,79,0.12); }
+
+/* hamburger hidden by default */
+.conf-hamburger{ display:none; width:48px; height:48px; background: linear-gradient(135deg, #0b6b55, #0b5d4f); border-radius:12px; border:none; padding:10px; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 10px 30px rgba(6,59,50,0.18); z-index:130; }
+.conf-hamburger svg{ display:block; }
+.conf-hamburger.open{ transform:scale(0.98); }
+
+/* MOBILE PANEL */
+.conf-mobile-panel{ display:none; position:fixed; inset:0; background: rgba(4,8,6,0.38); z-index:9999; justify-content:flex-end; }
+.conf-mobile-panel.show{ display:flex; }
+
+/* Default inner drawer (legacy) */
+.conf-mobile-inner{ width:92%; max-width:420px; height:100%; background:var(--conf-card-bg); border-radius:12px 0 0 12px; box-shadow:0 40px 120px rgba(2,10,8,0.48); padding:18px; overflow:auto; -webkit-overflow-scrolling:touch; }
+
+/* Mobile header/list */
+.conf-mobile-header{ display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; gap:8px; }
+.conf-mobile-brand{ display:flex; align-items:center; gap:10px; }
+.conf-mobile-title{ color:var(--conf-teal-900); font-weight:900; font-size:14px; }
+.conf-mobile-close{ background:transparent; border:none; font-size:22px; cursor:pointer; color:var(--conf-teal-900); }
+.conf-mobile-list{ list-style:none; padding:0; margin:0 0 14px 0; display:flex; flex-direction:column; gap:8px; }
+.conf-mobile-list a{ display:block; padding:12px 14px; border-radius:8px; color:var(--conf-teal-900); text-decoration:none; font-weight:800; background:transparent; }
+.conf-mobile-list a.active{ background: linear-gradient(90deg, rgba(11,93,79,0.06), rgba(11,93,79,0.03)); }
+
+/* HERO */
+.conf-hero{ position:relative; min-height:340px; background-size:cover; background-position:center; border-radius:12px; margin:18px auto 8px; max-width: calc(100% - 40px); overflow:hidden; display:flex; align-items:center; justify-content:center; padding:28px 12px; }
+.conf-hero-overlay{ position:absolute; inset:0; opacity:0.12; background-repeat:repeat; mix-blend-mode:overlay; }
+.conf-hero::before{ content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(4,43,37,0.26), rgba(6,59,50,0.12)); pointer-events:none; }
+.conf-hero-content{ position:relative; z-index:2; text-align:center; padding:26px; max-width:var(--conf-max); margin:0 auto; color:#fff; }
+
+.conf-eyebrow{ font-weight:700; color: rgba(255,255,255,0.95); margin-bottom:6px; letter-spacing:0.6px; font-size:clamp(12px, 1.4vw, 14px); }
+.conf-hero-title{ font-size: clamp(22px, 4.6vw, 36px); font-weight:900; margin:6px 0 8px; text-shadow:0 8px 30px rgba(0,0,0,0.35); line-height:1.02; word-break:break-word; }
+.conf-hero-theme{ margin:0 0 12px; font-weight:700; color: rgba(235,255,245,0.95); font-size: clamp(13px, 1.6vw, 16px); }
+.conf-hero-meta{ font-weight:700; color: rgba(230,255,247,0.95); margin-top:8px; font-size:clamp(12px,1.2vw,14px); }
+
+.conf-hero-actions{ margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.conf-cta{ display:inline-block; text-decoration:none; padding:10px 18px; border-radius:12px; font-weight:800; }
+.conf-cta.large{ padding:14px 20px; font-size:16px; }
+.conf-cta.ghost{ background:transparent; border:2px solid rgba(255,255,255,0.12); color:#fff; }
+.conf-cta.outline{ background:transparent; border:2px solid rgba(11,93,79,0.12); color:var(--conf-teal-900); }
+
+/* WRAPPER */
+.conf-wrapper{ max-width:var(--conf-max); margin:18px auto 60px; display:grid; grid-template-columns: 1fr 360px; gap:28px; padding:0 20px; }
+
+/* CARDS */
+.conf-main{ grid-column:1/2; }
+.conf-card{ background:var(--conf-card-bg); border-radius:var(--conf-radius); padding:22px; margin-bottom:18px; box-shadow:var(--conf-shadow); border:1px solid rgba(6,59,50,0.03); }
+.conf-card h2{ margin:0 0 12px; color:var(--conf-teal-700); font-size:20px; font-weight:900; }
+.conf-card p{ margin:0 0 12px; color:#243935; line-height:1.55; }
+
+/* Brochure */
+.brochure-card{ padding:28px; }
+.brochure-title-block{ display:block; margin-bottom:14px; }
+.brochure-main-title{ font-size:20px; font-weight:900; margin:0 0 8px; color:var(--conf-teal-700); }
+.brochure-meta p{ margin:8px 0; color:#213b35; }
+.brochure-sep{ border:0; height:1px; background:linear-gradient(90deg, rgba(6,59,50,0.03), rgba(6,59,50,0.06)); margin:18px 0; }
+
+/* Sections */
+.brochure-section{ padding:16px; border:1px solid rgba(6,59,50,0.03); border-radius:10px; margin-bottom:16px; background: linear-gradient(180deg,#fff,#fbfffc); }
+.brochure-section h3{ margin:0 0 8px; font-size:18px; color:var(--conf-teal-700); font-weight:900; }
+.theme-quote{ margin:8px 0 12px; font-weight:700; color:#0b3f37; }
+.brochure-note{ margin-top:10px; color:#53655f; font-style:italic; }
+
+/* lists */
+.sdg-list, .benefits-list, .participants-list, .dates-list, .highlights-list, .topic-list, .reg-list{ margin:8px 0 0 20px; color:#2d4b45; }
+.sdg-list li, .benefits-list li, .participants-list li, .dates-list li, .highlights-list li, .topic-list li, .reg-list li{ margin:8px 0; line-height:1.6; }
+
+/* grid helpers */
+.grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; }
+.topics-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:12px; }
+.participants-list.two-column{ columns:2; -webkit-columns:2; column-gap:28px; }
+
+/* glimpses/testimonials */
+.glimpses-placeholder{ height:140px; background:linear-gradient(180deg,#f5f8f6,#f7fbf9); border-radius:8px; display:flex; align-items:center; justify-content:center; color:#7a8a85; margin-bottom:12px; border:1px dashed rgba(6,59,50,0.03); }
+.testimonial{ margin:12px 0; padding:12px; background:#fff; border-radius:8px; border-left:4px solid var(--conf-gold); box-shadow:0 8px 22px rgba(6,59,50,0.04); }
+.testimonial .stars{ color:#f6b93b; font-weight:900; margin-bottom:8px; }
+.testimonial .quote{ margin:6px 0; color:#25423c; font-style:normal; }
+.testimonial .author{ margin:0; color:#556a64; font-weight:700; }
+
+/* brochure speakers */
+.brochure-speaker-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; margin-top:12px; }
+.brochure-speaker-card{ display:flex; gap:12px; align-items:flex-start; padding:12px; border-radius:10px; background:linear-gradient(180deg,#fff,#f9fffb); border:1px solid rgba(6,59,50,0.03); box-shadow:0 12px 30px rgba(6,59,50,0.03); }
+.speaker-portrait img{ width:86px; height:86px; object-fit:cover; border-radius:10px; border:6px solid #fff; box-shadow:0 14px 40px rgba(11,63,119,0.06); }
+.speaker-badge{ font-weight:900; background: rgba(11,93,79,0.06); color:#0b5d4f; padding:6px 8px; border-radius:8px; font-size:12px; display:inline-block; margin-top:6px; }
+
+/* sidebar */
+.conf-sidebar{ grid-column:2/3; position:sticky; top:96px; align-self:start; }
+.conf-sidebar-card{ background:var(--conf-card-bg); padding:18px; border-radius:12px; box-shadow:var(--conf-shadow); border:1px solid rgba(6,59,50,0.03); margin-bottom:12px; }
+.conf-sidebar-card h3, .conf-sidebar-card h4{ margin:0 0 10px; color:var(--conf-teal-700); font-weight:900; }
+.conf-sidebar-card ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; }
+.conf-sidebar-card a{ color:#114f44; text-decoration:none; font-weight:700; }
+.conf-sidebar-btn{ display:block; margin:8px 0; padding:10px; border-radius:10px; text-decoration:none; text-align:center; font-weight:900; color:#fff; background: linear-gradient(135deg,#0b6b55,#12b886); box-shadow:0 12px 36px rgba(11,93,79,0.12); }
+.conf-sidebar-btn.outline{ background:transparent; color:var(--conf-teal-900); border:2px solid rgba(11,107,85,0.06); box-shadow:none; }
+.conf-dates{ margin:8px 0 0; color:#234d43; }
+.conf-dates li{ margin:6px 0; font-weight:700; }
+
+/* ========= GLIMPSES CAROUSEL (PREMIUM) ========= */
+
+.glimpses-carousel {
+  position: relative;
+  margin-top: 12px;
+  border-radius: 12px;
+  overflow: visible;
+  padding: 12px;
+  background: linear-gradient(180deg, rgba(11,93,79,0.03), rgba(11,93,79,0.01));
+  box-shadow: 0 12px 40px rgba(6,59,50,0.04);
+}
+
+/* track is a flex-row of cards */
+.glimpses-track {
+  display: flex;
+  gap: 14px;
+  transition: transform 700ms cubic-bezier(.2,.9,.25,1);
+  will-change: transform;
+}
+
+/* each figure is a card — we show one card at a time by shifting the track */
+.glimpse-card {
+  min-width: 100%;
+  max-width: 100%;
+  height: 220px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  flex: 0 0 100%;
+  background: linear-gradient(180deg, #fff, #f8fff8);
+  transform-origin: center;
+  box-shadow: 0 18px 60px rgba(6,59,50,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* image fills card with subtle cover + object-position center */
+.glimpse-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transform: scale(1.02);
+  transition: transform 1s ease, filter 700ms ease;
+  filter: saturate(1.02) contrast(1.02);
+}
+
+/* overlay for premium mood */
+.glimpse-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(3,22,18,0.06), rgba(3,22,18,0.12));
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* active card gets subtle zoom + light vignette */
+.glimpse-card.active img {
+  transform: scale(1.06);
+  filter: saturate(1.06) contrast(1.04);
+}
+
+/* Prev/Next buttons — floating */
+.glimpse-prev, .glimpse-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width:44px;
+  height:44px;
+  border-radius:10px;
+  border:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(135deg,#fff,#f4fff7);
+  box-shadow:0 10px 30px rgba(6,59,50,0.08);
+  cursor: pointer;
+  z-index: 6;
+}
+.glimpse-prev { left: 12px; }
+.glimpse-next { right: 12px; }
+.glimpse-prev svg, .glimpse-next svg { color: var(--conf-teal-700); }
+
+/* indicators (thumbnails) */
+.glimpse-indicators {
+  display:flex;
+  gap:8px;
+  justify-content:center;
+  margin-top:12px;
+  padding:8px;
+}
+.thumb-btn {
+  width:64px;
+  height:44px;
+  border-radius:8px;
+  overflow:hidden;
+  border: 2px solid transparent;
+  padding:0;
+  background:transparent;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow: 0 8px 28px rgba(6,59,50,0.04);
+  transition: transform .28s ease, border-color .2s ease, box-shadow .2s ease;
+  cursor:pointer;
+}
+.thumb-btn img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transform-origin:center;
+}
+.thumb-btn:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(6,59,50,0.06); }
+.thumb-btn.selected { border-color: rgba(11,93,79,0.16); box-shadow: 0 18px 46px rgba(11,93,79,0.06); transform: translateY(-2px); }
+
+/* responsive tweaks */
+@media (min-width: 1000px) {
+  .glimpse-card { height: 320px; }
+  .thumb-btn { width:84px; height:54px; }
+}
+
+@media (max-width: 900px) {
+  .glimpse-card { height: 180px; border-radius:10px; }
+  .glimpses-carousel { padding:8px; }
+  .glimpse-prev, .glimpse-next { width:38px; height:38px; }
+  .thumb-btn { width:44px; height:34px; }
+}
+
+/* accessibility focus ring */
+.glimpses-carousel button:focus, .thumb-btn:focus { outline: 3px solid rgba(11,107,85,0.12); outline-offset: 2px; border-radius:8px; }
+
+/* responsive */
+@media (max-width:1100px){
+  .conf-wrapper{ max-width:920px; gap:22px; }
+  .conf-hero-title{ font-size:30px; }
+  .grid-2{ grid-template-columns:1fr; }
+}
+
+/* mobile adjustments */
+@media (max-width:900px){
+  .conf-topbar{ flex-direction:column; align-items:flex-start; padding:10px 14px; gap:8px; }
+  .conf-top-socials{ width:100%; order:2; justify-content:flex-start; }
+  .conf-contact-inline{ width:100%; justify-content:flex-start; font-size:15px; gap:8px; order:1; }
+
+  .conf-navbar .nav-links{ display:none; }
+  .conf-hamburger{ display:inline-flex; }
+
+  .conf-wrapper{ grid-template-columns:1fr; padding:0 12px; gap:16px; }
+  .conf-sidebar{ display:none; position:static; }
+  .conf-card{ padding:16px; margin-bottom:12px; }
+  .conf-hero{ min-height:220px; margin:12px 12px 8px; border-radius:10px; padding:18px 10px; }
+  .conf-hero-title{ font-size: clamp(18px, 6vw, 26px); line-height:1.08; text-shadow:0 6px 18px rgba(0,0,0,0.4); }
+  .brochure-section{ padding:12px; }
+  .brochure-speaker-grid{ grid-template-columns:1fr; }
+  .participants-list.two-column{ columns:1; }
+}
+
+/* very small phones */
+@media (max-width:420px){
+  .conf-top-socials a{ width:34px; height:34px; }
+  .conf-hero-title{ font-size:20px; }
+  .conf-topbar{ padding:8px 10px; }
+  .conf-logo{ height:48px; }
+  .conf-mobile-inner{ max-width:94%; }
+}
+
+/* accessibility focus */
+a:focus, button:focus, input:focus, textarea:focus{
+  outline:3px solid rgba(11,107,85,0.12);
+  outline-offset:2px;
+  border-radius:6px;
+}
+
+/* Premium Glimpses Slider */
+.glimpses-slider {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  margin: 12px 0 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  background: #ffffff;
+  position: relative;
+}
+
+.glimpses-track {
+  display: flex;
+  gap: 0;
+  animation: slideGallery 10s infinite linear;
+}
+
+.glimpses-track img {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-right: 2px solid #fff;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.glimpses-track img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.12) saturate(1.15);
+}
+
+/* Smooth continuous slider animation */
+@keyframes slideGallery {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Make slider responsive */
+@media (max-width: 768px) {
+  .glimpses-track img {
+    max-height: 180px;
+  }
+}
+
+/* ===== Force larger Glimpses viewport & images — high specificity to override others ===== */
+
+/* Desktop / large */
+.conf-card.brochure-card .brochure-section .glimpses-slider .glimpses-viewport {
+  height: 360px !important;        /* big premium height on desktop */
+  overflow: hidden !important;
+  display: block !important;
+}
+
+/* ensure track & individual cards stretch to viewport height */
+.conf-card.brochure-card .brochure-section .glimpses-slider .glimpses-track,
+.conf-card.brochure-card .brochure-section .glimpses-slider .glimpses-track .glimpse,
+.conf-card.brochure-card .brochure-section .glimpses-slider .glimpses-viewport .glimpse {
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+/* make images fill the card and crop with object-fit */
+.conf-card.brochure-card .brochure-section .glimpses-slider .glimpses-track img,
+.conf-card.brochure-card .brochure-section .glimpses-slider .glimpses-viewport img {
+  height: 100% !important;
+  width: auto !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* If thumbnails exist, keep them smaller but slightly larger */
+.conf-card.brochure-card .brochure-section .glimpses-slider .thumb img {
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Mobile breakpoint — reduce height so it fits nicely */
+@media (max-width: 900px) {
+  .conf-card.brochure-card .brochure-section .glimpses-slider .glimpses-viewport {
+    height: 220px !important;   /* mobile height */
+  }
+  .conf-card.brochure-card .brochure-section .glimpses-slider .glimpses-track img {
+    height: 220px !important;
+  }
+}
+
+/* Smaller phones */
+@media (max-width: 420px) {
+  .conf-card.brochure-card .brochure-section .glimpses-slider .glimpses-viewport {
+    height: 180px !important;
+  }
+  .conf-card.brochure-card .brochure-section .glimpses-slider .glimpses-track img {
+    height: 180px !important;
+  }
+}
+
+/* Safety: if some JS toggles a 'collapsed' class, force visible */
+.conf-card.brochure-card .brochure-section .glimpses-slider[aria-hidden="false"],
+.conf-card.brochure-card .brochure-section .glimpses-slider[aria-hidden="true"] {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+/* ================= FIX: prevent horizontal scrolling from Glimpses carousel ================= */
+
+/* 1) Defensive global container clamp for this page only */
+.conf-page, .page-container {
+  overflow-x: hidden; /* ensure page does not create horizontal scroll from children */
+}
+
+/* 2) Make wrapper safe — clip overflowing children */
+.conf-wrapper {
+  overflow-x: hidden; /* prevent internal cards from causing global scroll */
+}
+
+/* 3) Ensure stage cannot exceed its container width */
+.glimpses-stage {
+  max-width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  /* prevent children from wrapping into odd positions that cause overflow */
+  flex-wrap: nowrap;
+  padding: 0 6px;
+}
+
+/* 4) Constrain center + peeks so total width <= 100% */
+/* We compute center width as 'available minus two peek fallback widths' */
+.glimpse-center {
+  /* Use calc to ensure center shrinks when side peeks are present */
+  width: calc(100% - (2 * min(240px, 18%)));
+  max-width: calc(100% - (2 * min(240px, 18%)));
+  box-sizing: border-box;
+}
+
+/* limit peek sizes (so they never push layout) */
+.glimpse-peek {
+  flex: 0 0 min(220px, 18%); /* fixed-ish peek but will shrink on small screens */
+  box-sizing: border-box;
+}
+
+/* 5) Force images to stay inside their cards (no intrinsic overflow) */
+.glimpse-center img,
+.glimpse-peek img,
+.glimpses-track img,
+.glimpses-viewport img,
+.thumb img {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  box-sizing: border-box;
+}
+
+/* 6) If some JS set explicit widths on the track, ensure it can't overflow */
+.glimpses-track {
+  min-width: 0; /* allows flex children to shrink correctly */
+  box-sizing: border-box;
+}
+
+/* 7) On smaller screens remove the side peeks to avoid overflow */
+@media (max-width: 900px) {
+  .glimpses-stage { gap: 12px; padding: 0 4px; }
+  .glimpse-peek { display: none !important; }      /* hide side peeks */
+  .glimpse-center { width: 100% !important; max-width: 100% !important; }
+  .glimpses-controls { margin-top: 10px; }
+  /* smaller center height to avoid vertical overflow on phones */
+  .glimpse-center { height: 260px !important; }
+  .glimpses-viewport { height: 260px !important; }
+}
+
+/* 8) Extra safety for very small phones */
+@media (max-width: 420px) {
+  .glimpse-center { height: 200px !important; }
+  .glimpses-viewport { height: 200px !important; }
+}
+
+/* 9) Force no horizontal overflow from the brochure card itself */
+.conf-card.brochure-card, .brochure-section {
+  overflow-x: hidden; /* ensures internal overflow gets clipped */
+}
+
+/* 10) Optional: If some element still creates horizontal scroll, hide overflow visually */
+html, body {
+  /* do NOT un-comment unless you want to globally hide ALL horizontal scroll (not recommended for debugging)
+     overflow-x: hidden;
+  */
+}
+/* === FIX: make .glimpse slides full-width and stop CSS animation conflicts === */
+
+/* Ensure viewport is the clipping container */
+.glimpses-viewport {
+  width: 100%;
+  height: 360px;              /* desktop default — overridden by media rules below */
+  overflow: hidden;
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+}
+
+/* Track: a single horizontal flex row. Remove CSS keyframes animation so JS transform controls it. */
+.glimpses-track {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+  transition: transform 650ms cubic-bezier(.2,.9,.25,1);
+  will-change: transform;
+  animation: none !important;    /* IMPORTANT: stop any CSS animation that conflicts with JS */
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* Each slide (you use class "glimpse") should take full viewport width */
+.glimpse {
+  flex: 0 0 100%;           /* each item equals 100% of the viewport (glimpses-viewport) */
+  max-width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* Image inside slide: fill the slide, crop with object-fit */
+.glimpse img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0); /* helps some browsers render smoother */
+}
+
+/* Make sure container doesn't produce horizontal page scroll */
+.conf-page, .conf-wrapper, .conf-card.brochure-card, .brochure-section, .glimpses-slider, .glimpses-viewport {
+  overflow-x: hidden;
+}
+
+/* Responsive heights */
+@media (min-width: 1100px) {
+  .glimpses-viewport { height: 420px; } /* more premium / larger on wide screens */
+}
+@media (max-width: 1100px) {
+  .glimpses-viewport { height: 320px; }
+}
+@media (max-width: 900px) {
+  .glimpses-viewport { height: 220px; }
+}
+@media (max-width: 420px) {
+  .glimpses-viewport { height: 180px; }
+}
+
+/* Optional: add a subtle radius + bg so edges look premium on light backgrounds */
+.glimpses-slider { border-radius: 12px; background: #fff; box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
+
+/* Accessibility: allow keyboard focus to pause/resume if you later add focus handlers */
+.glimpses-slider:focus { outline: 3px solid rgba(11,107,85,0.12); outline-offset: 2px; }
+
+.glimpses-viewport {
+  overflow: hidden;
+  width: 100%;
+  height: 260px;
+  border-radius: 14px;
+}
+
+.glimpses-track {
+  display: flex;
+  transition: transform 0.6s ease;
+  width: 100%;
+}
+
+.glimpse {
+  min-width: 100%;
+  height: 260px;
+  overflow: hidden;
+}
+
+.glimpse img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.glimpse-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9;
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.8);
+  border: none;
+  border-radius: 50%;
+  font-size: 32px;
+  color: #0b5d4f;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.glimpse-btn:hover {
+  background: #fff;
+}
+
+.glimpse-btn.prev { left: 10px; }
+.glimpse-btn.next { right: 10px; }
+
+/* -------- Mobile menu visibility fixes (override) --------
+   Paste at the end of ConferenceEvent.css so it overrides previous rules.
+   This keeps your markup / JS unchanged but makes the mobile menu
+   display as a centered card that fits within the viewport.
+-----------------------------------------------------------*/
+
+/* Make sure mobile panel appears above everything and centers the card */
+.conf-mobile-panel {
+  display: none; /* default kept hidden until JS toggles .show */
+  position: fixed;
+  inset: 0;
+  background: rgba(4,8,6,0.55);
+  z-index: 99999; /* ensure highest stacking so hamburger click isn't blocked */
+  justify-content: center !important;  /* center horizontally */
+  align-items: center !important;      /* center vertically */
+  padding: 18px;                       /* safe inset on small screens */
+  -webkit-overflow-scrolling: touch;
+  touch-action: manipulation;
+}
+
+/* When visible, show as centered modal card */
+.conf-mobile-panel.show {
+  display: flex !important;
+}
+
+/* Make inner panel a bounded card, not full-height */
+.conf-mobile-panel .conf-mobile-inner {
+  width: 94% !important;
+  max-width: 520px !important;
+  height: auto !important;                             /* DO NOT be 100% high */
+  max-height: calc(100vh - 64px) !important;           /* leave room for status bar / safe area */
+  border-radius: 14px !important;
+  padding: 14px !important;
+  overflow-y: auto !important;                        /* only the inner card scrolls if needed */
+  -webkit-overflow-scrolling: touch !important;
+  box-shadow: 0 40px 120px rgba(2,10,8,0.48) !important;
+  background: var(--conf-card-bg) !important;
+  position: relative !important;
+  margin: 0 auto !important;
+  border: 1px solid rgba(6,59,50,0.04) !important;
+}
+
+/* Reduce spacing so the full nav fits better on smaller phones */
+.conf-mobile-panel .conf-mobile-list {
+  gap: 6px !important;
+  margin: 6px 0 12px !important;
+}
+
+/* Slightly reduce padding and font-size of links to fit more items */
+.conf-mobile-panel .conf-mobile-list a {
+  padding: 10px 12px !important;
+  font-size: 15px !important;
+  line-height: 1.2 !important;
+}
+
+/* Compact header / brand to reduce height */
+.conf-mobile-panel .conf-mobile-header {
+  margin-bottom: 8px !important;
+  gap: 6px !important;
+}
+.conf-mobile-panel .conf-mobile-brand img {
+  height: 30px !important;
+}
+.conf-mobile-panel .conf-mobile-title {
+  font-size: 13px !important;
+  font-weight: 900 !important;
+}
+
+/* Ensure quick links and CTAs sit comfortably */
+.conf-mobile-panel .conf-mobile-quick {
+  margin-top: 8px !important;
+}
+.conf-mobile-panel .conf-mobile-cta {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:10px !important;
+  justify-content:space-between;
+}
+
+/* Keep close button prominent and easy to click */
+.conf-mobile-panel .conf-mobile-close {
+  font-size: 22px !important;
+  padding: 6px !important;
+  line-height: 1 !important;
+  background: transparent !important;
+  border: 0 !important;
+  cursor: pointer !important;
+  color: var(--conf-teal-900) !important;
+}
+
+/* Make hamburger sit above everything and remain tappable */
+.conf-hamburger {
+  z-index: 100001 !important;
+  position: relative;
+}
+
+/* For very small phones make the modal slightly narrower */
+@media (max-width: 380px) {
+  .conf-mobile-panel .conf-mobile-inner {
+    max-width: 96% !important;
+    padding: 10px !important;
+    max-height: calc(100vh - 48px) !important;
+  }
+  .conf-mobile-panel .conf-mobile-list a { font-size: 14px !important; padding: 8px 10px !important; }
+}
+
+/* Scrollbar niceties for inner panel */
+.conf-mobile-panel .conf-mobile-inner::-webkit-scrollbar { width: 10px; }
+.conf-mobile-panel .conf-mobile-inner::-webkit-scrollbar-thumb { background: rgba(6,59,50,0.08); border-radius: 8px; }
+
+/* Accessibility: make sure keyboard users can tab to the close button */
+.conf-mobile-close:focus { outline: 3px solid rgba(11,107,85,0.12); outline-offset: 2px; border-radius:6px; }
+
+/* defensive fix: if some script left inline style forcing off-screen transform, reset it */
+.conf-mobile-panel .conf-mobile-inner[style*="transform"] {
+  transform: none !important;
+}
+
+/* final safety: guarantee no horizontal scrolling caused by menu overlay */
+body, html { overscroll-behavior-x: none; }
+
+/* ConferenceEvent.css
+   Premium styles (full). This contains the carousel/glimpses styles plus the rest of the theme.
+*/
+
+/* --- Theme tokens --- */
+:root{
+  --conf-bg:#f7fbf9;
+  --conf-teal-900:#042b26;
+  --conf-teal-700:#0b5d4f;
+  --conf-teal-500:#12a37b;
+  --conf-gold:#f6d28a;
+  --conf-muted:#6b7a74;
+  --conf-card-bg:#ffffff;
+  --conf-shadow:0 20px 56px rgba(6,59,50,0.06);
+  --conf-radius:14px;
+  --conf-max:1180px;
+  --conf-transition:0.26s cubic-bezier(.2,.9,.25,1);
+  --conf-accent:#0b6b55;
+  --conf-topbar-gap:12px;
+}
+
+/* base */
+.conf-page{ font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:var(--conf-teal-900); background:var(--conf-bg); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+.conf-page *{ box-sizing:border-box; }
+
+/* skip link */
+.skip-link{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+.skip-link:focus{ left:12px; top:12px; width:auto; height:auto; background:var(--conf-teal-900); color:#fff; padding:6px 10px; border-radius:6px; z-index:9999; }
+
+/* TOPBAR: contact and socials inline (flow) */
+.conf-topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--conf-topbar-gap);
+  padding:14px 18px;
+  background:linear-gradient(90deg,#063a34,#0b5d4f);
+  color:#eaf9f2;
+  border-bottom-left-radius:12px;
+  border-bottom-right-radius:12px;
+  box-shadow:0 10px 30px rgba(4,40,35,0.12);
+  z-index:120;
+}
+
+/* contact inline */
+.conf-contact-inline{ display:flex; align-items:center; gap:10px; font-weight:700; font-size:14px; }
+.conf-contact-inline a{ color:#eaf9f2; text-decoration:none; font-weight:700; }
+
+/* social cluster (flow) */
+.conf-top-socials{ display:flex; align-items:center; gap:10px; }
+.conf-top-socials a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:40px;
+  height:40px;
+  border-radius:10px;
+  background: rgba(255,255,255,0.06);
+  color:#eaf9f2;
+  text-decoration:none;
+  box-shadow: 0 6px 22px rgba(2,10,8,0.14);
+  transition: transform .18s ease, background .18s ease;
+}
+.conf-top-socials a svg{ width:16px; height:16px; display:block; }
+.conf-top-socials a:hover{ transform:translateY(-3px); background: rgba(255,255,255,0.10); }
+
+/* NAVBAR */
+.conf-navbar{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  padding:18px;
+  position:relative;
+  z-index:60;
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(247,252,250,0.98));
+  border-bottom:1px solid rgba(6,59,50,0.03);
+}
+.conf-nav-left{ flex:0 0 auto; display:flex; align-items:center; gap:12px; }
+.conf-logo{ height:56px; display:block; object-fit:contain; }
+
+/* links center */
+.nav-links{ flex:1 1 auto; }
+.nav-links ul{ display:flex; gap:10px; list-style:none; align-items:center; justify-content:center; margin:0; padding:0; flex-wrap:wrap; }
+.nav-links a, .nav-links span{ color:var(--conf-teal-900); font-weight:700; text-decoration:none; padding:8px 12px; border-radius:10px; transition:var(--conf-transition); font-size:14px; }
+.nav-links a:hover{ background: rgba(11,93,79,0.06); }
+.conf-active-section{ background: linear-gradient(90deg, rgba(11,93,79,0.12), rgba(11,93,79,0.06)); color: var(--conf-teal-700); box-shadow:0 10px 28px rgba(11,93,79,0.06); }
+
+/* nav right */
+.conf-nav-right{ display:flex; gap:12px; align-items:center; justify-content:flex-end; }
+.conf-btn-register{ background:linear-gradient(90deg,#0b6b55,#12b886); color:#fff; padding:10px 14px; border-radius:12px; text-decoration:none; font-weight:800; box-shadow:0 12px 36px rgba(11,93,79,0.12); }
+
+/* hamburger hidden by default */
+.conf-hamburger{ display:none; width:48px; height:48px; background: linear-gradient(135deg, #0b6b55, #0b5d4f); border-radius:12px; border:none; padding:10px; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 10px 30px rgba(6,59,50,0.18); z-index:130; }
+.conf-hamburger svg{ display:block; }
+.conf-hamburger.open{ transform:scale(0.98); }
+
+/* MOBILE PANEL */
+.conf-mobile-panel{ display:none; position:fixed; inset:0; background: rgba(4,8,6,0.38); z-index:9999; justify-content:flex-end; }
+.conf-mobile-panel.show{ display:flex; }
+
+/* Default inner drawer (legacy) */
+.conf-mobile-inner{ width:92%; max-width:420px; height:100%; background:var(--conf-card-bg); border-radius:12px 0 0 12px; box-shadow:0 40px 120px rgba(2,10,8,0.48); padding:18px; overflow:auto; -webkit-overflow-scrolling:touch; }
+
+/* Mobile header/list */
+.conf-mobile-header{ display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; gap:8px; }
+.conf-mobile-brand{ display:flex; align-items:center; gap:10px; }
+.conf-mobile-title{ color:var(--conf-teal-900); font-weight:900; font-size:14px; }
+.conf-mobile-close{ background:transparent; border:none; font-size:22px; cursor:pointer; color:var(--conf-teal-900); }
+.conf-mobile-list{ list-style:none; padding:0; margin:0 0 14px 0; display:flex; flex-direction:column; gap:8px; }
+.conf-mobile-list a{ display:block; padding:12px 14px; border-radius:8px; color:var(--conf-teal-900); text-decoration:none; font-weight:800; background:transparent; }
+.conf-mobile-list a.active{ background: linear-gradient(90deg, rgba(11,93,79,0.06), rgba(11,93,79,0.03)); }
+
+/* HERO */
+.conf-hero{ position:relative; min-height:340px; background-size:cover; background-position:center; border-radius:12px; margin:18px auto 8px; max-width: calc(100% - 40px); overflow:hidden; display:flex; align-items:center; justify-content:center; padding:28px 12px; }
+.conf-hero-overlay{ position:absolute; inset:0; opacity:0.12; background-repeat:repeat; mix-blend-mode:overlay; }
+.conf-hero::before{ content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(4,43,37,0.26), rgba(6,59,50,0.12)); pointer-events:none; }
+.conf-hero-content{ position:relative; z-index:2; text-align:center; padding:26px; max-width:var(--conf-max); margin:0 auto; color:#fff; }
+
+.conf-eyebrow{ font-weight:700; color: rgba(255,255,255,0.95); margin-bottom:6px; letter-spacing:0.6px; font-size:clamp(12px, 1.4vw, 14px); }
+.conf-hero-title{ font-size: clamp(22px, 4.6vw, 36px); font-weight:900; margin:6px 0 8px; text-shadow:0 8px 30px rgba(0,0,0,0.35); line-height:1.02; word-break:break-word; }
+.conf-hero-theme{ margin:0 0 12px; font-weight:700; color: rgba(235,255,245,0.95); font-size: clamp(13px, 1.6vw, 16px); }
+.conf-hero-meta{ font-weight:700; color: rgba(230,255,247,0.95); margin-top:8px; font-size:clamp(12px,1.2vw,14px); }
+
+.conf-hero-actions{ margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.conf-cta{ display:inline-block; text-decoration:none; padding:10px 18px; border-radius:12px; font-weight:800; }
+.conf-cta.large{ padding:14px 20px; font-size:16px; }
+.conf-cta.ghost{ background:transparent; border:2px solid rgba(255,255,255,0.12); color:#fff; }
+.conf-cta.outline{ background:transparent; border:2px solid rgba(11,93,79,0.12); color:var(--conf-teal-900); }
+
+/* WRAPPER */
+.conf-wrapper{ max-width:var(--conf-max); margin:18px auto 60px; display:grid; grid-template-columns: 1fr 360px; gap:28px; padding:0 20px; }
+
+/* CARDS */
+.conf-main{ grid-column:1/2; }
+.conf-card{ background:var(--conf-card-bg); border-radius:var(--conf-radius); padding:22px; margin-bottom:18px; box-shadow:var(--conf-shadow); border:1px solid rgba(6,59,50,0.03); }
+.conf-card h2{ margin:0 0 12px; color:var(--conf-teal-700); font-size:20px; font-weight:900; }
+.conf-card p{ margin:0 0 12px; color:#243935; line-height:1.55; }
+
+/* Brochure */
+.brochure-card{ padding:28px; }
+.brochure-title-block{ display:block; margin-bottom:14px; }
+.brochure-main-title{ font-size:20px; font-weight:900; margin:0 0 8px; color:var(--conf-teal-700); }
+.brochure-meta p{ margin:8px 0; color:#213b35; }
+.brochure-sep{ border:0; height:1px; background:linear-gradient(90deg, rgba(6,59,50,0.03), rgba(6,59,50,0.06)); margin:18px 0; }
+
+/* Sections */
+.brochure-section{ padding:16px; border:1px solid rgba(6,59,50,0.03); border-radius:10px; margin-bottom:16px; background: linear-gradient(180deg,#fff,#fbfffc); }
+.brochure-section h3{ margin:0 0 8px; font-size:18px; color:var(--conf-teal-700); font-weight:900; }
+.theme-quote{ margin:8px 0 12px; font-weight:700; color:#0b3f37; }
+.brochure-note{ margin-top:10px; color:#53655f; font-style:italic; }
+
+/* lists */
+.sdg-list, .benefits-list, .participants-list, .dates-list, .highlights-list, .topic-list, .reg-list{ margin:8px 0 0 20px; color:#2d4b45; }
+.sdg-list li, .benefits-list li, .participants-list li, .dates-list li, .highlights-list li, .topic-list li, .reg-list li{ margin:8px 0; line-height:1.6; }
+
+/* grid helpers */
+.grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; }
+.topics-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:12px; }
+.participants-list.two-column{ columns:2; -webkit-columns:2; column-gap:28px; }
+
+/* glimpses/testimonials */
+.glimpses-placeholder{ height:140px; background:linear-gradient(180deg,#f5f8f6,#f7fbf9); border-radius:8px; display:flex; align-items:center; justify-content:center; color:#7a8a85; margin-bottom:12px; border:1px dashed rgba(6,59,50,0.03); }
+.testimonial{ margin:12px 0; padding:12px; background:#fff; border-radius:8px; border-left:4px solid var(--conf-gold); box-shadow:0 8px 22px rgba(6,59,50,0.04); }
+.testimonial .stars{ color:#f6b93b; font-weight:900; margin-bottom:8px; }
+.testimonial .quote{ margin:6px 0; color:#25423c; font-style:normal; }
+.testimonial .author{ margin:0; color:#556a64; font-weight:700; }
+
+/* brochure speakers */
+.brochure-speaker-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; margin-top:12px; }
+.brochure-speaker-card{ display:flex; gap:12px; align-items:flex-start; padding:12px; border-radius:10px; background:linear-gradient(180deg,#fff,#f9fffb); border:1px solid rgba(6,59,50,0.03); box-shadow:0 12px 30px rgba(6,59,50,0.03); }
+.speaker-portrait img{ width:86px; height:86px; object-fit:cover; border-radius:10px; border:6px solid #fff; box-shadow:0 14px 40px rgba(11,63,119,0.06); }
+.speaker-badge{ font-weight:900; background: rgba(11,93,79,0.06); color:#0b5d4f; padding:6px 8px; border-radius:8px; font-size:12px; display:inline-block; margin-top:6px; }
+
+/* sidebar */
+.conf-sidebar{ grid-column:2/3; position:sticky; top:96px; align-self:start; }
+.conf-sidebar-card{ background:var(--conf-card-bg); padding:18px; border-radius:12px; box-shadow:var(--conf-shadow); border:1px solid rgba(6,59,50,0.03); margin-bottom:12px; }
+.conf-sidebar-card h3, .conf-sidebar-card h4{ margin:0 0 10px; color:var(--conf-teal-700); font-weight:900; }
+.conf-sidebar-card ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; }
+.conf-sidebar-card a{ color:#114f44; text-decoration:none; font-weight:700; }
+.conf-sidebar-btn{ display:block; margin:8px 0; padding:10px; border-radius:10px; text-decoration:none; text-align:center; font-weight:900; color:#fff; background: linear-gradient(135deg,#0b6b55,#12b886); box-shadow:0 12px 36px rgba(11,93,79,0.12); }
+.conf-sidebar-btn.outline{ background:transparent; color:var(--conf-teal-900); border:2px solid rgba(11,107,85,0.06); box-shadow:none; }
+.conf-dates{ margin:8px 0 0; color:#234d43; }
+.conf-dates li{ margin:6px 0; font-weight:700; }
+
+/* ========= GLIMPSES CAROUSEL (PREMIUM) ========= */
+
+.glimpses-carousel {
+  position: relative;
+  margin-top: 12px;
+  border-radius: 12px;
+  overflow: visible;
+  padding: 12px;
+  background: linear-gradient(180deg, rgba(11,93,79,0.03), rgba(11,93,79,0.01));
+  box-shadow: 0 12px 40px rgba(6,59,50,0.04);
+}
+
+/* track is a flex-row of cards */
+.glimpses-track {
+  display: flex;
+  gap: 14px;
+  transition: transform 700ms cubic-bezier(.2,.9,.25,1);
+  will-change: transform;
+}
+
+/* each figure is a card — we show one card at a time by shifting the track */
+.glimpse-card {
+  min-width: 100%;
+  max-width: 100%;
+  height: 220px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  flex: 0 0 100%;
+  background: linear-gradient(180deg, #fff, #f8fff8);
+  transform-origin: center;
+  box-shadow: 0 18px 60px rgba(6,59,50,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* image fills card with subtle cover + object-position center */
+.glimpse-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transform: scale(1.02);
+  transition: transform 1s ease, filter 700ms ease;
+  filter: saturate(1.02) contrast(1.02);
+}
+
+/* overlay for premium mood */
+.glimpse-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(3,22,18,0.06), rgba(3,22,18,0.12));
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* active card gets subtle zoom + light vignette */
+.glimpse-card.active img {
+  transform: scale(1.06);
+  filter: saturate(1.06) contrast(1.04);
+}
+
+/* Prev/Next buttons — floating */
+.glimpse-prev, .glimpse-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width:44px;
+  height:44px;
+  border-radius:10px;
+  border:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(135deg,#fff,#f4fff7);
+  box-shadow:0 10px 30px rgba(6,59,50,0.08);
+  cursor: pointer;
+  z-index: 6;
+}
+.glimpse-prev { left: 12px; }
+.glimpse-next { right: 12px; }
+.glimpse-prev svg, .glimpse-next svg { color: var(--conf-teal-700); }
+
+/* indicators (thumbnails) */
+.glimpse-indicators {
+  display:flex;
+  gap:8px;
+  justify-content:center;
+  margin-top:12px;
+  padding:8px;
+}
+.thumb-btn {
+  width:64px;
+  height:44px;
+  border-radius:8px;
+  overflow:hidden;
+  border: 2px solid transparent;
+  padding:0;
+  background:transparent;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow: 0 8px 28px rgba(6,59,50,0.04);
+  transition: transform .28s ease, border-color .2s ease, box-shadow .2s ease;
+  cursor:pointer;
+}
+.thumb-btn img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transform-origin:center;
+}
+.thumb-btn:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(6,59,50,0.06); }
+.thumb-btn.selected { border-color: rgba(11,93,79,0.16); box-shadow: 0 18px 46px rgba(11,93,79,0.06); transform: translateY(-2px); }
+
+/* responsive tweaks */
+@media (min-width: 1000px) {
+  .glimpse-card { height: 320px; }
+  .thumb-btn { width:84px; height:54px; }
+}
+
+@media (max-width: 900px) {
+  .glimpse-card { height: 180px; border-radius:10px; }
+  .glimpses-carousel { padding:8px; }
+  .glimpse-prev, .glimpse-next { width:38px; height:38px; }
+  .thumb-btn { width:44px; height:34px; }
+}
+
+/* accessibility focus ring */
+.glimpses-carousel button:focus, .thumb-btn:focus { outline: 3px solid rgba(11,107,85,0.12); outline-offset: 2px; border-radius:8px; }
+
+ /* (rest of your existing CSS — unchanged) */
+
+

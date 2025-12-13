@@ -5,8 +5,7 @@ import "./About.css";
 import "./Login.css";
 import "./UpcomingConferences.css";
 import photo from "../assets/confimage-1.jpeg";
-// Use the uploaded local logo path (developer instruction)
-const logoUrl = "/mnt/data/intelmeet.jpeg";
+import logoUrl from "../assets/intelmeet.jpeg";
 
 import {
   FaFacebookF,
@@ -21,12 +20,22 @@ import { Link } from "react-router-dom";
 
 export default function RegistrationAndFees() {
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const [status, setStatus] = useState(null); // success | error | null
+  const [status, setStatus] = useState(null);
   const [showTerms, setShowTerms] = useState(false);
   const step2Ref = useRef(null);
 
-  // Web3Forms PRO Access Key
   const WEB3FORMS_ACCESS_KEY = "c8d39d79-f4fb-4f53-9615-5572ece7334c";
+
+  // --------------------------------------
+  // FILE SIZE VALIDATION (500 KB LIMIT)
+  // --------------------------------------
+  const validateFileSize = (e) => {
+    const file = e.target.files[0];
+    if (file && file.size > 500 * 1024) {
+      alert("File size must be below 500 KB");
+      e.target.value = "";
+    }
+  };
 
   const handleSelectCategory = (category) => {
     setSelectedCategory(category);
@@ -49,7 +58,6 @@ export default function RegistrationAndFees() {
     ["Session Chair", "USD 100", "USD 140"],
   ];
 
-  // TERMS & CONDITIONS (copied from your screenshots — pasted verbatim)
   const TERMS_TEXT = `
 Terms & Conditions – IntelMeet Global Conferences
 
@@ -117,21 +125,17 @@ These Terms and Conditions apply to all participants, authors, presenters, and a
 By registering, submitting a paper, or participating in IntelMeet Global Conferences, you confirm that you have read, understood, and agreed to all terms stated above.
 `;
 
-  // ------------------------------------
-  //     FORM SUBMIT → Web3Forms
-  // ------------------------------------
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus(null);
 
-    // simple client-side validation: ensure category and terms are present
     if (!selectedCategory) {
       alert("Please select a category from the table before submitting.");
       return;
     }
 
     const form = e.target;
-    // ensure terms checkbox checked
     const termsChecked = form.querySelector('input[name="terms"]')?.checked;
     if (!termsChecked) {
       alert("Please read and accept the Terms & Conditions before submitting.");
@@ -141,18 +145,18 @@ By registering, submitting a paper, or participating in IntelMeet Global Confere
     try {
       const formData = new FormData(form);
 
-      // Required Access Key
       formData.append("access_key", WEB3FORMS_ACCESS_KEY);
       formData.append("from_name", "IntelMeet Registration Form");
       formData.append("subject", `Registration Form – ${formData.get("full_name") || "New Registration"}`);
-
-      // Ensure category + conference name are included even if readOnly
       formData.set("category", selectedCategory);
+
       if (!formData.get("conference_name")) {
-        formData.set("conference_name", "International Conference on Science, Engineering & Technology (ICSET-2025) – 28 November 2025");
+        formData.set(
+          "conference_name",
+          "International Conference on Science, Engineering & Technology (ICSET-2025) – 28 November 2025"
+        );
       }
 
-      // NOTE: files are included and will be sent (you have PRO)
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData,
@@ -165,7 +169,6 @@ By registering, submitting a paper, or participating in IntelMeet Global Confere
         form.reset();
         setSelectedCategory(null);
       } else {
-        console.error("Web3Forms Error:", json);
         setStatus("error");
       }
     } catch (err) {
@@ -184,18 +187,17 @@ By registering, submitting a paper, or participating in IntelMeet Global Confere
         </div>
         <div><span className="hidden-placeholder">f</span></div>
         <div className="top-icons">
-          <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noreferrer"><FaFacebookF /></a>
-          <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noreferrer"><FaInstagram /></a>
-          <a><FaTwitter /></a>
-          <a><FaLinkedinIn /></a>
-          <a><FaYoutube /></a>
+           <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+                    <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+                    <a href="https://x.com/intelmeet"><FaTwitter /></a>
+                    <a href="https://www.linkedin.com/in/intelmeet-global/"><FaLinkedinIn /></a>
+                    <a href="https://www.youtube.com/@intelmeetglobal"><FaYoutube /></a>
         </div>
       </div>
 
       {/* NAV */}
       <div className="navbar">
         <img src={logoUrl} alt="IntelMeet" className="logo" />
-
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About Us</Link></li>
@@ -228,7 +230,6 @@ By registering, submitting a paper, or participating in IntelMeet Global Confere
       </section>
 
       <div className="content-sidebar-wrapper">
-        {/* LEFT: MAIN */}
         <div className="content-main">
           <div className="about-section reg-section">
             <h2 className="cfp-title about-section-title">Registration Categories & Fees</h2>
@@ -271,19 +272,20 @@ By registering, submitting a paper, or participating in IntelMeet Global Confere
 
             <p className="click-msg">Click any row to continue registration</p>
 
-            {/* STEP 2 FORM */}
             {selectedCategory && (
               <div ref={step2Ref} className="step2-section">
                 <h3 className="step-title">Step 2: Complete the Registration Form</h3>
                 <p className="cfp-text">Selected Category: <strong>{selectedCategory}</strong></p>
 
                 <form className="reg-form" onSubmit={handleSubmit} encType="multipart/form-data" style={{ maxWidth: 980, margin: "0 auto" }}>
-                  <div style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-                    gap: "16px",
-                    alignItems: "start"
-                  }}>
+                  <div
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                      gap: "16px",
+                      alignItems: "start"
+                    }}
+                  >
                     <div className="form-row">
                       <label>Full Name</label>
                       <input type="text" name="full_name" required placeholder="eg., David Mathew" />
@@ -306,22 +308,22 @@ By registering, submitting a paper, or participating in IntelMeet Global Confere
 
                     <div className="form-row">
                       <label>Highest Qualification</label>
-                      <input type="text" name="qualification" required placeholder="eg., MSc / PhD / M.Tech" />
+                      <input type="text" name="qualification" placeholder="eg., MSc / PhD / M.Tech" />
                     </div>
 
                     <div className="form-row">
                       <label>Full Address</label>
-                      <input type="text" name="address" required placeholder="eg., 221B Baker Street…" />
+                      <input type="text" name="address" placeholder="eg., 221B Baker Street…" />
                     </div>
 
                     <div className="form-row">
                       <label>Zip / Pin Code</label>
-                      <input type="text" name="zip_code" required placeholder="eg., 560001" />
+                      <input type="text" name="zip_code" placeholder="eg., 560001" />
                     </div>
 
                     <div className="form-row" style={{ gridColumn: "1 / -1" }}>
                       <label>Paper Title (if applicable)</label>
-                      <input type="text" name="paper_title" placeholder="(If applicable) eg., Deep Learning Approach…" />
+                      <input type="text" name="paper_title" placeholder="(If applicable)" />
                     </div>
 
                     <div className="form-row" style={{ gridColumn: "1 / -1" }}>
@@ -334,16 +336,23 @@ By registering, submitting a paper, or participating in IntelMeet Global Confere
                       />
                     </div>
 
-                    {/* FILE UPLOADS — REQUIRED */}
                     <div className="form-row">
                       <label>Upload Professional Image</label>
-                      <input type="file" name="professional_image" accept=".jpg,.jpeg,.png" required />
+                      <input
+                        type="file"
+                        name="professional_image"
+                        onChange={validateFileSize}
+                      />
                       <small>Accepted formats: .jpg, .png</small>
                     </div>
 
                     <div className="form-row">
                       <label>Upload Identity Proof (Any one)</label>
-                      <input type="file" name="identity_proof" accept=".pdf,.doc,.docx,.jpg,.png" required />
+                      <input
+                        type="file"
+                        name="identity_proof"
+                        onChange={validateFileSize}
+                      />
                       <small>Accepted formats: .pdf, .doc, .docx, .jpg, .png</small>
                     </div>
 
@@ -352,7 +361,6 @@ By registering, submitting a paper, or participating in IntelMeet Global Confere
                       <textarea name="comments" placeholder="eg., requesting afternoon session slot" />
                     </div>
 
-                    {/* Terms link + hidden field */}
                     <div style={{ gridColumn: "1 / -1", display: "flex", alignItems: "center", gap: 12 }}>
                       <label style={{ display: "flex", alignItems: "center", gap: 8 }}>
                         <input type="checkbox" name="terms" value="accepted" required />
@@ -410,7 +418,6 @@ By registering, submitting a paper, or participating in IntelMeet Global Confere
 
       <Footer />
 
-      {/* SUCCESS MODAL */}
       {status === "success" && (
         <div className="modal-overlay">
           <div className="modal-box">
@@ -421,7 +428,6 @@ By registering, submitting a paper, or participating in IntelMeet Global Confere
         </div>
       )}
 
-      {/* ERROR MODAL */}
       {status === "error" && (
         <div className="modal-overlay">
           <div className="modal-box">
@@ -435,28 +441,77 @@ By registering, submitting a paper, or participating in IntelMeet Global Confere
       {/* TERMS POPUP */}
       {showTerms && (
         <div className="modal-overlay" style={{ zIndex: 1100 }}>
-          <div className="modal-box" style={{
-            width: "90%",
-            maxWidth: 1100,
-            maxHeight: "86vh",
-            overflow: "hidden",
-            padding: 0,
-            display: "flex",
-            flexDirection: "column"
-          }}>
-            <div style={{ padding: "18px 20px", borderBottom: "1px solid #eee", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <h2 style={{ margin: 0 }}>Terms & Conditions – IntelMeet Global Conferences</h2>
-              <button onClick={() => setShowTerms(false)} style={{ background: "#007bff", color: "#fff", border: "none", borderRadius: 6, padding: "8px 12px", cursor: "pointer" }}>Close</button>
+          <div
+            className="modal-box"
+            style={{
+              width: "90%",
+              maxWidth: 1100,
+              maxHeight: "86vh",
+              overflow: "hidden",
+              padding: 0,
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <div
+              style={{
+                padding: "18px 20px",
+                borderBottom: "1px solid #eee",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <h2 style={{ margin: 0 }}>
+                Terms & Conditions – IntelMeet Global Conferences
+              </h2>
+              <button
+                onClick={() => setShowTerms(false)}
+                style={{
+                  background: "#007bff",
+                  color: "#fff",
+                  border: "none",
+                  borderRadius: 6,
+                  padding: "8px 12px",
+                  cursor: "pointer",
+                }}
+              >
+                Close
+              </button>
             </div>
 
             <div style={{ padding: 20, overflowY: "auto", background: "#fff" }}>
-              <pre style={{ whiteSpace: "pre-wrap", fontFamily: "inherit", lineHeight: 1.6 }}>
+              <pre
+                style={{
+                  whiteSpace: "pre-wrap",
+                  fontFamily: "inherit",
+                  lineHeight: 1.6,
+                }}
+              >
                 {TERMS_TEXT}
               </pre>
             </div>
 
-            <div style={{ padding: 16, borderTop: "1px solid #eee", textAlign: "center" }}>
-              <button onClick={() => setShowTerms(false)} style={{ background: "#007bff", color: "#fff", border: "none", borderRadius: 6, padding: "10px 20px", cursor: "pointer" }}>Close</button>
+            <div
+              style={{
+                padding: 16,
+                borderTop: "1px solid #eee",
+                textAlign: "center",
+              }}
+            >
+              <button
+                onClick={() => setShowTerms(false)}
+                style={{
+                  background: "#007bff",
+                  color: "#fff",
+                  border: "none",
+                  borderRadius: 6,
+                  padding: "10px 20px",
+                  cursor: "pointer",
+                }}
+              >
+                Close
+              </button>
             </div>
           </div>
         </div>

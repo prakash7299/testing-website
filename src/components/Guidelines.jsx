@@ -30,11 +30,11 @@ export default function Guidelines() {
         </div>
         <div><span className="hidden-placeholder">f</span></div>
         <div>
-          <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-          <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-          <a href="#"><FaTwitter /></a>
-          <a href="#"><FaLinkedinIn /></a>
-          <a href="#"><FaYoutube /></a>
+           <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+                    <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+                    <a href="https://x.com/intelmeet"><FaTwitter /></a>
+                    <a href="https://www.linkedin.com/in/intelmeet-global/"><FaLinkedinIn /></a>
+                    <a href="https://www.youtube.com/@intelmeetglobal"><FaYoutube /></a>
         </div>
       </div>
 
@@ -56,7 +56,7 @@ export default function Guidelines() {
       
       
       
-                <li><Link className="nav-link" to="/benefits">Benifits</Link></li>
+                <li><Link className="nav-link" to="/benefits">Benefits</Link></li>
                 <li><Link className="nav-link" to="/speaker">Speaker</Link></li>
                 <li><Link className="nav-link" to="/committee">Committee</Link></li>
                 <li><Link className="nav-link" to="/publications">Publications</Link></li>
@@ -123,7 +123,8 @@ export default function Guidelines() {
               <li>Include a short biography of the presenting author.</li>
               <li>
                 File Format: <b>MS Word (.doc / .docx)</b> – 
-                <a href="#" style={{ color: "#007bff" }}> Download Abstract Template</a>
+                <a href="/Sample Abstract.docx"
+            download="Sample Abstract.docx" style={{ color: "#007bff" }}> Download Abstract Template</a>
               </li>
               <li>Acknowledgement email sent within <b>24 hours</b>.</li>
             </ul>
@@ -146,7 +147,8 @@ export default function Guidelines() {
               <li>Length: <b>6–8 pages</b>.</li>
               <li>
                 File Format: <b>MS Word (.doc / .docx)</b> –
-                <a href="#" style={{ color: "#007bff" }}> Download Full Paper Template</a>
+                <a href="/Full Paper Template.docx"
+            download="Full Paper Template.docx" style={{ color: "#007bff" }}> Download Full Paper Template</a>
               </li>
               <li>Upload full papers through the official IntelMeet submission form.</li>
             </ul>

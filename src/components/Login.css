@@ -1,3 +1,5 @@
+/* ---------- Your existing Login.css (unchanged) ---------- */
+
 .page-container {
   font-family: 'Segoe UI', sans-serif;
   color: #222;
@@ -997,6 +999,157 @@
   }
 }
 
+/* ---------- End of your original CSS ---------- */
 
+/* ========== SPEAKERS SECTION (Luxury-grade styling, scoped) ========== */
 
+/* Section wrapper */
+.speakers-section {
+  padding: 28px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ffffff, #fbfdff);
+  box-shadow: 0 18px 50px rgba(6,26,56,0.06);
+  border-left: 8px solid rgba(3,64,96,0.08);
+}
 
+/* header */
+.speakers-header {
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.speakers-title {
+  font-size: 26px;
+  color: #0b3f77;
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+}
+.speakers-sub {
+  margin: 6px 0 0;
+  color: #425466;
+  font-size: 15px;
+  max-width: 720px;
+}
+
+/* grid */
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  align-items: stretch;
+  margin-bottom: 18px;
+}
+
+/* individual card */
+.speaker-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), #fbfdff);
+  border-radius: 14px;
+  padding: 22px 18px;
+  text-align: center;
+  box-shadow: 0 18px 36px rgba(7,26,49,0.04);
+  border: 1px solid rgba(3,30,66,0.04);
+  transition: transform .18s ease, box-shadow .18s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+/* hover effect */
+.speaker-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 36px 80px rgba(7,26,49,0.08);
+}
+
+/* media / photo */
+.speaker-media { position: relative; display:flex; justify-content:center; align-items:center; }
+.speaker-photo-wrap {
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  display:grid;
+  place-items:center;
+  padding: 6px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,250,250,0.9));
+  box-shadow: 0 8px 30px rgba(3,30,66,0.06);
+  position: relative;
+  overflow: visible;
+  border: 6px solid rgba(255,255,255,0.9);
+}
+
+/* circular photo */
+.speaker-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 999px;
+  display:block;
+  box-shadow: 0 6px 20px rgba(2,45,96,0.06);
+  border: 4px solid rgba(255,255,255,0.85);
+}
+
+/* subtle glow behind photo for luxury feel */
+.photo-glow {
+  position: absolute;
+  inset: -6px;
+  border-radius: 999px;
+  filter: blur(16px);
+  background: radial-gradient(circle at 30% 30%, rgba(58,141,255,0.12), transparent 35%), radial-gradient(circle at 70% 70%, rgba(34,197,94,0.06), transparent 40%);
+  z-index: -1;
+}
+
+/* name + role */
+.speaker-name {
+  font-weight: 800;
+  color: #0b3f77;
+  font-size: 15px;
+  margin-top: 4px;
+}
+.speaker-role {
+  color: #364a57;
+  font-size: 14px;
+  margin-top: 6px;
+  line-height: 1.35;
+  max-width: 220px;
+}
+
+/* CTA */
+.speakers-cta { margin-top: 8px; display:flex; justify-content:flex-start; }
+.btn-view-speakers {
+  background: #0b3f77;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 18px 48px rgba(12,107,74,0.14);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.btn-view-speakers:hover { transform: translateY(-4px); box-shadow: 0 28px 70px rgba(12,107,74,0.18); }
+
+/* responsive: stack the grid for smaller screens */
+@media (max-width: 980px) {
+  .speakers-grid { grid-template-columns: repeat(2, 1fr); }
+  .speaker-photo-wrap { width:108px; height:108px; }
+  .speaker-role { max-width: 300px; }
+}
+
+@media (max-width: 640px) {
+  .speakers-grid { grid-template-columns: 1fr; }
+  .speakers-header { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .speakers-title { font-size: 22px; }
+  .speaker-card { padding: 18px; text-align: left; flex-direction: row; gap: 18px; align-items: center; }
+  .speaker-media { flex: 0 0 auto; }
+  .speaker-photo-wrap { width: 86px; height: 86px; }
+  .speaker-info { text-align: left; }
+  .speaker-name { font-size: 16px; }
+  .speaker-role { font-size: 14px; }
+  .speakers-cta { justify-content: center; margin-top: 18px; width:100%; }
+  .btn-view-speakers { width: auto; }
+}
+
+/* ensure the new styles are visually isolated and won't affect other components */
+.speakers-section :where(.speaker-card, .speaker-photo, .btn-view-speakers) { -webkit-font-smoothing:antialiased; }

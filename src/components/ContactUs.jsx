@@ -65,11 +65,11 @@ export default function ContactUs() {
         </div>
 
         <div className="top-icons">
-          <a><FaFacebookF /></a>
-          <a><FaInstagram /></a>
-          <a><FaTwitter /></a>
-          <a><FaLinkedinIn /></a>
-          <a><FaYoutube /></a>
+          <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+                    <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+                    <a href="https://x.com/intelmeet"><FaTwitter /></a>
+                    <a href="https://www.linkedin.com/in/intelmeet-global/"><FaLinkedinIn /></a>
+                    <a href="https://www.youtube.com/@intelmeetglobal"><FaYoutube /></a>
         </div>
       </div>
 
@@ -105,7 +105,7 @@ export default function ContactUs() {
 
           <li>
             <Link className="nav-link" to="/benefits">
-              Benifits
+              Benefits
             </Link>
           </li>
           <li>

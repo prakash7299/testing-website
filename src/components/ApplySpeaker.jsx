@@ -83,11 +83,11 @@ export default function ApplySpeaker() {
         </div>
 
         <div className="top-icons">
-          <a><FaFacebookF /></a>
-          <a><FaInstagram /></a>
-          <a><FaTwitter /></a>
-          <a><FaLinkedinIn /></a>
-          <a><FaYoutube /></a>
+            <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+            <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+            <a href="https://x.com/intelmeet"><FaTwitter /></a>
+            <a href="https://www.linkedin.com/in/intelmeet-global/"><FaLinkedinIn /></a>
+            <a href="https://www.youtube.com/@intelmeetglobal"><FaYoutube /></a>
         </div>
       </div>
 
@@ -164,16 +164,16 @@ export default function ApplySpeaker() {
             <h2 className="section-title">Professional Details</h2>
             <div className="form-box">
               <label>Institution / Organization</label>
-              <input type="text" name="institution" required />
+              <input type="text" name="institution" />
 
               <label>Department / Field of Expertise</label>
-              <input type="text" name="department" required />
+              <input type="text" name="department" />
 
               <label>Current Position</label>
-              <input type="text" name="position" required />
+              <input type="text" name="position" />
 
               <label>Years of Experience</label>
-              <input type="text" name="experience" required />
+              <input type="text" name="experience" />
 
               <label>LinkedIn Profile (Optional)</label>
               <input type="text" name="linkedin" />
@@ -182,10 +182,10 @@ export default function ApplySpeaker() {
             <h2 className="section-title">Presentation Details</h2>
             <div className="form-box">
               <label>Proposed Presentation Title</label>
-              <input type="text" name="presentation_title" required />
+              <input type="text" name="presentation_title" />
 
               <label>Short Summary (3–4 lines)</label>
-              <textarea name="summary" required></textarea>
+              <textarea name="summary"></textarea>
             </div>
 
             {/* UPLOADS */}
@@ -195,10 +195,7 @@ export default function ApplySpeaker() {
               <input
                 type="file"
                 name="professional_photo"
-                accept=".jpg,.jpeg,.png"
-                required
               />
-              <small>Accepted formats: .jpg, .png</small>
 
               <br />
 
@@ -206,10 +203,7 @@ export default function ApplySpeaker() {
               <input
                 type="file"
                 name="resume_cv"
-                accept=".pdf,.doc,.docx"
-                required
               />
-              <small>Accepted formats: .pdf, .doc, .docx</small>
             </div>
 
             <div className="submit-btn-box">

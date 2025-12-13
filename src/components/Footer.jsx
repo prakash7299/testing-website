@@ -1,9 +1,14 @@
 import React, { useState } from "react";
-import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import "./Footer.css";
 import { Link } from "react-router-dom";
 import TermsPopup from "./TermsPopup"; // Import popup
-
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaTwitter,
+  FaYoutube,
+  FaInstagram
+} from "react-icons/fa";
 export default function Footer() {
   const [showTerms, setShowTerms] = useState(false);
 
@@ -45,12 +50,15 @@ export default function Footer() {
             </p>
 
             <p>
-              <strong>Phone:</strong> +91 94424 17477
+              <strong>Phone:</strong> <a href="tel:+919442417477" className="phone-link">+91 9442417477</a>
             </p>
 
             <div className="social-icons">
-              <a href="#"><FaFacebookF /></a>
-              <a href="#"><FaLinkedinIn /></a>
+              <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+                        <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+                        <a href="https://x.com/intelmeet" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+                        <a href="https://www.linkedin.com/in/intelmeet-global/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
+                        <a href="https://www.youtube.com/@intelmeetglobal" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
             </div>
           </div>
 

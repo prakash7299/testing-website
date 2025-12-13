@@ -31,11 +31,11 @@ export default function PaperSubmission() {
         </div>
         <div><span className="hidden-placeholder">f</span></div>
         <div>
-          <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-          <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-          <a href="#"><FaTwitter /></a>
-          <a href="#"><FaLinkedinIn /></a>
-          <a href="#"><FaYoutube /></a>
+           <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+                    <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+                    <a href="https://x.com/intelmeet"><FaTwitter /></a>
+                    <a href="https://www.linkedin.com/in/intelmeet-global/"><FaLinkedinIn /></a>
+                    <a href="https://www.youtube.com/@intelmeetglobal"><FaYoutube /></a>
         </div>
       </div>
 
@@ -43,7 +43,7 @@ export default function PaperSubmission() {
             <div className="navbar">
               <img src={intelmeet} alt="Logo" className="logo" />
               <ul>
-                <li><a href="#">Home</a></li>
+                <li><Link className="nav-link" to="/ICELS">Home</Link></li>
                 <li><Link className="nav-link" to="/about">About Us</Link></li>
                 <li><Link className="nav-link" to="/upcoming-conferences">Upcoming Conferences</Link></li>
                 <li className="dropdown">
@@ -57,7 +57,7 @@ export default function PaperSubmission() {
       
       
       
-                <li><Link className="nav-link" to="/benefits">Benifits</Link></li>
+                <li><Link className="nav-link" to="/benefits">Benefits</Link></li>
                 <li><Link className="nav-link" to="/speaker">Speaker</Link></li>
                 <li><Link className="nav-link" to="/committee">Committee</Link></li>
                 <li><Link className="nav-link" to="/publications">Publications</Link></li>

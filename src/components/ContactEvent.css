@@ -1,0 +1,343 @@
+/* ======================================================
+   BASE
+====================================================== */
+.conf-page {
+  font-family: "Poppins", system-ui, sans-serif;
+  background: #f7fbf9;
+  color: #042b26;
+}
+
+.conf-page * {
+  box-sizing: border-box;
+}
+
+/* ======================================================
+   TOP BAR
+====================================================== */
+.conf-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 18px;
+  background: linear-gradient(90deg, #06403a, #0b5d4f);
+  color: #eaf9f2;
+  position: relative;
+  z-index: 1000;
+}
+
+.conf-top-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.conf-top-socials a {
+  color: #eaf9f2;
+  font-size: 14px;
+}
+
+/* ======================================================
+   NAVBAR
+====================================================== */
+.conf-navbar {
+  display: flex;
+  align-items: center;
+  padding: 16px 18px;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 900;
+}
+
+.conf-logo {
+  height: 56px;
+}
+
+/* ======================================================
+   HAMBURGER
+====================================================== */
+.conf-hamburger {
+  background: #0b5d4f;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+/* ======================================================
+   MOBILE PANEL (FIXED – NO OVERLAP)
+====================================================== */
+.conf-mobile-panel {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 8, 6, 0.55);
+  z-index: 99999;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px;
+}
+
+.conf-mobile-panel.show {
+  display: flex;
+}
+
+.conf-mobile-inner {
+  width: 100%;
+  max-width: 420px;
+
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px;
+
+  /* 🔥 THIS FIXES OVERLAP */
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.45);
+}
+
+/* scrollbar */
+.conf-mobile-inner::-webkit-scrollbar {
+  width: 6px;
+}
+.conf-mobile-inner::-webkit-scrollbar-thumb {
+  background: rgba(6, 59, 50, 0.25);
+  border-radius: 6px;
+}
+
+/* ======================================================
+   MOBILE HEADER
+====================================================== */
+.conf-mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.conf-mobile-close {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ======================================================
+   HERO
+====================================================== */
+.conf-hero {
+  position: relative;
+  min-height: 260px;
+  margin: 16px;
+  border-radius: 14px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  isolation: isolate;
+}
+
+.conf-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(4, 43, 37, 0.65),
+    rgba(6, 59, 50, 0.55)
+  );
+  z-index: 0;
+}
+
+.conf-hero-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  z-index: 0;
+}
+
+.conf-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #ffffff;
+  max-width: 90%;
+  padding: 20px 14px;
+}
+
+.conf-hero-title {
+  font-size: 26px;
+  line-height: 1.25;
+}
+
+.conf-hero-theme {
+  font-size: 14px;
+}
+
+/* ======================================================
+   MAIN WRAPPER
+====================================================== */
+.conf-wrapper {
+  max-width: 1180px;
+  margin: 32px auto 60px;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 28px;
+  padding: 0 20px;
+}
+
+/* ======================================================
+   CARD
+====================================================== */
+.conf-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 20px 56px rgba(6, 59, 50, 0.06);
+}
+
+/* ======================================================
+   CONTACT GRID
+====================================================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 28px;
+}
+
+/* ======================================================
+   FORM
+====================================================== */
+.conf-contact-form label {
+  display: block;
+  font-weight: 600;
+  margin-top: 14px;
+}
+
+.conf-contact-form input,
+.conf-contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  font-size: 15px;
+}
+
+.conf-contact-form > div {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+/* ======================================================
+   SIDEBAR
+====================================================== */
+.conf-sidebar {
+  position: sticky;
+  top: 96px;
+}
+
+.conf-sidebar-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 20px 56px rgba(6, 59, 50, 0.06);
+}
+
+/* ======================================================
+   MOBILE LAYOUT FIX
+====================================================== */
+@media (max-width: 900px) {
+  .conf-wrapper {
+    display: block;
+    padding: 0 14px;
+    margin-top: 12px;
+  }
+
+  .contact-grid {
+    display: block;
+  }
+
+  .conf-sidebar {
+    position: static;
+    margin-top: 24px;
+  }
+
+  .conf-hero {
+    margin-bottom: 20px;
+  }
+
+  .conf-contact-form > div {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ======================================================
+   SMALL MOBILE
+====================================================== */
+@media (max-width: 420px) {
+  .conf-hero-title {
+    font-size: 22px;
+  }
+
+  .conf-topbar {
+    padding: 8px 12px;
+  }
+}
+:root {
+  --conf-topbar-h: 52px;
+  --conf-navbar-h: 72px;
+}
+/* ======================================================
+   CONTACT EVENT — MOBILE MENU OFFSET FIX (SAFE)
+   Scoped ONLY to ContactEvent page
+====================================================== */
+@media (max-width: 900px) {
+
+  .contact-event-page .conf-mobile-panel {
+    position: fixed;
+
+    /* 👇 push below topbar + navbar */
+    top: 124px;
+
+    left: 0;
+    right: 0;
+
+    height: calc(100vh - 124px);
+
+    background: rgba(0,0,0,0.35);
+    z-index: 200;
+
+    display: none;
+  }
+
+  .contact-event-page .conf-mobile-panel.show {
+    display: block;
+  }
+
+  .contact-event-page .conf-mobile-inner {
+    height: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+
+    background: #ffffff;
+    border-radius: 14px 14px 0 0;
+
+    padding: 14px;
+    overflow-y: auto;
+
+    /* 🚫 no fixed / absolute */
+    position: relative;
+  }
+}
+

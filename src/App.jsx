@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 
 import Login from "./components/Login";
@@ -17,11 +17,22 @@ import Publications from "./components/Publications";
 import Committee from "./components/Committee";
 import Speaker from "./components/Speaker.jsx";
 import RegistrationAndFees from "./components/RegistrationAndFees";
+import WhatsAppWidget from "./components/WhatsAppWidget";
+import ConferenceEvent from "./components/ConferenceEvent";
+import AboutEvent from "./components/AboutEvent";
+import CallForPaper from "./components/CallForPaper";
+import RegistrationFees from "./components/RegistrationFees";
+import PaperSubmissionPremium from "./components/PaperSubmissionEvent.jsx";
+import SpeakerEvent from "./components/SpeakerEvent";
+import CommitteeEvent from "./components/CommitteeEvent";
+import PublicationsEvent from "./components/PublicationsEvent";
+import ContactEvent from "./components/ContactEvent";
 
 function App() {
   return (
-    <HashRouter>
-      <ScrollToTop />   {/* <-- FIX: Scroll to top after every route change */}
+    <BrowserRouter>
+      <ScrollToTop />
+      <WhatsAppWidget />
 
       <Routes>
         <Route path="/" element={<Login />} />
@@ -40,9 +51,18 @@ function App() {
         <Route path="/committee" element={<Committee />} />
         <Route path="/speaker" element={<Speaker />} />
         <Route path="/registration-fees" element={<RegistrationAndFees />} />
+        <Route path="/icels" element={<ConferenceEvent />} />
+        <Route path="/about-event" element={<AboutEvent />} />
+        <Route path="/callforpaper" element={<CallForPaper />} />
+        <Route path="/registration-event" element={<RegistrationFees />} />
+        <Route path="/papersubmissionevent" element={<PaperSubmissionPremium />} />
+        <Route path="/speaker-event" element={<SpeakerEvent />} />
+        <Route path="/committee-event" element={<CommitteeEvent />} />
+        <Route path="/publications-event" element={<PublicationsEvent />} />
+        <Route path="/contact-event" element={<ContactEvent />} />
 
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

@@ -1,165 +1,171 @@
 // Speaker.jsx
 import React from "react";
 import "./Speaker.css";
-import "./Login.css"; 
+import "./Login.css";
 import "./UpcomingConferences.css";
-import photo from "../assets/confimage-1.jpeg";
+import heroPhoto from "../assets/confimage-1.jpeg";
 import intelmeet from "../assets/intelmeet.jpeg";
-import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
+
+import walidaPhoto from "../assets/speaker-walida.png";
+import surajPhoto from "../assets/speaker-suraj.png";
+import hebaPhoto from "../assets/speaker-heba.png";
+import narinderjitPhoto from "../assets/speaker-narinderjit.png";
+
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 
 export default function Speaker() {
   const speakers = [
     {
-      name: "Dr. Nathan Reynolds",
-      institute: "Hampton School of Engineering",
-      country: "United States",
+      name: "Dr. Suraj Kumar Mukti",
+      title: "Professor",
+      affiliation: "National Institute of Technology Raipur",
+      country: "India",
+      photo: surajPhoto,
+    },
+    {
+      name: "Dr. Narinderjit Kaur",
+      title: "Dept. of Chemistry",
+      affiliation: "Kanya Maha Vidyalaya",
+      country: "India",
+      photo: narinderjitPhoto,
     },
     {
       name: "Prof. Olivia Bennett",
-      institute: "Royal Institute of Technology",
+      affiliation: "Royal Institute of Technology",
       country: "United Kingdom",
+      photo: null,
     },
     {
       name: "Dr. Lucas Graham",
-      institute: "Sydney Research University",
+      affiliation: "Sydney Research University",
       country: "Australia",
+      photo: null,
     },
     {
       name: "Prof. Sophia Turner",
-      institute: "European Center for Social Studies",
+      affiliation: "European Center for Social Studies",
       country: "Netherlands",
+      photo: null,
     },
     {
       name: "Dr. Adrian Foster",
-      institute: "Canadian Institute of Applied Sciences",
+      affiliation: "Canadian Institute of Applied Sciences",
       country: "Canada",
+      photo: null,
     },
     {
       name: "Dr. Emily Dawson",
-      institute: "Institute of Data & Computing",
+      affiliation: "Institute of Data & Computing",
       country: "Ireland",
+      photo: null,
     },
-    {
-      name: "Prof. Ethan Parker",
-      institute: "Brighton School of Business",
-      country: "United Kingdom",
-    },
-    {
-      name: "Dr. Charlotte Hayes",
-      institute: "Southridge University",
-      country: "New Zealand",
-    },
-    {
-      name: "Dr. Marcus Hill",
-      institute: "International Institute of Technology",
-      country: "Germany",
-    },
-    {
-      name: "Prof. Isabella Carter",
-      institute: "Pacific Research College",
-      country: "Singapore",
-    }
   ];
+
+  const initials = (name) => {
+    const n = name.split(" ");
+    return (n[0][0] + (n[1]?.[0] || "")).toUpperCase();
+  };
 
   return (
     <div className="page-container">
-
-      {/* ---------- TOP BAR ---------- */}
+      {/* TOP BAR */}
       <div className="top-bar">
         <div>
           <a href="mailto:support@intelmeetglobal.com">support@intelmeetglobal.com</a> |
           <a href="tel:+919442417477" className="phone-link"> +91 9442417477</a>
         </div>
-
-        <div><span className="hidden-placeholder">f</span></div>
-
-        <div className="top-icons">
-          <a><FaFacebookF /></a>
-          <a><FaInstagram /></a>
-          <a><FaTwitter /></a>
-          <a><FaLinkedinIn /></a>
-          <a><FaYoutube /></a>
-        </div>
+        <div className="hidden-placeholder">f</div>
+        <div className="top-icons"></div>
       </div>
 
-      {/* ---------- NAVBAR ---------- */}
-            <div className="navbar">
-              <img src={intelmeet} alt="Logo" className="logo" />
-              <ul>
-                <li><a href="#">Home</a></li>
-                <li><Link className="nav-link" to="/about">About Us</Link></li>
-                <li><Link className="nav-link" to="/upcoming-conferences">Upcoming Conferences</Link></li>
-                <li className="dropdown">
-                  <span className="dropdown-toggle">Paper Submission ▾</span>
-      
-                  <div className="dropdown-menu">
-                    <Link className="nav-link" to="/papersubmission">📄 Submission Form</Link>
-                    <Link className="nav-link" to="/papersubmission-guidelines">📘 Submission Guidelines</Link>
-                  </div>
-                </li>
-      
-      
-      
-                <li><Link className="nav-link" to="/benefits">Benifits</Link></li>
-                <li><Link className="nav-link" to="/speaker">Speaker</Link></li>
-                <li><Link className="nav-link" to="/committee">Committee</Link></li>
-                <li><Link className="nav-link" to="/publications">Publications</Link></li>
-                <li><Link className="nav-link" to="/contact">Contact Us</Link></li>
-              </ul>
-      
-              <Link to="/registration-fees" className="btn-register">Registration</Link>
-            </div>
+      {/* NAVBAR */}
+      <div className="navbar">
+        <img src={intelmeet} alt="Logo" className="logo" />
 
-      {/* ---------- HERO ---------- */}
-      <section className="uc-hero" style={{ backgroundImage: `url(${photo})` }}>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><Link className="nav-link" to="/about">About Us</Link></li>
+          <li><Link className="nav-link" to="/upcoming-conferences">Upcoming Conferences</Link></li>
+
+          <li className="dropdown">
+            <span className="dropdown-toggle">Paper Submission ▾</span>
+            <div className="dropdown-menu">
+              <Link className="nav-link" to="/papersubmission">📄 Submission Form</Link>
+              <Link className="nav-link" to="/papersubmission-guidelines">📘 Submission Guidelines</Link>
+            </div>
+          </li>
+
+          <li><Link className="nav-link" to="/benefits">Benefits</Link></li>
+          <li><Link className="nav-link" to="/speaker">Speaker</Link></li>
+          <li><Link className="nav-link" to="/committee">Committee</Link></li>
+          <li><Link className="nav-link" to="/publications">Publications</Link></li>
+          <li><Link className="nav-link" to="/contact">Contact Us</Link></li>
+        </ul>
+
+        <Link to="/registration-fees" className="btn-register">Registration</Link>
+      </div>
+
+      {/* HERO SECTION */}
+      <section className="uc-hero" style={{ backgroundImage: `url(${heroPhoto})` }}>
         <div className="uc-hero-content">
           <h1>Conference Speakers</h1>
           <p>Meet our distinguished global speakers</p>
         </div>
       </section>
 
-      {/* ---------- MAIN CONTENT ---------- */}
+      {/* MAIN CONTENT */}
       <div className="content-sidebar-wrapper">
-
         <div className="content-main">
 
-          <div className="speaker-header">
-            <h2>Conference Speakers</h2>
-            <p>
-              IntelMeet Global Conferences proudly features speakers from various academic and professional
-              backgrounds who share their research, insights, and expertise with our global audience.
-            </p>
-
-            <Link to="/apply-speaker" className="apply-btn">Apply Now</Link>
+          {/* ---------- PREMIUM HEADER (updated) ---------- */}
+          <div className="speaker-header premium-header">
+            <div className="premium-h-leftAccent" aria-hidden></div>
+            <div className="premium-h-text">
+              <h2 className="premium-title">Conference Speakers</h2>
+              <p className="premium-sub">
+                IntelMeet Global Conferences proudly features speakers from various academic and professional
+                backgrounds who share their research, insights, and expertise with our global audience.
+              </p>
+              <Link to="/apply-speaker" className="premium-apply">Apply Now</Link>
+            </div>
           </div>
 
+          {/* Speaker Cards */}
           <div className="speaker-grid">
             {speakers.map((sp, index) => (
-              <div className="speaker-card" key={index}>
-                <h3>{sp.name}</h3>
-                <p className="inst">{sp.institute}</p>
-                <p className="country">{sp.country}</p>
+              <div className="speaker-card luxury-card" key={index}>
+                <div className="lux-avatar-box">
+                  {sp.photo ? (
+                    <img src={sp.photo} alt={sp.name} className="lux-avatar" />
+                  ) : (
+                    <div className="lux-avatar-fallback">{initials(sp.name)}</div>
+                  )}
+                </div>
+
+                <div className="lux-details">
+                  <h3 className="lux-name">{sp.name}</h3>
+                  {sp.title && <div className="lux-title">{sp.title}</div>}
+                  {sp.affiliation && <div className="lux-affiliation">{sp.affiliation}</div>}
+                  {sp.country && <div className="lux-country">{sp.country}</div>}
+                </div>
               </div>
             ))}
           </div>
-
         </div>
 
-        {/* ---------- SIDEBAR ---------- */}
+        {/* SIDEBAR */}
         <div className="sidebar-links">
-                  <h3>Quick Link</h3>
-                  <ul>
-                    <li><Link className="nav-link" to="/benefits">Key Benefits of Participation</Link></li>
-                    <li><Link className="nav-link" to="/apply-speaker">Apply to Become a Speaker</Link></li>
-                    <li><Link className="nav-link" to="/instructions">Instructions for Participants</Link></li>
-                    <li><Link className="nav-link" to="/papersubmission-guidelines">Author Guidelines</Link></li>
-                    <li><Link className="nav-link" to="/committee-application">Apply for Committee Member</Link></li>
-                    <li><Link className="nav-link" to="/faq">Frequently Asked Questions (FAQs)</Link></li>
-                  </ul>
-                </div>
-
+          <h3>Quick Link</h3>
+          <ul>
+            <li><Link to="/benefits">Key Benefits of Participation</Link></li>
+            <li><Link to="/apply-speaker">Apply to Become a Speaker</Link></li>
+            <li><Link to="/instructions">Instructions for Participants</Link></li>
+            <li><Link to="/papersubmission-guidelines">Author Guidelines</Link></li>
+            <li><Link to="/committee-application">Apply for Committee Member</Link></li>
+            <li><Link to="/faq">Frequently Asked Questions (FAQs)</Link></li>
+          </ul>
+        </div>
       </div>
 
       <Footer />

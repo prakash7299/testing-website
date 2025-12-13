@@ -2,9 +2,9 @@ import React from "react";
 import "./Login.css";
 import photo from "../assets/confimage-1.jpeg";
 import intelmeet from "../assets/intelmeet.jpeg";
-import confimage1 from "../assets/confimage-1.jpeg";
-import confimage2 from "../assets/confimage-2.jpeg";
-import confimage3 from "../assets/confimage-3.jpeg";
+import confimage1 from "../assets/speaker-walida.png";
+import confimage2 from "../assets/speaker-suraj.png";
+import confimage3 from "../assets/committee-mahmoud.png";
 import Footer from "../components/Footer";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
@@ -19,6 +19,28 @@ import {
 import "./SidebarLinks.css"; // Add sidebar CSS file
 
 export default function Login() {
+  // speaker data only used for this section
+  const speakers = [
+    {
+      id: 1,
+      name: "Dr. Walida Ounruean",
+      role: "International Education Ambassador — Thailand",
+      image: confimage1,
+    },
+    {
+      id: 2,
+      name: "Dr. Suraj Kumar Mukti",
+      role: "National Institute of Technology Raipur — India",
+      image: confimage2,
+    },
+    {
+      id: 3,
+      name: "Dr. Mahmoud Magdy Abbas",
+      role: "Agricultural & Biological Research — Egypt",
+      image: confimage3,
+    },
+  ];
+
   return (
 
     <div className="page-container">
@@ -37,9 +59,9 @@ export default function Login() {
         <div>
           <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
           <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-          <a href="#"><FaTwitter /></a>
-          <a href="#"><FaLinkedinIn /></a>
-          <a href="#"><FaYoutube /></a>
+          <a href="https://x.com/intelmeet" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+          <a href="https://www.linkedin.com/in/intelmeet-global/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
+          <a href="https://www.youtube.com/@intelmeetglobal" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
         </div>
       </div>
 
@@ -61,7 +83,7 @@ export default function Login() {
 
 
 
-          <li><Link className="nav-link" to="/benefits">Benifits</Link></li>
+          <li><Link className="nav-link" to="/benefits">Benefits</Link></li>
           <li><Link className="nav-link" to="/speaker">Speaker</Link></li>
           <li><Link className="nav-link" to="/committee">Committee</Link></li>
           <li><Link className="nav-link" to="/publications">Publications</Link></li>
@@ -97,82 +119,38 @@ export default function Login() {
           </section>
 
           <section className="cfp-section">
-            <h2 className="cfp-title">Call for Papers – Now Open</h2>
-
-            <p className="cfp-text">
-              IntelMeet Global Conferences invites <b>researchers, academicians, industry
-                experts, and students</b> to submit original research for presentation and
-              publication.
-            </p>
-
-            <p className="cfp-text">
-              All submissions undergo a rigorous <b>double-blind peer-review process</b>
-              to ensure high-quality academic contribution.
-            </p>
-
-            <h3 className="cfp-subtitle">Areas of Submission</h3>
-
-            <ul className="cfp-list">
-              <li>Engineering & Technology</li>
-              <li>Computing, Artificial Intelligence & Data Science</li>
-              <li>Management, Business & Economics</li>
-              <li>Applied Sciences</li>
-              <li>Arts, Humanities & Social Sciences</li>
-              <li>Education, Psychology & Behavioural Sciences</li>
-              <li>Life Sciences & Allied Domains</li>
-            </ul>
-
-            <p className="cfp-note">
-              Authors may submit innovative studies, experimental findings, case analyses,
-              or theoretical contributions aligned with the conference theme.
-            </p>
-
-            <div className="cfp-buttons">
-              <Link className="btn-register" to="/papersubmission">📄 Submission Form</Link>
-              <Link className="btn-register" to="/papersubmission-guidelines">📘 Submission Guidelines</Link>
-            </div>
-          </section>
-
-          <section className="cfp-section">
             <h2 className="con-title">Upcoming International Conferences – 2025</h2>
 
             {/* Conference 1 */}
             <div className="conference-card">
               <h3 className="conf-name">
-                <span className="icon">📌</span> International Conference on Engineering & Technology (ICET)
+                <span className="icon"></span> International Conference on Environmental & Life Sciences (ICELS-25)
               </h3>
-              <p className="conf-detail"><span className="icon">📅</span> 28 November 2025</p>
-              <p className="conf-detail"><span className="icon">📚</span> Engineering, Technology, and Applied Sciences</p>
+              <p className="conf-detail"><span className="icon">📅</span> 19 December 2025</p>
               <Link className="conf-link" to="/upcoming-conferences">
-  🔗 View Details
+   View Details
 </Link>
             </div>
 
             {/* Conference 2 */}
             <div className="conference-card">
               <h3 className="conf-name">
-                <span className="icon">📌</span> International Conference on Science, Computing & Data Analytics (ICSDA)
+                <span className="icon"></span> International Conference on Science, Computing & Data Analytics (ICSDA)
               </h3>
               <p className="conf-detail"><span className="icon">📅</span> 5 December 2025</p>
-              <p className="conf-detail">
-                <span className="icon">📚</span> Computing, Data Analytics, and Scientific Research
-              </p>
               <Link className="conf-link" to="/upcoming-conferences">
-  🔗 View Details
+   View Details
 </Link>
             </div>
 
             {/* Conference 3 */}
             <div className="conference-card">
               <h3 className="conf-name">
-                <span className="icon">📌</span> International Conference on Management, Business & Social Innovation (ICMBSI)
+                <span className="icon"></span> International Conference on Management, Business & Social Innovation (ICMBSI)
               </h3>
               <p className="conf-detail"><span className="icon">📅</span> 8 December 2025</p>
-              <p className="conf-detail">
-                <span className="icon">📚</span> Management, Business, Economics, and Social Innovation
-              </p>
               <Link className="conf-link" to="/upcoming-conferences">
-  🔗 View Details
+   View Details
 </Link>
             </div>
               <Link className="view-all" to="/upcoming-conferences">[View All Conferences]</Link>
@@ -194,15 +172,34 @@ export default function Login() {
             <Link className="why-link" to="/benefits">[Know More]</Link>
           </section>
 
-          {/* ---------------- Conference Speakers ---------------- */}
-          <section className="cfp-section">
-            <h2 className="info-title">Conference Speakers</h2>
+          {/* ---------------- Conference Speakers (REPLACED with luxury layout) ---------------- */}
+          <section className="cfp-section speakers-section" aria-labelledby="speakers-heading">
+            <div className="speakers-header">
+              <h2 id="speakers-heading" className="speakers-title">Invited Speakers</h2>
+              <p className="speakers-sub">Key invited speakers and high-impact presentations.</p>
+            </div>
 
-            <p className="info-text">
-              Featuring distinguished academicians, researchers, and professionals who
-              contribute expertise and insights to IntelMeet conferences.
-            </p>
-             <Link className="info-link" to="/speaker">[View All Speakers]</Link>
+            <div className="speakers-grid" role="list">
+              {speakers.map((s) => (
+                <article key={s.id} className="speaker-card" role="listitem" itemScope itemType="https://schema.org/Person">
+                  <div className="speaker-media">
+                    <div className="speaker-photo-wrap">
+                      <img src={s.image} alt={s.name} className="speaker-photo" itemProp="image" />
+                      <div className="photo-glow" aria-hidden />
+                    </div>
+                  </div>
+
+                  <div className="speaker-info">
+                    <div className="speaker-name" itemProp="name">{s.name}</div>
+                    <div className="speaker-role" itemProp="jobTitle">{s.role}</div>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="speakers-cta">
+              <Link to="/speaker" className="btn-view-speakers">View Full Speakers</Link>
+            </div>
 
             <div className="info-divider"></div>
           </section>
@@ -234,15 +231,6 @@ export default function Login() {
             <div className="info-divider"></div>
           </section>
 
-          <section className="cfp-section">
-            <h2 className="gallery-title">Recent Conference Images</h2>
-
-            <div className="gallery-grid">
-              <img src={confimage1} alt="Conference Image 1" className="gallery-img" />
-              <img src={confimage2} alt="Conference Image 2" className="gallery-img" />
-              <img src={confimage3} alt="Conference Image 3" className="gallery-img" />
-            </div>
-          </section>
 
           {/* ---------------- Participant Feedback ---------------- */}
           <section className="cfp-section">
@@ -274,33 +262,6 @@ export default function Login() {
           </section>
 
           {/* ---------------- Connect With IntelMeet ---------------- */}
-          <section className="cfp-section">
-            <h2 className="connect-title">Connect With IntelMeet</h2>
-
-            <p className="connect-text">
-              Stay informed about conference announcements, schedules, publication updates, and academic highlights by
-              following our official social media channels.
-            </p>
-
-            <h4 className="follow-title">Follow us on:</h4>
-
-            <ul className="connect-list">
-              <li>🔗 LinkedIn</li>
-              <li>📘 Facebook</li>
-              <li>📷 Instagram</li>
-              <li>🐦 X (Twitter)</li>
-              <li>▶️ YouTube</li>
-            </ul>
-
-            <div className="info-divider"></div>
-          </section>
-
-
-
-
-
-
-
 
         </div>
 

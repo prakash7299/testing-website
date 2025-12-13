@@ -131,6 +131,16 @@ export default function Registration() {
                 <input type="email" name="email" placeholder="e.g., name@mail.com" required />
               </label>
 
+              <label>
+                Country *
+                <select name="country" required onChange={handleCountryChange}>
+                  <option value="">Select Country</option>
+                  {Object.keys(countryCodes).map((country) => (
+                    <option key={country}>{country}</option>
+                  ))}
+                </select>
+              </label>
+
               {/* Mobile + Code */}
               <label className="full-width">
                 Contact Number *
@@ -146,35 +156,32 @@ export default function Registration() {
               </label>
 
               <label className="full-width">
-                WhatsApp / Viber Number *
+                WhatsApp / Viber Number 
                 <div className="phone-row">
                   <input className="code-box" value={whatsappCode} readOnly />
                   <input
                     type="text"
                     name="whatsapp"
                     placeholder="Enter WhatsApp Number"
-                    required
                   />
                 </div>
               </label>
 
               <label className="full-width">
-                University / Institution / Organization *
+                University / Institution / Organization 
                 <input
                   type="text"
                   name="institution"
                   placeholder="e.g., ABC Institute of Technology"
-                  required
                 />
               </label>
 
               <label className="full-width">
-                Department / Area of Study *
+                Department / Area of Study 
                 <input
                   type="text"
                   name="department"
                   placeholder="e.g., Computer Science & Engineering"
-                  required
                 />
               </label>
 
@@ -197,12 +204,11 @@ export default function Registration() {
 
               {Array.from({ length: coAuthorCount }).map((_, i) => (
                 <label key={i} className="full-width">
-                  Co-Author Name {i + 1} *
+                  Co-Author Name {i + 1} 
                   <input
                     type="text"
                     name={`coauthor_${i + 1}`}
                     placeholder={`Enter Co-Author ${i + 1} details`}
-                    required
                   />
                 </label>
               ))}
@@ -215,18 +221,17 @@ export default function Registration() {
 
             <div className="two-col">
               <label className="full-width">
-                Title of the Paper *
+                Title of the Paper 
                 <input
                   type="text"
                   name="paper_title"
                   placeholder="Enter your paper title"
-                  required
                 />
               </label>
 
               <label>
-                Previous Publication Status *
-                <select name="previous_publication" required>
+                Previously Have You Published? 
+                <select name="previous_publication" >
                   <option value="">Select Yes / No</option>
                   <option>Yes</option>
                   <option>No</option>
@@ -234,8 +239,8 @@ export default function Registration() {
               </label>
 
               <label>
-                Submission Type *
-                <select name="submission_type" required>
+                Submission Type 
+                <select name="submission_type" >
                   <option value="">Select</option>
                   <option>Abstract Submission</option>
                   <option>Full Paper Submission</option>
@@ -243,8 +248,8 @@ export default function Registration() {
               </label>
 
               <label className="full-width">
-                Upload Full Paper (doc / docx) *
-                <input type="file" name="paper_file" accept=".doc,.docx" required />
+                Upload Your Paper 
+                <input type="file" name="paper_file" />
               </label>
 
               <label>
@@ -264,18 +269,18 @@ export default function Registration() {
 
             <div className="two-col">
               <label>
-                Conference Date *
-                <select name="conference_date" required>
+                Conference Date 
+                <select name="conference_date">
                   <option value="">Select Date</option>
-                  <option>18th November 2025</option>
+                  <option>28th November 2025</option>
                   <option>5th December 2025</option>
                   <option>8th December 2025</option>
                 </select>
               </label>
 
               <label>
-                Conference Name *
-                <select name="conference_name" required>
+                Conference Name 
+                <select name="conference_name">
                   <option value="">Choose Conference Name</option>
                   <option>ICT-25</option>
                   <option>ICET-25</option>
@@ -284,8 +289,8 @@ export default function Registration() {
               </label>
 
               <label className="full-width">
-                Preferred Presentation Type *
-                <select name="presentation_type" required>
+                Preferred Presentation Type 
+                <select name="presentation_type">
                   <option value="">Select Mode</option>
                   <option>Oral Presentation</option>
                   <option>Poster Presentation</option>

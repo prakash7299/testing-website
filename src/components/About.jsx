@@ -48,11 +48,11 @@ export default function About() {
         <div><span className="hidden-placeholder">f</span></div>
 
         <div>
-          <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank"><FaFacebookF /></a>
-          <a href="https://www.instagram.com/intelmeetglobal/" target="_blank"><FaInstagram /></a>
-          <a href="#"><FaTwitter /></a>
-          <a href="#"><FaLinkedinIn /></a>
-          <a href="#"><FaYoutube /></a>
+          <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+          <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+          <a href="https://x.com/intelmeet"><FaTwitter /></a>
+          <a href="https://www.linkedin.com/in/intelmeet-global/"><FaLinkedinIn /></a>
+          <a href="https://www.youtube.com/@intelmeetglobal"><FaYoutube /></a>
         </div>
       </div>
 

@@ -1,3 +1,4 @@
+// UpcomingConferences.jsx
 import React from "react";
 import "./UpcomingConferences.css";
 import "./Login.css";
@@ -19,7 +20,6 @@ import {
 function calculateRemainingDays(dateStr) {
   const date = new Date(dateStr);
   const today = new Date();
-  // normalize times (avoid timezone small diffs)
   const utc1 = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
   const utc2 = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
   const diff = Math.ceil((utc2 - utc1) / (1000 * 60 * 60 * 24));
@@ -28,22 +28,22 @@ function calculateRemainingDays(dateStr) {
 }
 
 /* =====================
-   Conference Data
-   (unchanged, per request)
+   Conference Data (added slug for clean URL)
    ===================== */
 const conferences = [
   {
     id: 1,
-    title: "International Conference on Engineering & Technology (ICET)",
+    slug: "/ICELS", // clean URL you requested
+    title: "International Conference on Science, Engineering & Technology (ISCET)",
     conferenceDate: "28 November 2025",
-    callForPapers: "Engineering, Technology, and Applied Sciences",
-    submissionDeadline: "22 November 2025",
-    registrationDeadline: "25 November 2025",
+    callForPapers: "Science, Engineering, Technology, and Applied Sciences",
+    submissionDeadline: "28 November 2025",
+    registrationDeadline: "28 November 2025",
   },
   {
     id: 2,
-    title:
-      "International Conference on Science, Computing & Data Analytics (ICSDA)",
+    slug: "/ICSDA",
+    title: "International Conference on Science, Computing & Data Analytics (ICSDA)",
     conferenceDate: "5 December 2025",
     callForPapers: "Computing, Data Analytics, and Scientific Research",
     submissionDeadline: "28 November 2025",
@@ -51,11 +51,10 @@ const conferences = [
   },
   {
     id: 3,
-    title:
-      "International Conference on Management, Business & Social Innovation (ICMBSI)",
+    slug: "/ICMBSI",
+    title: "International Conference on Management, Business & Social Innovation (ICMBSI)",
     conferenceDate: "8 December 2025",
-    callForPapers:
-      "Management, Business, Economics, and Social Innovation",
+    callForPapers: "Management, Business, Economics, and Social Innovation",
     submissionDeadline: "2 December 2025",
     registrationDeadline: "4 December 2025",
   },
@@ -67,13 +66,8 @@ export default function UpcomingConferences() {
       {/* TOP BAR */}
       <div className="top-bar">
         <div>
-          <a href="mailto:support@intelmeetglobal.com">
-            support@intelmeetglobal.com
-          </a>{" "}
-          |{" "}
-          <a href="tel:+919442417477" className="phone-link">
-            +91 9442417477
-          </a>
+          <a href="mailto:support@intelmeetglobal.com">support@intelmeetglobal.com</a> |{" "}
+          <a href="tel:+919442417477" className="phone-link">+91 9442417477</a>
         </div>
 
         <div>
@@ -81,11 +75,11 @@ export default function UpcomingConferences() {
         </div>
 
         <div className="top-icons">
-          <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noreferrer"><FaFacebookF /></a>
-          <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noreferrer"><FaInstagram /></a>
-          <a href="#"><FaTwitter /></a>
-          <a href="#"><FaLinkedinIn /></a>
-          <a href="#"><FaYoutube /></a>
+          <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+          <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+          <a href="https://x.com/intelmeet" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+          <a href="https://www.linkedin.com/in/intelmeet-global/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
+          <a href="https://www.youtube.com/@intelmeetglobal" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
         </div>
       </div>
 
@@ -117,10 +111,7 @@ export default function UpcomingConferences() {
       </div>
 
       {/* HERO */}
-      <section
-        className="uc-hero"
-        style={{ backgroundImage: `url(${photo})` }}
-      >
+      <section className="uc-hero" style={{ backgroundImage: `url(${photo})` }}>
         <div className="uc-hero-content">
           <h1>Upcoming Conferences</h1>
           <p>Explore scheduled international conferences & deadlines</p>
@@ -143,6 +134,49 @@ export default function UpcomingConferences() {
                 <div className="uc-meta">
                   <p><strong>Conference Date:</strong> {c.conferenceDate}</p>
                   <p><strong>Call for Papers:</strong> {c.callForPapers}</p>
+                </div>
+
+                {/* View Details button moved above deadlines and opens clean slug in a new tab */}
+                <div className="uc-view-row premium-position" style={{ marginTop: 14 }}>
+                  <button
+                    type="button"
+                    className="btn-view-details premium"
+                    onClick={() => {
+                      // open the configured clean slug in a new tab
+                      try {
+                        const target = c.slug || `/conference/${c.id}`;
+                        // if slug is a relative path (starts with /), open absolute origin + slug
+                        if (target.startsWith("/")) {
+                          window.open(`${window.location.origin}${target}`, "_blank", "noopener,noreferrer");
+                        } else {
+                          window.open(target, "_blank", "noopener,noreferrer");
+                        }
+                      } catch (err) {
+                        // fallback
+                        window.open(`/conference/${c.id}`, "_blank", "noopener,noreferrer");
+                      }
+                    }}
+                    aria-label={`Open details for ${c.title} in a new tab`}
+                    title={`Open details for ${c.title} in a new tab`}
+                  >
+                    <span className="v-left" aria-hidden>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+                        <path d="M12 2C6.477 2 2 6.478 2 12s4.477 10 10 10 10-4.478 10-10S17.523 2 12 2z"
+                          stroke="rgba(58,42,26,0.95)" strokeWidth="0.8"/>
+                        <path d="M9 12h6" stroke="rgba(58,42,26,0.95)" strokeWidth="1.6" strokeLinecap="round"/>
+                        <path d="M15 8l4 4-4 4" stroke="rgba(58,42,26,0.95)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </span>
+
+                    <span className="v-label">View Details</span>
+
+                    <span className="v-right" aria-hidden>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12h14" stroke="rgba(58,42,26,0.9)" strokeWidth="1.6" strokeLinecap="round"/>
+                        <path d="M12 5l7 7-7 7" stroke="rgba(58,42,26,0.9)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </span>
+                  </button>
                 </div>
 
                 {/* DEADLINE GRID */}
