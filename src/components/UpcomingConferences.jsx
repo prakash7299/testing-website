@@ -33,30 +33,30 @@ function calculateRemainingDays(dateStr) {
 const conferences = [
   {
     id: 1,
-    slug: "/ICELS", // clean URL you requested
-    title: "International Conference on Science, Engineering & Technology (ISCET)",
-    conferenceDate: "28 November 2025",
-    callForPapers: "Science, Engineering, Technology, and Applied Sciences",
-    submissionDeadline: "28 November 2025",
-    registrationDeadline: "28 November 2025",
+    slug: "/icels", // clean URL you requested
+    title: "International Conference on Environmental & Life Sciences(ICELS-25)",
+    conferenceDate: "26 December 2025",
+    callForPapers: "environmental science, life sciences, biotechnology, ecology, climate change, biodiversity, agriculture, water science, and sustainability studies.",
+    submissionDeadline: "24 December 2025",
+    registrationDeadline: "24 December 2025",
   },
   {
     id: 2,
     slug: "/ICSDA",
     title: "International Conference on Science, Computing & Data Analytics (ICSDA)",
-    conferenceDate: "5 December 2025",
+    conferenceDate: "3 January 2026",
     callForPapers: "Computing, Data Analytics, and Scientific Research",
-    submissionDeadline: "28 November 2025",
-    registrationDeadline: "1 December 2025",
+    submissionDeadline: "30 December 2025",
+    registrationDeadline: "1 January 2026",
   },
   {
     id: 3,
     slug: "/ICMBSI",
     title: "International Conference on Management, Business & Social Innovation (ICMBSI)",
-    conferenceDate: "8 December 2025",
+    conferenceDate: "12 January 2026",
     callForPapers: "Management, Business, Economics, and Social Innovation",
-    submissionDeadline: "2 December 2025",
-    registrationDeadline: "4 December 2025",
+    submissionDeadline: "9 January 2026",
+    registrationDeadline: "10 January 2026",
   },
 ];
 
@@ -67,7 +67,7 @@ export default function UpcomingConferences() {
       <div className="top-bar">
         <div>
           <a href="mailto:support@intelmeetglobal.com">support@intelmeetglobal.com</a> |{" "}
-          <a href="tel:+919442417477" className="phone-link">+91 9442417477</a>
+          <a href="tel:+919025956834" className="phone-link">+91 9025956834</a>
         </div>
 
         <div>
@@ -75,7 +75,7 @@ export default function UpcomingConferences() {
         </div>
 
         <div className="top-icons">
-          <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+          <a href="https://www.facebook.com/IntelMeet/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
           <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
           <a href="https://x.com/intelmeet" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
           <a href="https://www.linkedin.com/in/intelmeet-global/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>

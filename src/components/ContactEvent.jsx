@@ -100,11 +100,11 @@ export default function ContactEvent() {
         <div className="conf-top-left">
           <a href="mailto:support@intelmeetglobal.com">support@intelmeetglobal.com</a>
           <span className="conf-sep">|</span>
-          <a href="tel:+919442417477" className="conf-phone-link">+91 9442417477</a>
+          <a href="tel:+919025956834" className="conf-phone-link">+91 9025956834</a>
         </div>
         <div className="conf-top-right">
            <div className="conf-top-socials">
-          <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noreferrer"><FaFacebookF /></a>
+          <a href="https://www.facebook.com/IntelMeet/" target="_blank" rel="noreferrer"><FaFacebookF /></a>
           <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noreferrer"><FaInstagram /></a>
           <a href="https://x.com/intelmeet" target="_blank" rel="noreferrer"><FaTwitter /></a>
           <a href="https://www.linkedin.com/in/intelmeet-global/" target="_blank" rel="noreferrer"><FaLinkedinIn /></a>
@@ -121,7 +121,7 @@ export default function ContactEvent() {
 
         <nav className="nav-links" aria-label="Main navigation">
           <ul>
-            <li><Link to="/ICELS" className="nav-link">Home</Link></li>
+            <li><Link to="/icels" className="nav-link">Home</Link></li>
             <li><Link to="/about-event" className="nav-link">About</Link></li>
             <li><Link to="/callforpaper" className="nav-link">Call for Papers</Link></li>
             <li><Link to="/papersubmissionevent" className="nav-link">Paper Submission</Link></li>
@@ -158,7 +158,7 @@ export default function ContactEvent() {
             </div>
 
             <ul className="conf-mobile-list">
-              <li><Link to="/ICELS" onClick={() => setMobileNavOpen(false)}>Home</Link></li>
+              <li><Link to="/icels" onClick={() => setMobileNavOpen(false)}>Home</Link></li>
               <li><Link to="/about-event" onClick={() => setMobileNavOpen(false)}>About</Link></li>
               <li><Link to="/callforpaper" onClick={() => setMobileNavOpen(false)}>Call for Papers</Link></li>
               <li><Link to="/papersubmissionevent" onClick={() => setMobileNavOpen(false)}>Paper Submission</Link></li>
@@ -216,7 +216,7 @@ export default function ContactEvent() {
               <div className="contact-left">
                 <h3>Primary Contact</h3>
                 <p><strong>Email:</strong> <a href="mailto:support@intelmeetglobal.com">support@intelmeetglobal.com</a></p>
-                <p><strong>Phone / WhatsApp:</strong> +91 94424 17477</p>
+                <p><strong>Phone / WhatsApp:</strong> +91 9025956834</p>
 
                 <h3 style={{ marginTop: 18 }}>Working hours</h3>
                 <p>Support is available 24/7 for conference-related queries. Response times may vary for non-urgent requests.</p>
@@ -243,26 +243,6 @@ export default function ContactEvent() {
                   </div>
                 </form>
               </div>
-
-              <div className="contact-right">
-                <h4>Stay Connected</h4>
-                <p>Follow IntelMeet for announcements and deadlines:</p>
-                <ul className="social-list">
-                  <li><a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                  <li><a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                  <li><a href="https://x.com/intelmeet" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
-                  <li><a href="https://www.linkedin.com/in/intelmeet-global/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                  <li><a href="https://www.youtube.com/@intelmeetglobal" target="_blank" rel="noopener noreferrer">YouTube</a></li>
-                </ul>
-
-                <div className="support-card">
-                  <h5>For Authors</h5>
-                  <p>Questions about submissions, templates or status? Use the submission portal or email support.</p>
-                  <Link to="/papersubmissionevent" className="conf-cta small">Submission Portal</Link>
-                </div>
-
-               
-              </div>
             </div>
           </section>
         </main>
@@ -272,10 +252,10 @@ export default function ContactEvent() {
           <div className="conf-sidebar-card">
             <h3>Quick Links</h3>
             <ul>
-              <li><Link to="/benefits">Key Benefits</Link></li>
-              <li><Link to="/apply-speaker">Apply as Speaker</Link></li>
-              <li><Link to="/papersubmission-guidelines">Author Guidelines</Link></li>
-              <li><Link to="/committee-application">Apply Committee</Link></li>
+                                   <li><Link to="/about-event">About Event</Link></li>
+                                        <li><Link to="/callforpaper">Call For Paper</Link></li>
+                                        <li><Link to="/papersubmissionevent">Paper Submission</Link></li>
+                                        <li><Link to="/registration-event">Registration</Link></li>
             </ul>
           </div>
 
@@ -288,8 +268,8 @@ export default function ContactEvent() {
           <div className="conf-sidebar-card">
             <h4>Important Dates</h4>
             <ul className="conf-dates">
-              <li><strong>Submission deadline:</strong> 15 Dec 2025</li>
-              <li><strong>Conference:</strong> 19 Dec 2025</li>
+              <li><strong>Submission deadline:</strong> 24 Dec 2025</li>
+              <li><strong>Conference:</strong> 26 Dec 2025</li>
             </ul>
           </div>
         </aside>

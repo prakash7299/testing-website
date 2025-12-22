@@ -1,124 +1,100 @@
 /* ===============================
-   PUBLICATIONS EVENT PAGE (PREMIUM)
-   =============================== */
+   PUBLICATIONS EVENT – LUXURY UI
+=============================== */
 
-:root {
-  --brand-700: #0b3f77;
-  --gold: #f7d791;
-  --muted: #6b7280;
-  --card-bg: rgba(255,255,255,0.96);
-  --shadow-1: 0 18px 48px rgba(16,24,40,0.06);
-  --shadow-2: 0 36px 110px rgba(16,24,40,0.12);
-  --radius-lg: 24px;
-}
-
-/* Wrapper */
 .pub-wrapper {
-  max-width: 1050px;
-  margin: 40px auto 80px;
-  padding: 0 16px;
+  max-width: 1100px;
+  margin: 50px auto 90px;
+  padding: 0 18px;
 }
 
-/* Header */
-.premium-header {
+/* HEADER */
+.pub-header {
   display: flex;
   gap: 22px;
-  margin-bottom: 32px;
+  margin-bottom: 42px;
 }
 
-.premium-h-leftAccent {
-  width: 10px;
-  background: linear-gradient(180deg, var(--brand-700), #1d5fb8);
-  border-radius: 8px;
+.pub-accent {
+  width: 6px;
+  background: linear-gradient(180deg, #0b5d4f, #1d8f6f);
+  border-radius: 6px;
 }
 
-.premium-title {
+.pub-header h2 {
   font-size: 34px;
   font-weight: 900;
-  background: linear-gradient(90deg, var(--brand-700), #225a9c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #063b32;
 }
 
-.premium-sub {
+.pub-header p {
   font-size: 16px;
-  color: #2c3d50;
+  color: #4a5e5a;
   margin-top: 6px;
+  max-width: 700px;
 }
 
-/* Publication Cards */
+/* GRID */
+.pub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 26px;
+}
+
+/* CARDS */
 .pub-card {
-  background: linear-gradient(180deg, var(--card-bg), #fff);
-  border-radius: var(--radius-lg);
-  padding: 28px;
-  box-shadow: var(--shadow-1);
-  border: 1px solid rgba(10,20,40,0.06);
-  margin-bottom: 28px;
+  background: linear-gradient(180deg, #ffffff, #fbfdfc);
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: 0 20px 60px rgba(6, 59, 50, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid rgba(6, 59, 50, 0.05);
 }
 
 .pub-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-2);
+  transform: translateY(-6px);
+  box-shadow: 0 36px 120px rgba(6, 59, 50, 0.16);
 }
 
-.pub-title {
-  font-size: 22px;
-  font-weight: 900;
-  color: var(--brand-700);
-  margin-bottom: 12px;
+.pub-card h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0b5d4f;
+  margin-bottom: 10px;
 }
 
-.pub-text {
+.pub-card p {
   font-size: 15px;
-  color: #2d3e50;
-  line-height: 1.6;
-  margin-bottom: 12px;
-}
-
-.pub-list {
-  margin-left: 20px;
-  color: #1e2b38;
   line-height: 1.7;
+  color: #3b4c48;
 }
 
-.pub-list li {
-  margin-bottom: 6px;
+/* SUPPORT CARD */
+.pub-support {
+  background: linear-gradient(180deg, #0b5d4f, #0f7c63);
+  color: #ffffff;
 }
 
-.pub-note {
-  margin-top: 10px;
-  font-size: 14px;
-  color: var(--muted);
+.pub-support h3,
+.pub-support p {
+  color: #ffffff;
 }
 
-/* CTA buttons */
+/* CTA */
 .pub-cta {
+  margin-top: 42px;
   display: flex;
   gap: 14px;
-  margin-top: 32px;
+  flex-wrap: wrap;
 }
 
-.conf-cta {
-  padding: 12px 20px;
-  background: var(--brand-700);
-  color: white;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 800;
-}
-
-.conf-cta.outline {
-  background: transparent;
-  color: var(--brand-700);
-  border: 2px solid var(--brand-700);
-}
-
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 900px) {
-  .premium-header {
+  .pub-header {
     flex-direction: column;
   }
-  .premium-title {
+
+  .pub-header h2 {
     font-size: 26px;
   }
 }

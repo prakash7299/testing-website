@@ -100,7 +100,7 @@ export default function QuickRegistration({ compact = false }) {
             {busy ? "Sending..." : "Reserve Spot"}
           </button>
 
-          <Link to="/registration-fees" className="qr-ghost" title="Full registration">
+          <Link to="/registration-event" className="qr-ghost" title="Full registration">
             Full registration
           </Link>
         </div>

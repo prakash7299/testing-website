@@ -73,7 +73,7 @@ export default function Speaker() {
       <div className="top-bar">
         <div>
           <a href="mailto:support@intelmeetglobal.com">support@intelmeetglobal.com</a> |
-          <a href="tel:+919442417477" className="phone-link"> +91 9442417477</a>
+          <a href="tel:+919025956834" className="phone-link"> +91 9025956834</a>
         </div>
         <div className="hidden-placeholder">f</div>
         <div className="top-icons"></div>

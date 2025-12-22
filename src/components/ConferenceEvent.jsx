@@ -5,12 +5,14 @@ import "./ConferenceEvent.css";
 
 import intelmeet from "../assets/intelmeet.jpeg";
 import heroImg from "../assets/hero-environment.png";
+import sdgImg from "../assets/SDG.png";
 import heroPattern from "../assets/hero-pattern.png";
 import speakerWalida from "../assets/speaker-walida.png";
 import speakerSuraj from "../assets/speaker-suraj.png";
 import speakerMahmoud from "../assets/committee-mahmoud.png";
-import Footer from "../components/Footer";
+import FooterEvent from "../components/FooterEvent";
 import QuickRegistration from "./QuickRegistration";
+import ConferenceProof from "./ConferenceProof";
 
 import {
   FaFacebookF,
@@ -24,6 +26,7 @@ import {
 import confMeet2 from "../assets/conf-meet-2.jpg";
 import confMeet7 from "../assets/conf-meet-7.jpg";
 import confMeet8 from "../assets/conf-meet-8.jpg";
+import { Helmet } from "react-helmet-async"
 
 
 const conferenceData = {
@@ -31,14 +34,14 @@ const conferenceData = {
     id: 1,
     title: "International Conference on Environmental & Life Sciences(ICELS-25)",
     shortTitle: "Environmental & Life Sciences",
-    date: "19 December 2025",
+    date: "26 December 2025",
     theme: "Advancing Environmental Innovation and Life Science Research for a Sustainable Future",
     location: "Virtual (Global Online Conference)",
     hero: heroImg,
     summary:
       "ICELS-25 connects researchers, academics, scientists, environmentalists and industry experts from across the globe to share innovations in environmental science, life sciences, biotechnology, climate action and sustainable solutions.",
-    submissionDeadline: "15 December 2025",
-    notificationDate: "22 December 2025",
+    submissionDeadline: "24 December 2025",
+    notificationDate: "25 December 2025",
     priceUSD: 140,
     currency: "USD",
   },
@@ -60,7 +63,7 @@ export default function ConferenceEvent() {
   const mobilePanelRef = useRef(null);
 
   const anchors = [
-    { id: "home", label: "Home", route: "/ICELS" },
+    { id: "home", label: "Home", route: "/icels" },
     { id: "about", label: "About", route: "/about-event" },
     { id: "callforpaper", label: "Call for Papers", route: "/callforpaper" },
     { id: "papersubmission", label: "Paper Submission", route: "/papersubmissionevent" },
@@ -284,6 +287,31 @@ export default function ConferenceEvent() {
   }
 
   return (
+    <>
+      <Helmet>
+        <title>
+          ICELS 2025 | International Conference on Environmental & Life Sciences
+        </title>
+
+        <meta
+          name="description"
+          content="Join ICELS 2025 – International Conference on Environmental & Life Sciences. A global virtual conference on ecology, sustainability, climate and life science research."
+        />
+
+        <meta
+          name="keywords"
+          content="ICELS, ICELS 2025, environmental conference 2025, life sciences conference, international ecology conference"
+        />
+
+        <link
+          rel="canonical"
+          href="https://www.intelmeetglobal.com/icels"
+        />
+        <meta property="og:title" content="ICELS 2025 | International Conference on Environmental & Life Sciences" />
+<meta property="og:description" content="Global virtual conference on environment, ecology & life sciences." />
+<meta property="og:url" content="https://www.intelmeetglobal.com/icels" />
+<meta property="og:type" content="website" />
+      </Helmet>
     <div className="conf-page page-container">
       <a href="#home" className="skip-link">Skip to content</a>
 
@@ -292,12 +320,12 @@ export default function ConferenceEvent() {
         <div className="conf-contact-inline">
           <a href="mailto:support@intelmeetglobal.com">support@intelmeetglobal.com</a>
           <span className="conf-sep">|</span>
-          <a href="tel:+919442417477" className="conf-phone-link">+91 9442417477</a>
+          <a href="tel:+919025956834" className="conf-phone-link">+91 9025956834</a>
         </div>
 
         {/* Socials inside the topbar flow — aligned to right on desktop, stacked on mobile */}
         <div className="conf-top-socials" aria-hidden={false}>
-          <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noreferrer" aria-label="IntelMeet on Facebook"><FaFacebookF /></a>
+          <a href="https://www.facebook.com/IntelMeet/" target="_blank" rel="noreferrer" aria-label="IntelMeet on Facebook"><FaFacebookF /></a>
           <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noreferrer" aria-label="IntelMeet on Instagram"><FaInstagram /></a>
           <a href="https://x.com/intelmeet" target="_blank" rel="noreferrer" aria-label="IntelMeet on X"><FaTwitter /></a>
           <a href="https://www.linkedin.com/in/intelmeet-global/" target="_blank" rel="noreferrer" aria-label="IntelMeet on LinkedIn"><FaLinkedinIn /></a>
@@ -429,6 +457,11 @@ export default function ConferenceEvent() {
         </div>
       </section>
 
+      <div className="conf-fullwidth-section">
+  <ConferenceProof />
+</div>
+
+
       {/* Main wrapper */}
       <div className="conf-wrapper">
         <main className="conf-main">
@@ -438,17 +471,17 @@ export default function ConferenceEvent() {
               <h2 className="brochure-main-title">About the Conference</h2>
               <div className="brochure-meta">
                 <p>
-                  The International Conference on Environmental & Life Sciences (ICELS-25) is a premier global virtual
+                  <strong>The International Conference on Environmental & Life Sciences (ICELS-25)</strong> is a premier global virtual
                   conference designed to connect researchers, academicians, scientists, environmentalists, and industry
                   experts from more than 10+ countries.
                 </p>
                 <p>
-                  This international event focuses on advancing innovative research across environmental science, life
+                  This international event focuses on advancing innovative research across <strong>environmental science, life
                   sciences, biotechnology, ecology, climate change, biodiversity, agriculture, water science, and
-                  sustainability studies.
+                  sustainability studies.</strong>
                 </p>
                 <p>
-                  ICELS-25 provides a highly interactive platform for presenting research, discussing scientific
+                  <strong>ICELS-25</strong> provides a highly interactive platform for presenting research, discussing scientific
                   challenges, and exploring emerging innovations that shape a sustainable global future.
                 </p>
               </div>
@@ -468,21 +501,29 @@ export default function ConferenceEvent() {
 
             {/* SDGs */}
             <div className="brochure-section">
-              <h3>Alignment with UN Sustainable Development Goals (SDGs)</h3>
-              <p>ICELS-25 supports global scientific innovations aligned with key United Nations SDGs, including:</p>
-              <ul className="sdg-list">
-                <li>SDG 3 – Good Health & Well-Being</li>
-                <li>SDG 4 – Quality Education</li>
-                <li>SDG 6 – Clean Water & Sanitation</li>
-                <li>SDG 7 – Affordable & Clean Energy</li>
-                <li>SDG 9 – Industry, Innovation & Infrastructure</li>
-                <li>SDG 12 – Responsible Consumption & Production</li>
-                <li>SDG 13 – Climate Action</li>
-                <li>SDG 14 – Life Below Water</li>
-                <li>SDG 15 – Life on Land</li>
-              </ul>
-              <p className="brochure-note">ICELS-25 encourages research that contributes to sustainable development and real-world ecological impact.</p>
-            </div>
+  <h3>Alignment with UN Sustainable Development Goals (SDGs)</h3>
+
+  <p>
+    ICELS-25 supports global scientific innovations aligned with key United Nations
+    Sustainable Development Goals (SDGs), including:
+  </p>
+
+  {/* SDGs Image */}
+  <div className="sdg-image-wrapper">
+    <img
+      src={sdgImg}
+      alt="ICELS-25 alignment with UN Sustainable Development Goals"
+      className="sdg-image"
+      loading="lazy"
+    />
+  </div>
+
+  <p className="brochure-note">
+    ICELS-25 encourages research that contributes to sustainable development and
+    real-world ecological impact.
+  </p>
+</div>
+
 
             {/* Why Join */}
             <div className="brochure-section">
@@ -490,12 +531,12 @@ export default function ConferenceEvent() {
               <p>Participants gain access to a global academic and research-driven environment. Key benefits include:</p>
               <ul className="benefits-list">
                 <li>Present your research to an international audience</li>
-                <li>Receive an officially recognized conference certificate (Presenter / Listener / Keynote / Committee Member)</li>
-                <li>Publish your abstract in our digital conference proceedings</li>
-                <li>Opportunity to join as a Presenter, Keynote Speaker, Committee Member, or Listener</li>
-                <li>Interact with global experts during dedicated Q&A sessions</li>
-                <li>Improve academic visibility and networking opportunities</li>
-                <li>Ideal for academics, PhD scholars, researchers, industry professionals, and students</li>
+                <li>Receive an officially recognized <strong>conference certificate</strong> (Presenter / Listener / Keynote / Committee Member)</li>
+                <li>Publish your abstract in our <strong>digital conference proceedings</strong></li>
+                <li>Opportunity to join as a <strong>Presenter, Keynote Speaker, Committee Member, or Listener</strong></li>
+                <li>Interact with global experts during dedicated <strong>Q&A sessions</strong></li>
+                <li>Improve academic <strong>visibility and networking opportunities</strong></li>
+                <li>Ideal for <strong>academics, PhD scholars, researchers, industry professionals, and students</strong></li>
               </ul>
             </div>
 
@@ -517,14 +558,20 @@ export default function ConferenceEvent() {
               </ul>
             </div>
 
+            <div className="conf-sidebar-card conf-sidebar-quickreg">
+            <h4>Quick Registration</h4>
+            <p className="conf-quick-sub">Register quickly to receive updates & early-bird alerts.</p>
+            <QuickRegistration />
+          </div>
+
             {/* Important Dates & Highlights in two-column blocks */}
             <div className="brochure-section grid-2">
               <div>
                 <h3>Important Dates</h3>
                 <ul className="dates-list">
-                  <li><strong>Conference Date:</strong> 19th December 2025</li>
-                  <li><strong>Abstract / Paper Submission Deadline:</strong> 15th December 2025</li>
-                  <li><strong>Registration Closes:</strong> 17th December 2025</li>
+                  <li><strong>Conference Date:</strong> 26th December 2025</li>
+                  <li><strong>Abstract / Paper Submission Deadline:</strong> 20th December 2025</li>
+                  <li><strong>Registration Closes:</strong> 21st December 2025</li>
                   <li><em>(Registration closes 2 days before the event as per IntelMeet policy.)</em></li>
                 </ul>
               </div>
@@ -643,44 +690,10 @@ export default function ConferenceEvent() {
 
           </section>
         </main>
-
-        {/* Sidebar */}
-        <aside className="conf-sidebar" aria-label="Quick links & actions">
-          <div className="conf-sidebar-card">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><Link to="/benefits">Key Benefits of Participation</Link></li>
-              <li><Link to="/apply-speaker">Apply Speaker</Link></li>
-              <li><Link to="/instructions">Instructions for Participants</Link></li>
-              <li><Link to="/papersubmission-guidelines">Author Guidelines</Link></li>
-            </ul>
-          </div>
-
-          <div className="conf-sidebar-card conf-sidebar-quickreg">
-            <h4>Quick Registration</h4>
-            <p className="conf-quick-sub">Register quickly to receive updates & early-bird alerts.</p>
-            <QuickRegistration />
-          </div>
-
-          <div className="conf-sidebar-card">
-            <h4>Quick Actions</h4>
-            <Link to="/papersubmissionevent" className="conf-sidebar-btn">Submit Paper</Link>
-            <Link to="/registration-event" className="conf-sidebar-btn outline">Register</Link>
-          </div>
-
-          <div className="conf-sidebar-card">
-            <h4>Important Dates</h4>
-            <ul className="conf-dates">
-              <li><strong>Submission deadline:</strong> {conf.submissionDeadline}</li>
-              <li><strong>Notification of acceptance:</strong> {conf.notificationDate}</li>
-              <li><strong>Registration deadline:</strong> 17 Dec 2025</li>
-              <li><strong>Conference:</strong> {conf.date}</li>
-            </ul>
-          </div>
-        </aside>
       </div>
 
-      <Footer />
+      <FooterEvent />
     </div>
+    </>
   );
 }

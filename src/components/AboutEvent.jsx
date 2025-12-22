@@ -6,7 +6,7 @@ import "./AboutEvent.css";
 import intelmeet from "../assets/intelmeet.jpeg";
 import heroImg from "../assets/hero-environment.png";
 import heroPattern from "../assets/hero-pattern.png";
-import Footer from "../components/Footer";
+import FooterEvent from "../components/FooterEvent";
 import QuickRegistration from "./QuickRegistration";
 
 /*
@@ -27,12 +27,12 @@ const pageData = {
   title: "About — ICELS-25 & IntelMeet Global Conferences",
   subtitle: "About the conference, organisation, vision, mission and offerings",
   hero: heroImg,
-  date: "19 December 2025",
+  date: "26 December 2025",
 };
 
 /* NAV ITEMS: exactly the same as ConferenceEvent.jsx */
 const anchors = [
-  { id: "home", label: "Home", route: "/ICELS" },
+  { id: "home", label: "Home", route: "/icels" },
   { id: "about", label: "About", route: "/about-event" },
   { id: "callforpaper", label: "Call for Papers", route: "/callforpaper" },
   { id: "papersubmission", label: "Paper Submission", route: "/papersubmissionevent" },
@@ -149,11 +149,11 @@ export default function AboutEvent() {
         <div className="conf-contact-inline">
           <a href="mailto:support@intelmeetglobal.com">support@intelmeetglobal.com</a>
           <span className="conf-sep">|</span>
-          <a href="tel:+919442417477" className="conf-phone-link">+91 9442417477</a>
+          <a href="tel:+919025956834" className="conf-phone-link">+91 9025956834</a>
         </div>
 
         <div className="conf-top-socials" aria-hidden={false}>
-          <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noreferrer" aria-label="IntelMeet on Facebook"><FaFacebookF /></a>
+          <a href="https://www.facebook.com/IntelMeet/" target="_blank" rel="noreferrer" aria-label="IntelMeet on Facebook"><FaFacebookF /></a>
           <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noreferrer" aria-label="IntelMeet on Instagram"><FaInstagram /></a>
           <a href="https://x.com/intelmeet" target="_blank" rel="noreferrer" aria-label="IntelMeet on X"><FaTwitter /></a>
           <a href="https://www.linkedin.com/in/intelmeet-global/" target="_blank" rel="noreferrer" aria-label="IntelMeet on LinkedIn"><FaLinkedinIn /></a>
@@ -291,34 +291,34 @@ export default function AboutEvent() {
             <div className="about-block">
               <h3>International Conference on Environmental & Life Sciences (ICELS-25)</h3>
               <p>
-                The International Conference on Environmental & Life Sciences (ICELS-25) is a premier global virtual
+                <strong>The International Conference on Environmental & Life Sciences (ICELS-25)</strong> is a premier global virtual
                 conference designed to connect researchers, academicians, scientists, environmentalists, and industry
                 experts from more than 10+ countries.
               </p>
               <p>
-                This international event focuses on advancing innovative research across environmental science, life
+                This international event focuses on advancing innovative research across <strong>environmental science, life
                 sciences, biotechnology, ecology, climate change, biodiversity, agriculture, water science, and
-                sustainability studies.
+                sustainability studies.</strong>
               </p>
             </div>
 
             <div className="about-section-grid">
-              <div className="about-left">
+              <div className="card-panel glass">
                 <h3>Why Attend ICELS-25?</h3>
                 <ul>
                   <li>Present research to an international audience</li>
                   <li>Learn from global keynote speakers</li>
                   <li>Participate in expert-led discussions</li>
                 </ul>
-
+                <div><span className="hidden-placeholder">f</span></div>
                 <h3>Benefits of Attending</h3>
                 <ul>
                   <li>Official conference certificate</li>
-                  <li>Abstract publication in ICELS-25 proceedings (non-journal)</li>
+                  <li>Abstract publication in ICELS-25 proceedings</li>
                   <li>Global networking opportunities</li>
                   <li>Eligibility to join as presenter, listener, keynote, or committee member</li>
                 </ul>
-
+                <div><span className="hidden-placeholder">f</span></div>
                 <h3>Who Can Attend?</h3>
                 <ul>
                   <li>Researchers & Academicians</li>
@@ -413,8 +413,7 @@ export default function AboutEvent() {
               <h3>Connect With IntelMeet</h3>
               <p>Join our upcoming events and be part of a global scientific community.</p>
               <ul>
-                <li>Explore Our Conferences</li>
-                <li><Link to="/ICELS" className="conf-link">Register ICELS-25</Link></li>
+                <Link to="/registration-event" className="conf-link">Register ICELS-25</Link>
               </ul>
             </div>
           </section>
@@ -425,10 +424,10 @@ export default function AboutEvent() {
           <div className="conf-sidebar-card">
             <h3>Quick Links</h3>
             <ul>
-              <li><Link to="/ICELS">ICELS-25 Home</Link></li>
-              <li><Link to="/papersubmission">Submit Paper</Link></li>
-              <li><Link to="/registration-fees">Registration Fees</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
+              <li><Link to="/icels">ICELS-25 Home</Link></li>
+              <li><Link to="/papersubmissionevent">Submit Paper</Link></li>
+              <li><Link to="/registration-event">Registration Fees</Link></li>
+              <li><Link to="/contact-event">Contact</Link></li>
             </ul>
           </div>
 
@@ -442,14 +441,14 @@ export default function AboutEvent() {
             <h4>Important Dates</h4>
             <ul className="conf-dates">
               <li><strong>Conference:</strong> {pageData.date}</li>
-              <li><strong>Submission deadline:</strong> 15 Dec 2025</li>
-              <li><strong>Registration deadline:</strong> 17 Dec 2025</li>
+              <li><strong>Submission deadline:</strong> 20th Dec 2025</li>
+              <li><strong>Registration deadline:</strong> 21st Dec 2025</li>
             </ul>
           </div>
         </aside>
       </div>
 
-      <Footer />
+      <FooterEvent />
     </div>
   );
 }

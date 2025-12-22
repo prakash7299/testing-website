@@ -214,6 +214,7 @@
   margin-bottom:20px;
   box-shadow: var(--shadow-soft);
   border:1px solid rgba(8,45,36,0.04);
+  font-size:15px; 
 }
 .elevated { box-shadow: 0 34px 100px rgba(6,45,36,0.09); }
 
@@ -238,11 +239,11 @@
 
 /* left column lists */
 .about-left h3 { color:var(--emerald); margin-top:12px; margin-bottom:8px; font-weight:900; }
-.about-left ul { margin-left:18px; color:var(--muted); }
+.about-left ul { margin-left:18px; font-size:15px;}
 .about-left ul li { margin:10px 0; font-weight:700; letter-spacing:0.2px; }
 
 /* right column glass panels */
-.about-right { display:flex; flex-direction:column; gap:12px; }
+.about-right { display:flex; flex-direction:column; gap:12px; font-size:15px;}
 .card-panel {
   background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.9));
   padding:14px;
@@ -254,9 +255,10 @@
   background: linear-gradient(180deg, rgba(255,255,255,0.65), rgba(255,255,255,0.75));
   backdrop-filter: blur(6px);
   border: 1px solid rgba(217,185,106,0.06);
+  font-size:15px;
 }
 .card-panel h3 { margin:0 0 8px; color:var(--deep-green); font-weight:900; }
-.card-panel p { color:var(--muted); margin:0; }
+.card-panel p { color:var(--muted); margin:0; font-size:15px;}
 
 /* join CTA */
 .join-cta {

@@ -9,6 +9,8 @@ import Footer from "../components/Footer";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import HeroSlider from "../components/HeroSlider";
+import narinderjitPhoto from "../assets/speaker-narinderjit.png";
+import { Helmet } from "react-helmet-async";
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -23,9 +25,9 @@ export default function Login() {
   const speakers = [
     {
       id: 1,
-      name: "Dr. Walida Ounruean",
-      role: "International Education Ambassador — Thailand",
-      image: confimage1,
+      name: "Dr. Narinderjit Kaur",
+      role: "Dept. of Chemistryd",
+      image: narinderjitPhoto,
     },
     {
       id: 2,
@@ -35,14 +37,31 @@ export default function Login() {
     },
     {
       id: 3,
-      name: "Dr. Mahmoud Magdy Abbas",
-      role: "Agricultural & Biological Research — Egypt",
-      image: confimage3,
+      name: "Prof. Olivia Bennett",
+      role: "Royal Institute of Technology",
+      image: null,
     },
   ];
 
   return (
+    <>
+      <Helmet>
+        <title>
+          IntelMeet Global Conferences | International Academic Conferences
+        </title>
 
+        <meta
+          name="description"
+          content="IntelMeet Global Conferences organizes international academic and research conferences across science, technology, environment and life sciences."
+        />
+
+        <meta
+          name="keywords"
+          content="international conferences, academic conferences, global research conferences, IntelMeet Global"
+        />
+
+        <link rel="canonical" href="https://www.intelmeetglobal.com/" />
+      </Helmet>
     <div className="page-container">
 
       {/* Top bar */}
@@ -53,11 +72,11 @@ export default function Login() {
               support@intelmeetglobal.com
             </a>
           </span>
-          | <a href="tel:+919442417477" className="phone-link">+91 9442417477</a>
+          | <a href="tel:+919025956834" className="phone-link">+91 9025956834</a>
         </div>
         <div><span className="hidden-placeholder">f</span></div>
         <div>
-          <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+          <a href="https://www.facebook.com/IntelMeet/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
           <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
           <a href="https://x.com/intelmeet" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
           <a href="https://www.linkedin.com/in/intelmeet-global/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
@@ -119,14 +138,14 @@ export default function Login() {
           </section>
 
           <section className="cfp-section">
-            <h2 className="con-title">Upcoming International Conferences – 2025</h2>
+            <h2 className="con-title">Upcoming International Conferences – 2025 & 2026</h2>
 
             {/* Conference 1 */}
             <div className="conference-card">
               <h3 className="conf-name">
                 <span className="icon"></span> International Conference on Environmental & Life Sciences (ICELS-25)
               </h3>
-              <p className="conf-detail"><span className="icon">📅</span> 19 December 2025</p>
+              <p className="conf-detail"><span className="icon">📅</span> 26th December 2025</p>
               <Link className="conf-link" to="/upcoming-conferences">
    View Details
 </Link>
@@ -137,7 +156,7 @@ export default function Login() {
               <h3 className="conf-name">
                 <span className="icon"></span> International Conference on Science, Computing & Data Analytics (ICSDA)
               </h3>
-              <p className="conf-detail"><span className="icon">📅</span> 5 December 2025</p>
+              <p className="conf-detail"><span className="icon">📅</span> 3rd January 2026</p>
               <Link className="conf-link" to="/upcoming-conferences">
    View Details
 </Link>
@@ -148,7 +167,7 @@ export default function Login() {
               <h3 className="conf-name">
                 <span className="icon"></span> International Conference on Management, Business & Social Innovation (ICMBSI)
               </h3>
-              <p className="conf-detail"><span className="icon">📅</span> 8 December 2025</p>
+              <p className="conf-detail"><span className="icon">📅</span> 12th January 2026</p>
               <Link className="conf-link" to="/upcoming-conferences">
    View Details
 </Link>
@@ -283,5 +302,6 @@ export default function Login() {
 
       <Footer />
     </div>
+     </>
   );
 }

@@ -6,7 +6,7 @@ import "./CallForPaper.css";
 import intelmeet from "../assets/intelmeet.jpeg";
 import heroImg from "../assets/hero-environment.png";
 import heroPattern from "../assets/hero-pattern.png";
-import Footer from "../components/Footer";
+import Footer from "../components/FooterEvent";
 import QuickRegistration from "./QuickRegistration";
 
 /*
@@ -29,13 +29,13 @@ const page = {
   subtitle:
     "Submit original abstracts for presentation at the International Conference on Environmental & Life Sciences",
   hero: heroImg,
-  deadline: "15 December 2025",
-  conferenceDate: "19 December 2025",
+  deadline: "24 December 2025",
+  conferenceDate: "26 December 2025",
 };
 
 /* NAV ITEMS: exact same as ConferenceEvent.jsx */
 const anchors = [
-  { id: "home", label: "Home",  route: "/ICELS" },
+  { id: "home", label: "Home",  route: "/icels" },
   { id: "about", label: "About", route: "/about-event" },
   { id: "callforpaper", label: "Call for Papers", route: "/callforpaper" },
   { id: "papersubmission", label: "Paper Submission", route: "/papersubmissionevent" },
@@ -129,11 +129,11 @@ export default function CallForPaper() {
         <div className="conf-contact-inline">
           <a href="mailto:support@intelmeetglobal.com">support@intelmeetglobal.com</a>
           <span className="conf-sep">|</span>
-          <a href="tel:+919442417477" className="conf-phone-link">+91 9442417477</a>
+          <a href="tel:+919025956834" className="conf-phone-link">+91 9025956834</a>
         </div>
 
         <div className="conf-top-socials" aria-hidden={false}>
-          <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noreferrer" aria-label="IntelMeet on Facebook"><FaFacebookF /></a>
+          <a href="https://www.facebook.com/IntelMeet/" target="_blank" rel="noreferrer" aria-label="IntelMeet on Facebook"><FaFacebookF /></a>
           <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noreferrer" aria-label="IntelMeet on Instagram"><FaInstagram /></a>
           <a href="https://x.com/intelmeet" target="_blank" rel="noreferrer" aria-label="IntelMeet on X"><FaTwitter /></a>
           <a href="https://www.linkedin.com/in/intelmeet-global/" target="_blank" rel="noreferrer" aria-label="IntelMeet on LinkedIn"><FaLinkedinIn /></a>
@@ -312,7 +312,7 @@ export default function CallForPaper() {
                 <strong>Submission Deadline:</strong> {page.deadline}
               </li>
               <li>
-                <strong>Registration Closes:</strong> 17th December 2025
+                <strong>Registration Closes:</strong> 21st December 2025
               </li>
               <li>
                 <strong>Conference Date:</strong> {page.conferenceDate} — 3:00 PM UTC/GMT (virtual)
@@ -336,10 +336,10 @@ export default function CallForPaper() {
             <h3 className="section-title">Submit Your Abstract</h3>
             <p>Share your research with our global scientific community.</p>
             <div className="submit-row">
-              <Link to="/papersubmission" className="conf-cta">
+              <Link to="/papersubmissionevent" className="conf-cta">
                 Submit Your Paper Now
               </Link>
-              <Link to="/registration-fees" className="conf-cta outline">
+              <Link to="/registration-event" className="conf-cta outline">
                 Register
               </Link>
             </div>
@@ -379,16 +379,16 @@ export default function CallForPaper() {
             <h3>Quick Links</h3>
             <ul>
               <li>
-                <Link to="/ICELS">ICELS-25 Home</Link>
+                <Link to="/icels">ICELS-25 Home</Link>
               </li>
               <li>
-                <Link to="/papersubmission">Submit Paper</Link>
+                <Link to="/papersubmissionevent">Submit Paper</Link>
               </li>
               <li>
-                <Link to="/registration-fees">Registration Fees</Link>
+                <Link to="/registration-event">Registration Fees</Link>
               </li>
               <li>
-                <Link to="/contact">Contact</Link>
+                <Link to="/contact-event">Contact</Link>
               </li>
             </ul>
           </div>
@@ -409,7 +409,7 @@ export default function CallForPaper() {
                 <strong>Conference:</strong> {page.conferenceDate}
               </li>
               <li>
-                <strong>Registration Close:</strong> 17 Dec 2025
+                <strong>Registration Close:</strong> 21st December 2025
               </li>
             </ul>
           </div>

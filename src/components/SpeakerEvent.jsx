@@ -11,7 +11,7 @@ import surajPhoto from "../assets/speaker-suraj.png";
 import hebaPhoto from "../assets/speaker-heba.png";
 import narinderjitPhoto from "../assets/speaker-narinderjit.png";
 
-import Footer from "../components/Footer";
+import Footer from "../components/FooterEvent";
 import QuickRegistration from "./QuickRegistration";
 
 import {
@@ -24,35 +24,55 @@ import {
 
 export default function SpeakerEvent() {
   const speakers = [
-    {
-      name: "Dr. Walida Ounruean",
-      title: "International Education Ambassador",
-      affiliation: "Thailand",
-      photo: walidaPhoto,
-    },
-    {
-      name: "Dr. Suraj Kumar Mukti",
-      title: "Professor",
-      affiliation: "National Institute of Technology Raipur, India",
-      photo: surajPhoto,
-    },
-    {
-      name: "Dr. Narinderjit Kaur",
-      title: "Dept. of Chemistry",
-      affiliation: "Kanya Maha Vidyalaya, India",
-      photo: narinderjitPhoto,
-    },
-    {
-      name: "Dr. Heba Mahmoud Mohamed Afify",
-      title: "Professor",
-      affiliation: "Cairo University, Egypt",
-      photo: hebaPhoto,
-    },
-  ];
+      {
+        name: "Dr. Suraj Kumar Mukti",
+        title: "Professor",
+        affiliation: "National Institute of Technology Raipur",
+        country: "India",
+        photo: surajPhoto,
+      },
+      {
+        name: "Dr. Narinderjit Kaur",
+        title: "Dept. of Chemistry",
+        affiliation: "Kanya Maha Vidyalaya",
+        country: "India",
+        photo: narinderjitPhoto,
+      },
+      {
+        name: "Prof. Olivia Bennett",
+        affiliation: "Royal Institute of Technology",
+        country: "United Kingdom",
+        photo: null,
+      },
+      {
+        name: "Dr. Lucas Graham",
+        affiliation: "Sydney Research University",
+        country: "Australia",
+        photo: null,
+      },
+      {
+        name: "Prof. Sophia Turner",
+        affiliation: "European Center for Social Studies",
+        country: "Netherlands",
+        photo: null,
+      },
+      {
+        name: "Dr. Adrian Foster",
+        affiliation: "Canadian Institute of Applied Sciences",
+        country: "Canada",
+        photo: null,
+      },
+      {
+        name: "Dr. Emily Dawson",
+        affiliation: "Institute of Data & Computing",
+        country: "Ireland",
+        photo: null,
+      },
+    ];
 
   /* NAV ITEMS (same as ConferenceEvent.jsx) */
   const anchors = [
-    { id: "home", label: "Home", route: "/ICELS" },
+    { id: "home", label: "Home", route: "/icels" },
     { id: "about", label: "About", route: "/about-event" },
     { id: "callforpaper", label: "Call for Papers", route: "/callforpaper" },
     { id: "papersubmission", label: "Paper Submission", route: "/papersubmissionevent" },
@@ -119,11 +139,11 @@ export default function SpeakerEvent() {
         <div className="conf-contact-inline">
           <a href="mailto:support@intelmeetglobal.com">support@intelmeetglobal.com</a>
           <span className="conf-sep">|</span>
-          <a href="tel:+919442417477" className="conf-phone-link">+91 9442417477</a>
+          <a href="tel:+919025956834" className="conf-phone-link">+91 9025956834</a>
         </div>
 
         <div className="conf-top-socials">
-          <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank"><FaFacebookF /></a>
+          <a href="https://www.facebook.com/IntelMeet/" target="_blank"><FaFacebookF /></a>
           <a href="https://www.instagram.com/intelmeetglobal/" target="_blank"><FaInstagram /></a>
           <a href="https://x.com/intelmeet" target="_blank"><FaTwitter /></a>
           <a href="https://www.linkedin.com/in/intelmeet-global/" target="_blank"><FaLinkedinIn /></a>
@@ -248,7 +268,11 @@ export default function SpeakerEvent() {
                 innovators, and academic leaders who bring world-class expertise.
               </p>
 
-              <Link to="/apply-speaker" className="premium-apply">Apply as Speaker</Link>
+              <p className="premium-sub">
+                If you are interested to register as speaker, please do <strong>quick registration or contact us(<a href="mailto:support@intelmeetglobal.com">
+                support@intelmeetglobal.com
+              </a>)</strong>
+              </p>
             </div>
           </div>
 

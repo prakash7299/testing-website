@@ -123,12 +123,12 @@
 
 /* topics two-column flow inside the Topics card */
 .topics-two { display:grid; grid-template-columns: 1fr 1fr; gap:18px; align-items:start; }
-.topics-col h4 { margin:6px 0 8px; font-size:15px; color:var(--deep-green); font-weight:900; font-family:"Playfair Display", serif; }
+.topics-col h4 { margin:6px 0 8px; font-size:15px; color:var(--deep-green); font-weight:900; font-family:"Playfair Display", serif; font-size: 20px;}
 @media (max-width:1100px) { .topics-two { grid-template-columns:1fr; } }
 
 /* lists */
-.cfp-list { margin-left:16px; color:var(--muted); list-style: disc; padding-left: 12px; }
-.cfp-list li { margin:8px 0; font-weight:800; line-height:1.6; font-size:15px; color: #384f48; }
+.cfp-list { margin-left:16px; list-style: disc; padding-left: 12px; }
+.cfp-list li { margin:8px 0; line-height:1.6; font-size:15px; color: #384f48; }
 
 /* grouped side-panels wrapper (desktop) */
 .side-panels-inline {
@@ -272,3 +272,7 @@
   .conf-hero-title { font-size:18px; }
   .conf-logo { height:44px; }
 }
+
+.cfp-intro p{font-size: 15px;}
+
+.topics-col p{font-size: 15px;}

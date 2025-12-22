@@ -23,13 +23,13 @@ export default function Benefits() {
           <a href="mailto:support@intelmeetglobal.com">
             support@intelmeetglobal.com
           </a>{" "}
-          | <a href="tel:+919442417477" className="phone-link">+91 9442417477</a>
+          | <a href="tel:+919025956834" className="phone-link">+91 9025956834</a>
         </div>
 
         <div><span className="hidden-placeholder">f</span></div>
 
         <div>
-          <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank"><FaFacebookF /></a>
+          <a href="https://www.facebook.com/IntelMeet/" target="_blank"><FaFacebookF /></a>
           <a href="https://www.instagram.com/intelmeetglobal/" target="_blank"><FaInstagram /></a>
           <a href="https://x.com/intelmeet"><FaTwitter /></a>
           <a href="https://www.linkedin.com/in/intelmeet-global/"><FaLinkedinIn /></a>
@@ -180,7 +180,7 @@ export default function Benefits() {
             <p className="cfp-text">For support related to submissions or participation:</p>
             <ul className="cfp-list">
               <li>📧 support@intelmeetglobal.com</li>
-              <li>📞 +91 94424 17477</li>
+              <li>📞 +91 90259 56834</li>
             </ul>
             <div><span className="hidden-placeholder">f</span></div>
             <p className="cfp-text">

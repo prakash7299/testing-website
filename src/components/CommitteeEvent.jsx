@@ -11,11 +11,20 @@ import heroPattern from "../assets/hero-pattern.png";
 import mahmoudPhoto from "../assets/committee-mahmoud.png";
 import walidaPhoto from "../assets/speaker-walida.png";
 import surajPhoto from "../assets/speaker-suraj.png";
+import osmanPhoto from "../assets/osman.jpg";
 import hebaPhoto from "../assets/speaker-heba.png";
 import narinderjitPhoto from "../assets/speaker-narinderjit.png";
 
 import QuickRegistration from "./QuickRegistration";
-import Footer from "../components/Footer";
+import Footer from "../components/FooterEvent";
+import { Helmet } from "react-helmet-async";
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaTwitter,
+  FaYoutube,
+  FaInstagram,
+} from "react-icons/fa";
 
 export default function CommitteeEvent() {
   const mobilePanelRef = useRef(null);
@@ -25,62 +34,24 @@ export default function CommitteeEvent() {
   const conference = {
     id: 1,
     title: "International Conference on Environmental & Life Sciences (ICELS-25)",
-    date: "19 December 2025",
+    date: "26 December 2025",
     location: "Virtual (Global Online Conference)",
     hero: heroImg,
     summary:
       "ICELS-25 connects researchers, academics and industry experts to accelerate environmental and life science innovation.",
-    submissionDeadline: "15 December 2025",
+    submissionDeadline: "20 December 2025",
   };
 
   const committee = [
+    { name: "Dr. Osman Adiguzel", title: "Department of Physics", affiliation: "Firat University, Elazig", country: "Turkey", photo: osmanPhoto },
     { name: "Dr. Suraj Kumar Mukti", title: "Professor", affiliation: "National Institute of Technology Raipur", country: "India", photo: surajPhoto },
-    { name: "Dr. Narinderjit Kaur", title: "Dept. of Chemistry", affiliation: "Kanya Maha Vidyalaya", country: "India", photo: narinderjitPhoto },
-    { name: "Prof. Andrew Collins", title: "", affiliation: "Western Coast University", country: "New Zealand", photo: null },
+    { name: "Dr. Narinderjit Kaur", title: "Department of Chemistry", affiliation: "Kanya Maha Vidyalaya", country: "India", photo: narinderjitPhoto },
     { name: "Dr. Sarah Mitchell", title: "", affiliation: "Northview Academy", country: "Ireland", photo: null },
     { name: "Ms. Olivia Harper", title: "", affiliation: "Academic Publishing Group", country: "United States", photo: null },
     { name: "Mr. Ethan Clarke", title: "", affiliation: "International Academic Events Office", country: "United Kingdom", photo: null },
   ];
 
-  // SEO meta (same as before)
-  useEffect(() => {
-    const title = `Organizing Committee — ICELS-25 | IntelMeet Global Conferences`;
-    document.title = title;
-
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement("meta");
-      metaDesc.setAttribute("name", "description");
-      document.head.appendChild(metaDesc);
-    }
-    metaDesc.setAttribute(
-      "content",
-      `Meet the organizing and technical committee for ICELS-25 — experienced academics and practitioners supporting the event. Submission deadline ${conference.submissionDeadline}.`
-    );
-
-    let linkCanonical = document.querySelector('link[rel="canonical"]');
-    if (!linkCanonical) {
-      linkCanonical = document.createElement("link");
-      linkCanonical.setAttribute("rel", "canonical");
-      document.head.appendChild(linkCanonical);
-    }
-    linkCanonical.setAttribute("href", window.location.href.split("#")[0]);
-
-    const ldId = "intelmeet-org-jsonld";
-    if (document.getElementById(ldId)) document.getElementById(ldId).remove();
-    const ld = document.createElement("script");
-    ld.type = "application/ld+json";
-    ld.id = ldId;
-    ld.text = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "IntelMeet Global Conferences",
-      "url": window.location.origin,
-      "logo": intelmeet,
-      "sameAs": [],
-    });
-    document.head.appendChild(ld);
-  }, []);
+  
 
   // close on ESC and outside click
   useEffect(() => {
@@ -129,6 +100,54 @@ export default function CommitteeEvent() {
   };
 
   return (
+    <><Helmet>
+    <title>
+      Organizing Committee — ICELS-25 | IntelMeet Global Conferences
+    </title>
+
+    <meta
+      name="description"
+      content="Meet the organizing and technical committee of ICELS-25, featuring international researchers, academics, and industry experts supporting the conference."
+    />
+
+    <link
+      rel="canonical"
+      href="https://www.intelmeetglobal.com/committee-event"
+    />
+
+    {/* Open Graph for LinkedIn & Social */}
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Organizing Committee — ICELS-25"
+    />
+    <meta
+      property="og:description"
+      content="Explore the organizing and technical committee members of the International Conference on Environmental & Life Sciences (ICELS-25)."
+    />
+    <meta
+      property="og:url"
+      content="https://www.intelmeetglobal.com/committee-event"
+    />
+    <meta
+      property="og:image"
+      content="https://www.intelmeetglobal.com/og-icels.jpg"
+    />
+
+    {/* Organization Schema */}
+    <script type="application/ld+json">
+      {`
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "IntelMeet Global Conferences",
+        "url": "https://www.intelmeetglobal.com",
+        "logo": "https://www.intelmeetglobal.com/logo.png"
+      }
+      `}
+    </script>
+  </Helmet>
+    
     <div className="conf-page committee-page">
       <a href="#main" className="skip-link">Skip to content</a>
 
@@ -137,10 +156,16 @@ export default function CommitteeEvent() {
         <div className="conf-top-left">
           <a href="mailto:support@intelmeetglobal.com">support@intelmeetglobal.com</a>
           <span className="conf-sep">|</span>
-          <a href="tel:+919442417477" className="conf-phone-link">+91 9442417477</a>
+          <a href="tel:+919025956834" className="conf-phone-link">+91 9025956834</a>
         </div>
         <div className="conf-top-right">
-          <Link to="/registration-event" className="conf-top-cta">Registration</Link>
+           <div className="conf-top-socials">
+                              <a href="https://www.facebook.com/IntelMeet/" target="_blank"><FaFacebookF /></a>
+                              <a href="https://www.instagram.com/intelmeetglobal/" target="_blank"><FaInstagram /></a>
+                              <a href="https://x.com/intelmeet" target="_blank"><FaTwitter /></a>
+                              <a href="https://www.linkedin.com/in/intelmeet-global/" target="_blank"><FaLinkedinIn /></a>
+                              <a href="https://www.youtube.com/@intelmeetglobal" target="_blank"><FaYoutube /></a>
+                    </div>
         </div>
       </div>
 
@@ -150,7 +175,7 @@ export default function CommitteeEvent() {
 
         <nav className="nav-links" aria-label="Main navigation">
           <ul>
-            <li><Link to="/ICELS" className="nav-link">Home</Link></li>
+            <li><Link to="/icels" className="nav-link">Home</Link></li>
             <li><Link to="/about-event" className="nav-link">About</Link></li>
             <li><Link to="/callforpaper" className="nav-link">Call for Papers</Link></li>
             <li><Link to="/papersubmissionevent" className="nav-link">Paper Submission</Link></li>
@@ -201,7 +226,7 @@ export default function CommitteeEvent() {
 
           <ul className="conf-mobile-list">
             <li>
-              <Link to="/ICELS" onClick={() => setMobileNavOpen(false)} ref={firstNavItemRef}>
+              <Link to="/icels" onClick={() => setMobileNavOpen(false)} ref={firstNavItemRef}>
                 Home
               </Link>
             </li>
@@ -216,11 +241,12 @@ export default function CommitteeEvent() {
 
           <div className="conf-mobile-quick">
             <h4>Quick Links</h4>
-            <ul>
-              <li><Link to="/benefits" onClick={() => setMobileNavOpen(false)}>Key Benefits</Link></li>
-              <li><Link to="/apply-speaker" onClick={() => setMobileNavOpen(false)}>Apply Speaker</Link></li>
-              <li><Link to="/papersubmission-guidelines" onClick={() => setMobileNavOpen(false)}>Author Guidelines</Link></li>
-            </ul>
+             <ul>
+                          <li><Link to="/about-event">About Event</Link></li>
+                          <li><Link to="/callforpaper">Call For Paper</Link></li>
+                          <li><Link to="/papersubmissionevent">Paper Submission</Link></li>
+                          <li><Link to="/registration-event">Registration</Link></li>
+              </ul>
 
             <h4>Important Dates</h4>
             <ul className="conf-mobile-dates">
@@ -262,8 +288,11 @@ export default function CommitteeEvent() {
               <h2>Organizing & Technical Committee</h2>
               <p className="conf-lead">Our committee includes international domain experts, researchers and practitioners who guide program and review quality.</p>
               <div className="committee-cta-row">
-                <Link to="/committee-application" className="conf-cta">Apply for Committee</Link>
-                <Link to="/contact" className="conf-cta outline">Contact Organizers</Link>
+                <p className="premium-sub">
+                If you are interested to register as committee member, please do <strong>quick registration or contact us(<a href="mailto:support@intelmeetglobal.com">
+                support@intelmeetglobal.com
+              </a>)</strong>
+              </p>
               </div>
             </div>
 
@@ -284,7 +313,6 @@ export default function CommitteeEvent() {
                     {m.affiliation && <div className="committee-affiliation">{m.affiliation}</div>}
                     {m.country && <div className="committee-country">{m.country}</div>}
                     <div className="committee-actions">
-                      <Link to={`/committee/${idx + 1}`} className="committee-link">View profile</Link>
                       <a href={`mailto:support@intelmeetglobal.com?subject=Committee inquiry: ${encodeURIComponent(m.name)}`} className="committee-link outline">Contact</a>
                     </div>
                   </div>
@@ -298,12 +326,12 @@ export default function CommitteeEvent() {
         <aside className="conf-sidebar" aria-label="Quick links & actions">
           <div className="conf-sidebar-card">
             <h3>Quick Links</h3>
-            <ul>
-              <li><Link to="/benefits">Key Benefits of Participation</Link></li>
-              <li><Link to="/apply-speaker">Apply to be Speaker</Link></li>
-              <li><Link to="/papersubmission-guidelines">Author Guidelines</Link></li>
-              <li><Link to="/faq">FAQs</Link></li>
-            </ul>
+             <ul>
+                          <li><Link to="/about-event">About Event</Link></li>
+                          <li><Link to="/callforpaper">Call For Paper</Link></li>
+                          <li><Link to="/papersubmissionevent">Paper Submission</Link></li>
+                          <li><Link to="/registration-event">Registration</Link></li>
+                        </ul>
           </div>
 
           <div className="conf-sidebar-card conf-sidebar-quickreg">
@@ -324,5 +352,6 @@ export default function CommitteeEvent() {
 
       <Footer />
     </div>
+    </>
   );
 }

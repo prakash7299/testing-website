@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
-
+import ReactGA from "react-ga4";
 import Login from "./components/Login";
 import About from "./components/About";
 import Registration from "./components/Registration";
@@ -27,10 +27,11 @@ import SpeakerEvent from "./components/SpeakerEvent";
 import CommitteeEvent from "./components/CommitteeEvent";
 import PublicationsEvent from "./components/PublicationsEvent";
 import ContactEvent from "./components/ContactEvent";
-
+import PageTracker from "./components/PageTracker";
 function App() {
   return (
     <BrowserRouter>
+      <PageTracker />   {/* ✅ GA4 page tracking */}
       <ScrollToTop />
       <WhatsAppWidget />
 

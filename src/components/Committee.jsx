@@ -14,12 +14,20 @@ import walidaPhoto from "../assets/speaker-walida.png";
 import surajPhoto from "../assets/speaker-suraj.png";
 import hebaPhoto from "../assets/speaker-heba.png";
 import narinderjitPhoto from "../assets/speaker-narinderjit.png";
+import osmanPhoto from "../assets/osman.jpg";
 
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 
 export default function Committee() {
   const committee = [
+    {
+      name: "Dr. Osman Adiguzel",
+      title: "Department of Physics",
+      affiliation: "Firat University, Elazig",
+      country: "Turkey",
+      photo: osmanPhoto,
+    },
     {
       name: "Dr. Suraj Kumar Mukti",
       title: "Professor",
@@ -78,7 +86,7 @@ export default function Committee() {
       <div className="top-bar">
         <div>
           <a href="mailto:support@intelmeetglobal.com">support@intelmeetglobal.com</a> |
-          <a href="tel:+919442417477" className="phone-link"> +91 9442417477</a>
+          <a href="tel:++919025956834" className="phone-link">+91 9025956834</a>
         </div>
         <div><span className="hidden-placeholder">f</span></div>
         <div className="top-icons" />

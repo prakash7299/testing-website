@@ -183,11 +183,11 @@ By registering, submitting a paper, or participating in IntelMeet Global Confere
       <div className="top-bar">
         <div>
           <a href="mailto:support@intelmeetglobal.com">support@intelmeetglobal.com</a>{" "}
-          | <a href="tel:+919442417477" className="phone-link">+91 9442417477</a>
+          | <a href="tel:+919025956834" className="phone-link">+91 9025956834</a>
         </div>
         <div><span className="hidden-placeholder">f</span></div>
         <div className="top-icons">
-           <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+           <a href="https://www.facebook.com/IntelMeet/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
                     <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
                     <a href="https://x.com/intelmeet"><FaTwitter /></a>
                     <a href="https://www.linkedin.com/in/intelmeet-global/"><FaLinkedinIn /></a>
@@ -240,7 +240,7 @@ By registering, submitting a paper, or participating in IntelMeet Global Confere
             </p>
 
             <p className="cfp-text">
-              For bank transfer or PayPal instructions contact <strong>support@intelmeetglobal.com</strong> or <strong>+91 94424 17477</strong>.
+              For bank transfer or PayPal instructions contact <strong>support@intelmeetglobal.com</strong> or <strong>+91 90259 56834</strong>.
             </p>
 
             <div className="reg-card">
@@ -393,7 +393,7 @@ By registering, submitting a paper, or participating in IntelMeet Global Confere
                       <h4>Contact Support</h4>
                       <p>If you prefer bank transfer or PayPal, request account details:</p>
                       <p><strong>Email:</strong> support@intelmeetglobal.com</p>
-                      <p><strong>Phone:</strong> +91 94424 17477</p>
+                      <p><strong>Phone:</strong> +91 90259 56834</p>
                     </div>
                   </div>
                 </form>

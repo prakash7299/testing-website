@@ -54,9 +54,9 @@ export default function ContactUs() {
             support@intelmeetglobal.com
           </a>{" "}
           |
-          <a href="tel:+919442417477" className="phone-link">
+          <a href="tel:+919025956834" className="phone-link">
             {" "}
-            +91 9442417477
+            +91 9025956834
           </a>
         </div>
 
@@ -65,7 +65,7 @@ export default function ContactUs() {
         </div>
 
         <div className="top-icons">
-          <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+          <a href="https://www.facebook.com/IntelMeet/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
                     <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
                     <a href="https://x.com/intelmeet"><FaTwitter /></a>
                     <a href="https://www.linkedin.com/in/intelmeet-global/"><FaLinkedinIn /></a>
@@ -170,7 +170,7 @@ export default function ContactUs() {
                 <b>Email:</b> support@intelmeetglobal.com
               </li>
               <li className="cfp-text">
-                <b>Call/WhatsApp:</b> +91 94424 17477
+                <b>Call/WhatsApp:</b> +91 90259 56834
               </li>
             </ul>
           </section>

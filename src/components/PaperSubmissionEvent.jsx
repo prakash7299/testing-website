@@ -15,7 +15,7 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 
-import Footer from "./Footer";
+import Footer from "./FooterEvent";
 
 export default function PaperSubmissionEvent() {
   const [status, setStatus] = useState(null);
@@ -23,7 +23,7 @@ export default function PaperSubmissionEvent() {
   const mobilePanelRef = useRef(null);
   const firstNavItemRef = useRef(null);
 
-  const WEB3FORMS_ACCESS_KEY = "c8d39d79-f4fb-4f53-9615-5572ece7334c";
+  const WEB3FORMS_ACCESS_KEY = "146dc7a1-8d3e-4647-8d51-bcab9f31680f";
 
   useEffect(() => {
     // focus first nav item when mobile opens
@@ -80,8 +80,8 @@ export default function PaperSubmissionEvent() {
 
   const validateFileSize = (e) => {
     const file = e.target.files[0];
-    if (file && file.size > 500 * 1024) {
-      alert("File size must be below 500 KB");
+    if (file && file.size > 5000 * 1024) {
+      alert("File size must be below 5 MB");
       e.target.value = "";
     }
   };
@@ -122,7 +122,7 @@ export default function PaperSubmissionEvent() {
 
   /* NAV ITEMS: match ConferenceEvent.jsx exactly */
   const anchors = [
-    { id: "home", label: "Home", route: "/ICELS" },
+    { id: "home", label: "Home", route: "/icels" },
     { id: "about", label: "About", route: "/about-event" },
     { id: "callforpaper", label: "Call for Papers", route: "/callforpaper" },
     { id: "papersubmission", label: "Paper Submission", route: "/papersubmissionevent" },
@@ -141,11 +141,11 @@ export default function PaperSubmissionEvent() {
         <div className="conf-contact-inline">
           <a href="mailto:support@intelmeetglobal.com">support@intelmeetglobal.com</a>
           <span className="conf-sep">|</span>
-          <a href="tel:+919442417477" className="conf-phone-link">+91 9442417477</a>
+          <a href="tel:+919025956834" className="conf-phone-link">+91 9025956834</a>
         </div>
 
         <div className="conf-top-socials" aria-hidden={false}>
-          <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noreferrer" aria-label="IntelMeet on Facebook"><FaFacebookF /></a>
+          <a href="https://www.facebook.com/IntelMeet/" target="_blank" rel="noreferrer" aria-label="IntelMeet on Facebook"><FaFacebookF /></a>
           <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noreferrer" aria-label="IntelMeet on Instagram"><FaInstagram /></a>
           <a href="https://x.com/intelmeet" target="_blank" rel="noreferrer" aria-label="IntelMeet on X"><FaTwitter /></a>
           <a href="https://www.linkedin.com/in/intelmeet-global/" target="_blank" rel="noreferrer" aria-label="IntelMeet on LinkedIn"><FaLinkedinIn /></a>
@@ -270,10 +270,10 @@ export default function PaperSubmissionEvent() {
         <main className="conf-main">
           {/* ---------- FORM CARD (UNCHANGED) ---------- */}
           <section className="conf-card submission-card">
-            <h2 className="form-title">Abstract Submission Form</h2>
+            <h2 className="form-title">Abstract / Paper Submission Form</h2>
             <p className="form-subtext">
               Fill in the details below and upload your abstract (PDF/DOC).  
-              Ensure file size is under <strong>500 KB</strong>.
+              Ensure file size is under <strong>5 MB</strong>.
             </p>
 
             <form className="paper-form" onSubmit={handleSubmit} encType="multipart/form-data">
@@ -290,17 +290,17 @@ export default function PaperSubmissionEvent() {
 
                 <div className="form-row">
                   <label>Country</label>
-                  <input type="text" name="country" required placeholder="eg., India" />
+                  <input type="text" name="country" placeholder="eg., India" />
                 </div>
 
                 <div className="form-row">
                   <label>Phone Number</label>
-                  <input type="text" name="phone" required placeholder="eg., +1 9876543210" />
+                  <input type="text" name="phone" placeholder="eg., +1 9876543210" />
                 </div>
 
                 <div className="form-row wide">
                   <label>Paper Title</label>
-                  <input type="text" name="paper_title" required placeholder="Enter your research title" />
+                  <input type="text" name="paper_title" placeholder="Enter your research title" />
                 </div>
 
                 <div className="form-row wide">
@@ -333,7 +333,7 @@ export default function PaperSubmissionEvent() {
               <li>Abstract must be between 150–300 words.</li>
               <li>Keywords: 3–5 mandatory.</li>
               <li>Upload only PDF/DOC/DOCX formats.</li>
-              <li>Maximum file size allowed: 500 KB.</li>
+              <li>Maximum file size allowed: 5 MB.</li>
               <li>Research must be original and unpublished.</li>
               <li>Accepted abstracts will be included in conference proceedings.</li>
             </ul>
@@ -345,18 +345,27 @@ export default function PaperSubmissionEvent() {
           <div className="conf-sidebar-card">
             <h3>Quick Links</h3>
             <ul>
-              <li><Link to="/callforpaper">Call for Papers</Link></li>
-              <li><Link to="/papersubmission-guidelines">Author Guidelines</Link></li>
-              <li><Link to="/benefits">Why Participate?</Link></li>
-            </ul>
+                          <li>
+                            <Link to="/icels">ICELS-25 Home</Link>
+                          </li>
+                          <li>
+                            <Link to="/papersubmissionevent">Submit Paper</Link>
+                          </li>
+                          <li>
+                            <Link to="/registration-event">Registration Fees</Link>
+                          </li>
+                          <li>
+                            <Link to="/contact-event">Contact</Link>
+                          </li>
+                        </ul>
           </div>
 
           <div className="conf-sidebar-card">
             <h3>Important Dates</h3>
             <ul className="conf-dates">
-              <li><strong>Submission Deadline:</strong> 15 Dec 2025</li>
-              <li><strong>Notification:</strong> 22 Dec 2025</li>
-              <li><strong>Conference:</strong> 19 Dec 2025</li>
+              <li><strong>Submission Deadline:</strong> 24 December 2025</li>
+              <li><strong>Registration:</strong> 24 December 2025</li>
+              <li><strong>Conference:</strong> 26 December 2025</li>
             </ul>
           </div>
         </aside>

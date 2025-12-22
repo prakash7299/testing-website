@@ -42,13 +42,13 @@ export default function About() {
           <a href="mailto:support@intelmeetglobal.com">
             support@intelmeetglobal.com
           </a> | 
-          <a href="tel:+919442417477" className="phone-link"> +91 9442417477</a>
+          <a href="tel:+919025956834" className="phone-link"> +91 9025956834</a>
         </div>
 
         <div><span className="hidden-placeholder">f</span></div>
 
         <div>
-          <a href="https://www.facebook.com/IntelMeetGlobal/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+          <a href="https://www.facebook.com/IntelMeet/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
           <a href="https://www.instagram.com/intelmeetglobal/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
           <a href="https://x.com/intelmeet"><FaTwitter /></a>
           <a href="https://www.linkedin.com/in/intelmeet-global/"><FaLinkedinIn /></a>

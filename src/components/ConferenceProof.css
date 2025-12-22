@@ -1,0 +1,225 @@
+/* src/components/ConferenceProof.css */
+
+/* Section spacing same as other sections */
+.conf-proof-section {
+  margin: 40px 0;
+}
+
+/* Uses existing conf-card look */
+.conf-proof-card-wrapper {
+  padding: 28px;
+}
+
+/* Header matches other section headers */
+.conf-proof-header {
+  margin-bottom: 24px;
+}
+
+.conf-proof-header h2 {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--deep-green);
+  margin-bottom: 6px;
+}
+
+.conf-proof-header p {
+  max-width: 860px;
+  color: #4b6158;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Grid aligned with ICELS layout */
+.conf-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 🔥 wider cards */
+  gap: 26px;
+  align-items: stretch;
+}
+
+
+/* Image card — same feel as other cards */
+.conf-proof-item {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.conf-proof-item img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+
+.conf-proof-item figcaption {
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #2f4038;
+  font-weight: 600;
+}
+
+/* Footer note matches conference tone */
+.conf-proof-footer {
+  margin-top: 26px;
+  font-size: 14px;
+  color: var(--emerald);
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .conf-proof-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .conf-proof-item img {
+    height: 200px;
+  }
+}
+
+/* ===== Conference Proof Section (Aligned with ICELS layout) ===== */
+
+.conf-proof-section {
+  margin: 48px 0;
+}
+
+/* Card wrapper — same density as brochure cards */
+.conf-proof-card-wrapper {
+  padding: 24px 26px;
+}
+
+/* Header */
+.conf-proof-header {
+  margin-bottom: 22px;
+}
+
+.conf-proof-header h2 {
+  font-size: 22px; /* slightly smaller for desktop balance */
+  font-weight: 900;
+  color: var(--deep-green);
+  margin-bottom: 6px;
+}
+
+.conf-proof-header p {
+  max-width: 760px;
+  font-size: 14.5px;
+  color: #4b6158;
+  line-height: 1.6;
+}
+
+/* ===== GRID FIX ===== */
+.conf-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: stretch; /* equal card height */
+}
+
+/* Individual card */
+.conf-proof-item {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image: reduce height to avoid tall cards */
+.conf-proof-item img {
+  width: 100%;
+  height: 170px;              /* 🔥 reduced */
+  object-fit: cover;
+  display: block;
+  background: #000;           /* hides Zoom black bars nicely */
+}
+
+/* Caption: tighter & cleaner */
+.conf-proof-item figcaption {
+  padding: 10px 12px 12px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #2f4038;
+  font-weight: 600;
+  flex-grow: 1;
+}
+
+/* Footer note */
+.conf-proof-footer {
+  margin-top: 18px;
+  font-size: 13.5px;
+  color: var(--emerald);
+  font-weight: 700;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablets */
+@media (max-width: 1100px) {
+  .conf-proof-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .conf-proof-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .conf-proof-item img {
+    height: 200px;
+  }
+}
+/* Make this section wider than default conf-card */
+.conf-proof-section .conf-wrapper {
+  max-width: 12800px;   /* 🔥 wider than normal */
+}
+
+.conf-proof-item img {
+  height: 210px;   /* was 170 */
+}
+.conf-proof-item figcaption {
+  font-size: 14px;
+  line-height: 1.55;
+}
+/* Tablets */
+@media (max-width: 1100px) {
+  .conf-proof-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .conf-proof-item img {
+    height: 220px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .conf-proof-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .conf-proof-section .conf-wrapper {
+    max-width: 100%;
+  }
+}
+
+/* Full-width section that ignores sidebar */
+.conf-fullwidth-section {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 24px;
+}
+
+/* Center content nicely */
+.conf-fullwidth-section .conf-wrapper {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+
+

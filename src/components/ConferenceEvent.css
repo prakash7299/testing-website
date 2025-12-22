@@ -137,16 +137,17 @@
 .conf-card p{ margin:0 0 12px; color:#243935; line-height:1.55; }
 
 /* Brochure */
+.brochure{font-size: 15px;}
 .brochure-card{ padding:28px; }
 .brochure-title-block{ display:block; margin-bottom:14px; }
 .brochure-main-title{ font-size:20px; font-weight:900; margin:0 0 8px; color:var(--conf-teal-700); }
-.brochure-meta p{ margin:8px 0; color:#213b35; }
+.brochure-meta p{ margin:8px 0; color:#213b35; font-size: 15px; }
 .brochure-sep{ border:0; height:1px; background:linear-gradient(90deg, rgba(6,59,50,0.03), rgba(6,59,50,0.06)); margin:18px 0; }
 
 /* Sections */
-.brochure-section{ padding:16px; border:1px solid rgba(6,59,50,0.03); border-radius:10px; margin-bottom:16px; background: linear-gradient(180deg,#fff,#fbfffc); }
+.brochure-section{ font-size: 15px; padding:16px; border:1px solid rgba(6,59,50,0.03); border-radius:10px; margin-bottom:16px; background: linear-gradient(180deg,#fff,#fbfffc); }
 .brochure-section h3{ margin:0 0 8px; font-size:18px; color:var(--conf-teal-700); font-weight:900; }
-.theme-quote{ margin:8px 0 12px; font-weight:700; color:#0b3f37; }
+.theme-quote{ margin:8px 0 12px; font-weight:700; color:#0b3f37; font-size: 15px; }
 .brochure-note{ margin-top:10px; color:#53655f; font-style:italic; }
 
 /* lists */
@@ -1117,5 +1118,68 @@ body, html { overscroll-behavior-x: none; }
 .glimpses-carousel button:focus, .thumb-btn:focus { outline: 3px solid rgba(11,107,85,0.12); outline-offset: 2px; border-radius:8px; }
 
  /* (rest of your existing CSS — unchanged) */
+
+
+/* ===== FIX SDG IMAGE ALIGNMENT (MOBILE ONLY) ===== */
+@media (max-width: 600px) {
+
+  .sdg-image-wrapper {
+    width: 100%;
+    margin: 16px auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;   /* prevents side cut */
+  }
+
+  .sdg-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+
+    /* remove any previous luxury effects on mobile */
+    padding: 0;
+    border-radius: 12px;
+    box-shadow: none;
+    transform: none;
+  }
+}
+
+/* Full-width section that ignores sidebar */
+.conf-fullwidth-section {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 24px;
+}
+
+/* Center content nicely */
+.conf-fullwidth-section .conf-wrapper {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+/* =========================================================
+   FIX: Make ConferenceProof truly full-width (no sidebar)
+   ========================================================= */
+
+/* Kill the 2-column grid ONLY inside the proof section */
+.conf-fullwidth-section .conf-wrapper {
+  display: block !important;      /* remove grid */
+  max-width: 1320px !important;   /* wider than normal */
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+/* Ensure no phantom sidebar space */
+.conf-fullwidth-section .conf-sidebar,
+.conf-fullwidth-section aside {
+  display: none !important;
+}
+
+/* Ensure proof cards stretch fully */
+.conf-fullwidth-section .conf-main {
+  width: 100% !important;
+  max-width: 100% !important;
+}
 
 
